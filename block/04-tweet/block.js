@@ -14,7 +14,7 @@
 	var __ = wp.i18n.__; // The __() for internationalization.
 	var el = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var Editable = wp.blocks.Editable; // Editable component of React.
-	var children = wp.blocks.query.children; // The children() function to extract child nodes from a paragraph of rich text.
+	var children = wp.blocks.source.children; // The children() function to extract child nodes from a paragraph of rich text.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() to register blocks.
 
 	/**
