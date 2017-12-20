@@ -1,0 +1,33 @@
+{
+	"name": "create-guten-block",
+	"version": "1.0.0",
+	"description": "Create a gutenberg block plugin on the go.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon index.js demo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ahmadawais/cgb.git"
+	},
+	"keywords": [
+		"gutenberg",
+		"create-gutenberg-block",
+		"wordpress"
+	],
+	"author": "AhmadAwais",
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/ahmadawais/cgb/issues"
+	},
+	"homepage": "https://github.com/ahmadawais/cgb#readme",
+	"devDependencies": {
+		"colors": "^1.1.2",
+		"copy-dir": "^0.3.0",
+		"eslint": "^4.13.1",
+		"shelljs": "^0.7.8"
+	},
+	"bin": {
+		"create-guten-block": "index.js"
+	}
+}

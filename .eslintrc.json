@@ -1,0 +1,19 @@
+{
+  "extends": ["airbnb", "prettier"],
+  // Rules → https://eslint.org/docs/user-guide/configuring#configuring-rules
+  // "off" or 0 - turn the rule off
+  // "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
+  // "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
+  "rules": {
+    "no-console": 0,
+    "prefer-const": 1,
+    "no-plusplus": 0,
+    "no-unused-vars": 0,
+    "class-methods-use-this": 0,
+    "no-param-reassign": 0,
+    "import/first": 0,
+    "no-unused-expressions": 0,
+    "no-unneeded-ternary": 0,
+    "no-restricted-syntax": 0
+  }
+}

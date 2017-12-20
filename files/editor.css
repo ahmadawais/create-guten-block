@@ -1,0 +1,14 @@
+/**
+ * ----------------------------------------------------------------------------
+ * #.# Editor CSS
+ *
+ * BLOCK: wp-block-cgb-block CSS for the editor.
+ * ----------------------------------------------------------------------------
+ */
+
+.wp-block-cgb-block {
+	color: #000000;
+	background: #bada55;
+	border: 0.2rem solid green;
+	padding: 2rem;
+}
