@@ -7,11 +7,24 @@ const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const pkg = require( './package.json' );
 const files = path.join( __dirname, '/files/' );
-const appName = process.argv[ 2 ];
-const appDirectory = `${ process.cwd() }/${ appName }`;
 
 // Update notifier.
 updateNotifier( { pkg } ).notify();
+
+// Create block name from 2nd Argument.
+const blockName = process.argv[ 2 ]
+	.toLowerCase()
+	.split( ' ' )
+	.join( '-' );
+
+// Block plugin dir.
+const blockDir = `${ process.cwd() }/${ blockName }`;
+
+// Create block name for PHP functions.
+const blockNameForPHP = blockName
+	.toLowerCase()
+	.split( '-' )
+	.join( '_' );
 
 // Init the spinner.
 const spinner = new ora( {
@@ -22,7 +35,7 @@ const spinner = new ora( {
 // Create Plugin Directory.
 const createPluginDir = () => {
 	return new Promise( resolve => {
-		shell.exec( `mkdir -p ${ appName }`, () => {
+		shell.exec( `mkdir -p ${ blockName }`, () => {
 			resolve( true );
 		} );
 	} );
@@ -31,9 +44,18 @@ const createPluginDir = () => {
 // Copy files to the plugin dir.
 const copyFilestoPluginDir = () => {
 	return new Promise( resolve => {
-		shell.cd( appDirectory );
+		shell.cd( blockDir );
 		shell.cp( '-RL', `${ files }*`, './' );
 		shell.cp( '-RL', `${ files }.*`, './' );
+
+		// Replace dynamic content for block name in the code.
+		shell.ls( '**.*' ).forEach( function( file ) {
+			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
+			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
+			shell.sed( '-i', '<% blockNameForPHP %>', `${ blockNameForPHP }`, file );
+			shell.sed( '-i', '<% blockNameForPHP % >', `${ blockNameForPHP }`, file );
+		} );
+
 		resolve();
 	} );
 };
@@ -66,7 +88,15 @@ const printNextSteps = () => {
 	console.log( '\n\n\n', chalk.black.bgYellow( ' What\'s Next: ' ) );
 	console.log(
 		chalk.dim( '\n create-guten-block' ),
-		'has created a Gutenberg block WordPress plugin with ESNext, Webpack, ESLint, and basic JavaScript + CSS...\n'
+		'has created a Gutenberg block WordPress plugin called ',
+		chalk.dim( `${ blockName }` ),
+		' that you can use with zero configurations and benefit from ESNext (i.e. ES6/7/8), React.js, JSX, Webpack, ESLint, etc.\n'
+	);
+	console.log(
+		'\n👉 ',
+		' Go to your block folder',
+		chalk.black.bgWhite( ` cd ${ blockName } ` ),
+		'to start developing your block.'
 	);
 	console.log(
 		'\n👉 ',
@@ -86,7 +116,7 @@ const printNextSteps = () => {
 const run = async() => {
 	await prePrint();
 
-	if ( ! appName ) {
+	if ( ! blockName ) {
 		spinner.fail( 'FAILED: Provide a plugin name in the following format: ' );
 		console.log( chalk.dim( '\ncreate-guten-block' ), 'plugin-name \n' );
 		return false;
@@ -94,13 +124,13 @@ const run = async() => {
 
 	spinner.start(
 		`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
-			` ${ appName } `
+			` ${ blockName } `
 		) }`
 	);
 	await createPluginDir();
 	spinner.succeed();
 
-	spinner.start( '2. Copying files to the directory...' );
+	spinner.start( '2. Building plugin files in the block directory...' );
 	await copyFilestoPluginDir();
 	spinner.succeed();
 
@@ -111,7 +141,6 @@ const run = async() => {
 	await printNextSteps();
 };
 
-// eslint-disable-next-line
 console.clear();
 
 // Run the CLI.

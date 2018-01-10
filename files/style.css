@@ -6,7 +6,7 @@
  * ----------------------------------------------------------------------------
  */
 
-.wp-block-cgb-block {
+.wp-block-cgb-block-<% blockName % >  {
   color: #000000;
   background: lightblue;
   border: 0.2rem solid blue;

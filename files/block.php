@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Create Guten Block
+ * Plugin Name: CGB: <% blockName %> Gutenberg Block
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: Create a Gutenberg block with ESNext, Webpack, etc.
+ * Description: <% blockName %> is a Gutenberg block created via create-guten-block.
  * Author: mrahmadawais, maedahbatool
  * Author URI: https://AhmadAwais.com/
  * Version: 1.0.0
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Hook: Editor assets.
-add_action( 'enqueue_block_editor_assets', 'cgb_editor_assets' );
+add_action( 'enqueue_block_editor_assets', '<% phpBlockName %>_cgb_editor_assets' );
 
 /**
  * Enqueue the block's assets for the editor.
@@ -29,10 +29,10 @@ add_action( 'enqueue_block_editor_assets', 'cgb_editor_assets' );
  *
  * @since 1.0.0
  */
-function cgb_editor_assets() {
+function <% phpBlockName %>_cgb_editor_assets() {
 	// Scripts.
 	wp_enqueue_script(
-		'cgb-block', // Handle.
+		'<% blockName %>-cgb-block', // Handle.
 		plugins_url( 'block.build.js', __FILE__ ), // Block.build.js: We register the block here. Built with Webpack.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ), // Dependencies, defined above.
 		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' ) // filemtime — Gets file modification time.
@@ -40,28 +40,28 @@ function cgb_editor_assets() {
 
 	// Styles.
 	wp_enqueue_style(
-		'cgb-block-css', // Handle.
+		'<% blockName %>-cgb-block-css', // Handle.
 		plugins_url( 'editor.css', __FILE__ ), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // filemtime — Gets file modification time.
 	);
-} // End function cgb_editor_assets().
+} // End function <% phpBlockName %>_cgb_editor_assets().
 
 
 // Hook: Frontend assets.
-add_action( 'enqueue_block_assets', 'cgb_frontend_assets' );
+add_action( 'enqueue_block_assets', '<% phpBlockName %>_cgb_frontend_assets' );
 
 /**
  * Enqueue the block's assets for the frontend.
  *
  * @since 1.0.0
  */
-function cgb_frontend_assets() {
+function <% phpBlockName %>_cgb_frontend_assets() {
 	// Styles.
 	wp_enqueue_style(
-		'cgb-frontend-css', // Handle.
+		'<% blockName %>-cgb-frontend-css', // Handle.
 		plugins_url( 'style.css', __FILE__ ), // Block frontend CSS.
 		array( 'wp-blocks' ), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // filemtime — Gets file modification time.
 	);
-} // End function cgb_frontend_assets().
+} // End function <% phpBlockName %>_cgb_frontend_assets().
