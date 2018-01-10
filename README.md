@@ -16,7 +16,7 @@ cd my-block
 npm run dev
 ```
 
-![Create-guten-block](http://on.ahmda.ws/okgp/c)
+![Create-guten-block](http://on.ahmda.ws/okiU/c)
 
 Then open your WordPress installation with Gutenberg plugin active and activate the `CGB: my-block Gutenberg Block` plugin you just created.
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
