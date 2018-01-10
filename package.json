@@ -8,19 +8,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ahmadawais/cgb.git"
+		"url": "git+https://github.com/ahmadawais/create-guten-block.git"
 	},
-	"keywords": [
-		"gutenberg",
-		"create-gutenberg-block",
-		"wordpress"
-	],
+	"keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
 	"author": "AhmadAwais",
 	"license": "GPL-3.0",
 	"bugs": {
-		"url": "https://github.com/ahmadawais/cgb/issues"
+		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
-	"homepage": "https://github.com/ahmadawais/cgb#readme",
+	"homepage": "https://github.com/ahmadawais/create-guten-block#readme",
 	"devDependencies": {
 		"babel-eslint": "^8.2.1",
 		"chalk": "^2.3.0",
