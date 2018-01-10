@@ -41,7 +41,9 @@ const copyFilestoPluginDir = () => {
 // NPM install and npm run build to build the block.
 const npmInstallBuild = () => {
 	return new Promise( async resolve => {
+		// Install.
 		await execa( 'npm', [ 'install', '--slient' ] );
+		// Build.
 		await execa( 'npm', [ 'run', 'build', '--slient' ] );
 		resolve();
 	} );
