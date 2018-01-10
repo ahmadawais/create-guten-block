@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Hook: Editor assets.
-add_action( 'enqueue_block_editor_assets', '<% phpBlockName %>_cgb_editor_assets' );
+add_action( 'enqueue_block_editor_assets', '<% blockNameForPHP %>_cgb_editor_assets' );
 
 /**
  * Enqueue the block's assets for the editor.
@@ -29,7 +29,7 @@ add_action( 'enqueue_block_editor_assets', '<% phpBlockName %>_cgb_editor_assets
  *
  * @since 1.0.0
  */
-function <% phpBlockName %>_cgb_editor_assets() {
+function <% blockNameForPHP %>_cgb_editor_assets() {
 	// Scripts.
 	wp_enqueue_script(
 		'<% blockName %>-cgb-block', // Handle.
@@ -45,18 +45,18 @@ function <% phpBlockName %>_cgb_editor_assets() {
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // filemtime — Gets file modification time.
 	);
-} // End function <% phpBlockName %>_cgb_editor_assets().
+} // End function <% blockNameForPHP %>_cgb_editor_assets().
 
 
 // Hook: Frontend assets.
-add_action( 'enqueue_block_assets', '<% phpBlockName %>_cgb_frontend_assets' );
+add_action( 'enqueue_block_assets', '<% blockNameForPHP %>_cgb_frontend_assets' );
 
 /**
  * Enqueue the block's assets for the frontend.
  *
  * @since 1.0.0
  */
-function <% phpBlockName %>_cgb_frontend_assets() {
+function <% blockNameForPHP %>_cgb_frontend_assets() {
 	// Styles.
 	wp_enqueue_style(
 		'<% blockName %>-cgb-frontend-css', // Handle.
@@ -64,4 +64,4 @@ function <% phpBlockName %>_cgb_frontend_assets() {
 		array( 'wp-blocks' ), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // filemtime — Gets file modification time.
 	);
-} // End function <% phpBlockName %>_cgb_frontend_assets().
+} // End function <% blockNameForPHP %>_cgb_frontend_assets().

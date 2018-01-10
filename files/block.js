@@ -33,10 +33,10 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	edit: function( props ) {
 		// Creates a <p class='wp-block-cgb-block-<% blockName %>'></p>.
 		return (
-			<div>
-				<p className={ props.className }>
-					<% blockName %> BLOCK: Hello from the editor.
-				</p>
+			<div className={ props.className }>
+				<p>— Hello from the backend.</p>
+				<p>CGB BLOCK: <code><% blockName %></code> is a new Gutenberg block</p>
+				<p>It was created via <code><a href="https://github.com/ahmadawais/create-guten-block">create-guten-block</a></code>.</p>
 			</div>
 		);
 	},
@@ -44,10 +44,11 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	// The "save" property must be specified and must be a valid function.
 	save: function( props ) {
 		return (
-			<div>
-				<p className={ props.className }>
-					<% blockName %> BLOCK: Hello from the frontend.
-				</p>
+			<div className={ props.className }>
+				<p>— Hello from the frontend.</p>
+				<p>
+					CGB BLOCK: <code><% blockName %></code> is a new Gutenberg block.</p>
+				<p>It was created via <code><a href="https://github.com/ahmadawais/create-guten-block">create-guten-block</a></code>.</p>
 			</div>
 		);
 	},
