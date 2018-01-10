@@ -31,15 +31,15 @@ module.exports = {
 	entry: './block.js', // Webpack
 	output: {
 		path: __dirname,
-		filename: 'block.build.js'
+		filename: 'block.build.js',
 	},
 	module: {
 		loaders: [
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				exclude: /node_modules/
-			}
-		]
-	}
+				exclude: /node_modules/,
+			},
+		],
+	},
 };

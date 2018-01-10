@@ -21,7 +21,7 @@ Read the files explained above. All of the files are heavily inline documented. 
 - Makes sure [NodeJS and NPM](https://nodejs.org/) are installed by running `node -v` or `npm -v` to check their versions.
 - Access this directory `cd /path/to/gutenberg-boilerplate/block/02-basic-esnext/`
 - Install node dependencies by running `node install` or `sudo node install`
-- For building the [`block.js`](https://github.com/ahmadawais/Gutenberg-Boilerplate/blob/master/block/02-basic-esnext/block.js) file into [`block.build.js`](https://github.com/ahmadawais/Gutenberg-Boilerplate/blob/master/block/02-basic-esnext/block.build.js) you can use run npm scripts. 
+- For building the [`block.js`](https://github.com/ahmadawais/Gutenberg-Boilerplate/blob/master/block/02-basic-esnext/block.js) file into [`block.build.js`](https://github.com/ahmadawais/Gutenberg-Boilerplate/blob/master/block/02-basic-esnext/block.build.js) you can use run npm scripts.
 - To watch and build run `npm run dev`
 - To build for production run `npm run build`
 
