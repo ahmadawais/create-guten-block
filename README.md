@@ -1,6 +1,7 @@
 # Create-Guten-Block [WIP]
 
-[WORK-IN-PROGRESS]
+[WORK-IN-PROGRESS] Stricly, WIP at the moment. Do NOT use it or announce, share it anywhere until I remove this notice and release it to the public.
+
 Create WordPress Gutenberg blocks with no build configuration.
 
 Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux.
