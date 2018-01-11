@@ -1,6 +1,7 @@
-# Create-Guten-Block [WIP]
 
-[WORK-IN-PROGRESS] Stricly, WIP at the moment. Do NOT use it or announce, share it anywhere until I remove this notice and release it to the public.
+> **[WORK-IN-PROGRESS] Stricly, WIP at the moment. Do NOT use it or announce, share it anywhere until I remove this notice and release it to the public.**
+
+# Create-Guten-Block [WIP]
 
 Create WordPress Gutenberg blocks with no build configuration.
 
