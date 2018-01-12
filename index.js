@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// create-guten-block CLI!
+// TODO: sed has issues create the same dir again.
 const path = require( 'path' );
 const shell = require( 'shelljs' );
 const updateNotifier = require( 'update-notifier' );
@@ -6,7 +8,7 @@ const execa = require( 'execa' );
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const pkg = require( './package.json' );
-const files = path.join( __dirname, '/files/' );
+const template = path.join( __dirname, '/packages/cgb-scripts/template/' );
 
 // Update notifier.
 updateNotifier( { pkg } ).notify();
@@ -21,10 +23,13 @@ const blockName = process.argv[ 2 ]
 const blockDir = `${ process.cwd() }/${ blockName }`;
 
 // Create block name for PHP functions.
-const blockNameForPHP = blockName
+const blockNamePHPLower = blockName
 	.toLowerCase()
 	.split( '-' )
 	.join( '_' );
+
+// Create block name for PHP functions.
+const blockNamePHPUpper = blockNamePHPLower.toUpperCase();
 
 // Init the spinner.
 const spinner = new ora( {
@@ -41,19 +46,21 @@ const createPluginDir = () => {
 	} );
 };
 
-// Copy files to the plugin dir.
-const copyFilestoPluginDir = () => {
+// Copy template to the plugin dir.
+const copyTemplateToPluginDir = () => {
 	return new Promise( resolve => {
 		shell.cd( blockDir );
-		shell.cp( '-RL', `${ files }*`, './' );
-		shell.cp( '-RL', `${ files }.*`, './' );
+		shell.cp( '-RL', `${ template }*`, './' );
+		shell.cp( '-RL', `${ template }.*`, './' );
 
 		// Replace dynamic content for block name in the code.
-		shell.ls( '**.*' ).forEach( function( file ) {
+		shell.ls( '**/**.*' ).forEach( function( file ) {
 			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
 			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
-			shell.sed( '-i', '<% blockNameForPHP %>', `${ blockNameForPHP }`, file );
-			shell.sed( '-i', '<% blockNameForPHP % >', `${ blockNameForPHP }`, file );
+			shell.sed( '-i', '<% blockNamePHPLower %>', `${ blockNamePHPLower }`, file );
+			shell.sed( '-i', '<% blockNamePHPLower % >', `${ blockNamePHPLower }`, file );
+			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPLower }`, file );
+			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPLower }`, file );
 		} );
 
 		resolve();
@@ -131,7 +138,7 @@ const run = async() => {
 	spinner.succeed();
 
 	spinner.start( '2. Building plugin files in the block directory...' );
-	await copyFilestoPluginDir();
+	await copyTemplateToPluginDir();
 	spinner.succeed();
 
 	spinner.start( '3. Installing node packages & building the block...' );

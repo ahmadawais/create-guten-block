@@ -4,7 +4,7 @@
  * CSS for both Frontend+Backend.
  */
 
-.wp-block-cgb-block-cgb {
+.wp-block-cgb-block-<% blockName % >  {
 	color: $black;
 	background: $red;
 	border: 0.2rem solid $black;
