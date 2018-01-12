@@ -29,3 +29,14 @@ You don’t need to install or configure tools like Webpack or Babel.
 They are preconfigured so that you can focus on the code.
 
 Just create a project, and you’re good to go.
+
+## Changelog
+
+### VERSION 1.0.0
+
+- ⚡️ NEW: NPM Module `create-guten-block`
+- ⚡️ NEW: Create WordPress plugin folder
+- ⚡️ NEW: Building WordPress plugin files
+- ⚡️ NEW: Build custom Gutenberg Block
+- ⚡️ NEW: Basic Webpack configurations
+- ⚡️ NEW: Dynamic WP Pluing and Gutenberg Block Names
