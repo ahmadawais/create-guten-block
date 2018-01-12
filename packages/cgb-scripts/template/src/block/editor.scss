@@ -5,7 +5,7 @@
  * which makes it higher in priority.
  */
 
-.wp-block-cgb-block-cgb {
+.wp-block-cgb-block-<% blockName % >  {
 	color: $black;
 	background: $green;
 	border: 0.2rem solid $black;

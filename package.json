@@ -4,7 +4,8 @@
   "description": "Create a gutenberg block plugin on the go.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js demo"
+    "dev": "nodemon index.js demo",
+    "demo": "create-guten-block demo"
   },
   "repository": {
     "type": "git",

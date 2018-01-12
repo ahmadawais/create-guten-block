@@ -83,7 +83,6 @@ module.exports = {
 		path: path.resolve( __dirname ),
 		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
 	},
-	watch: true,
 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
 	devtool: 'cheap-eval-source-map',
 	module: {
@@ -109,4 +108,6 @@ module.exports = {
 	},
 	// Add plugins.
 	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
+	stats: 'minimal',
+	// stats: 'errors-only',
 };
