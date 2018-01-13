@@ -99,6 +99,9 @@ const npmInstallBuild = () => {
 	return new Promise( async resolve => {
 		// Install.
 		await execa( 'npm', [ 'install', '--slient' ] );
+
+		// Install latest cgb-scripts.
+		await execa( 'npm', [ 'install', 'cgb-scripts', '--slient' ] );
 		// Build.
 		// await execa( 'npm', [ 'run', 'build', '--slient' ] );
 		resolve();
