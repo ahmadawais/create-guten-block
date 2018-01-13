@@ -2,9 +2,6 @@
 	"name": "<% blockName %>-cgb-guten-block",
 	"version": "1.0.0",
 	"private": true,
-	"dependencies": {
-		"cgb-scripts": "^0.0.5"
-	},
 	"scripts": {
 		"start": "cgb-scripts start",
 		"build": "cgb-scripts build",
