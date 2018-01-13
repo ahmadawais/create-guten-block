@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * CGB Command Run for Dev ENV.
  */
+
+// Run CGB command in development env.
+// Then handleErrors.
+// TODO: Allow custom scripts.
 
 'use strict';
 
@@ -34,49 +35,54 @@ const handleError = e => {
 process.on( 'SIGINT', handleExit );
 process.on( 'uncaughtException', handleError );
 
+// The rootDir is where this repo exits. i.e. the dir where lerna.json is.
+const rootDir = path.join( __dirname, '..' );
+
 // ******************************************************************************
+// TODO: Allow custom scripts.
 // Pack cgb-scripts so we can verify they work.
 // ******************************************************************************
 
-// The rootDir is where this repo exits. i.e. the dir where lerna.json is.
-const rootDir = path.join( __dirname, '..' );
-const cgbScriptsDir = path.join( rootDir, 'packages', 'cgb-scripts' );
-const packageJsonPath = path.join( cgbScriptsDir, 'package.json' );
-const packageJsonOrigPath = path.join( cgbScriptsDir, 'package.json.orig' );
+// // The rootDir is where this repo exits. i.e. the dir where lerna.json is.
+// const rootDir = path.join( __dirname, '..' );
+// const cgbScriptsDir = path.join( rootDir, 'packages', 'cgb-scripts' );
+// const packageJsonPath = path.join( cgbScriptsDir, 'package.json' );
+// const packageJsonOrigPath = path.join( cgbScriptsDir, 'package.json.orig' );
 
-// Install all our packages
-const lernaPath = path.join( rootDir, 'node_modules', '.bin', 'lerna' );
-cp.execSync( `${ lernaPath } bootstrap`, {
-	cwd: rootDir,
-	stdio: 'inherit',
-} );
+// // Install all our packages
+// const lernaPath = path.join( rootDir, 'node_modules', '.bin', 'lerna' );
+// cp.execSync( `${ lernaPath } bootstrap`, {
+// 	cwd: rootDir,
+// 	stdio: 'inherit',
+// } );
 
-// Save package.json because we're going to touch it
-fs.writeFileSync( packageJsonOrigPath, fs.readFileSync( packageJsonPath ) );
+// // Save package.json because we're going to touch it
+// fs.writeFileSync( packageJsonOrigPath, fs.readFileSync( packageJsonPath ) );
 
-// Replace own dependencies (those in the`packages` dir) with the local paths
-// of those packages
-const replaceOwnDepsPath = path.join( __dirname, 'replace-own-deps.js' );
-cp.execSync( `node ${ replaceOwnDepsPath }`, { stdio: 'inherit' } );
+// // Replace own dependencies (those in the`packages` dir) with the local paths
+// // of those packages
+// const replaceOwnDepsPath = path.join( __dirname, 'replace-own-deps.js' );
+// cp.execSync( `node ${ replaceOwnDepsPath }`, { stdio: 'inherit' } );
 
-// Finally, pack cgb-scripts
-// Don't redirect stdio as we want to capture the output that will be returned
-// from execSync(). In this case it will be the .tgz filename.
-const scriptsFileName = cp
-	.execSync( 'npm pack', { cwd: cgbScriptsDir } )
-	.toString()
-	.trim();
-const scriptsPath = path.join(
-	rootDir,
-	'packages',
-	'cgb-scripts',
-	scriptsFileName
-);
+// // Finally, pack cgb-scripts
+// // Don't redirect stdio as we want to capture the output that will be returned
+// // from execSync(). In this case it will be the .tgz filename.
+// const scriptsFileName = cp
+// 	.execSync( 'npm pack', { cwd: cgbScriptsDir } )
+// 	.toString()
+// 	.trim();
 
-// Restore package.json
-fs.unlinkSync( packageJsonPath );
-fs.writeFileSync( packageJsonPath, fs.readFileSync( packageJsonOrigPath ) );
-fs.unlinkSync( packageJsonOrigPath );
+// const scriptsPath = path.join(
+// 	rootDir,
+// 	'packages',
+// 	'cgb-scripts',
+// 	scriptsFileName
+// );
+
+// // Restore package.json
+// fs.unlinkSync( packageJsonPath );
+// fs.writeFileSync( packageJsonPath, fs.readFileSync( packageJsonOrigPath ) );
+// fs.unlinkSync( packageJsonOrigPath );
 
 // ******************************************************************************
 // Now that we have packed them, call the global CLI.
@@ -91,7 +97,7 @@ try {
 
 const args = process.argv.slice( 2 );
 
-// Now run the CRA command
+// Now run the CGB command.
 const cgbScriptPath = path.join(
 	rootDir,
 	'packages',
@@ -99,6 +105,7 @@ const cgbScriptPath = path.join(
 	'index.js'
 );
 cp.execSync(
+	// TODO: Allow custom scripts.
 	// `node ${ cgbScriptPath } --scripts-version="${ scriptsPath }" ${ args.join( ' ' ) }`,
 	`node ${ cgbScriptPath } ${ args.join( ' ' ) }`,
 	{
@@ -107,5 +114,5 @@ cp.execSync(
 	}
 );
 
-// Cleanup
+// Cleanup. Dev only.
 handleExit();
