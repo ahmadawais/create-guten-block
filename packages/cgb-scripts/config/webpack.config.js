@@ -20,7 +20,7 @@
  * @since 1.0.0
  */
 
-const path = require( 'path' );
+// const path = require( 'path' );
 const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const paths = require( './paths' );
@@ -64,7 +64,7 @@ const extractConfig = {
 				// Add common CSS file for variables and mixins.
 				data: '@import "./src/common.scss";\n',
 				outputStyle:
-					'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
+          'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
 			},
 		},
 	],
