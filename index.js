@@ -59,8 +59,8 @@ const copyTemplateToPluginDir = () => {
 			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
 			shell.sed( '-i', '<% blockNamePHPLower %>', `${ blockNamePHPLower }`, file );
 			shell.sed( '-i', '<% blockNamePHPLower % >', `${ blockNamePHPLower }`, file );
-			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPLower }`, file );
-			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPLower }`, file );
+			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPUpper }`, file );
+			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPUpper }`, file );
 		} );
 
 		resolve();
