@@ -34,7 +34,7 @@ Just create a project, and you’re good to go.
 
 ## Changelog
 
-### VERSION 1.0.1
+### VERSION 2.0.0
 
 Work in progress.
 
@@ -49,5 +49,4 @@ Work in progress.
 
 ### Docs Init
 
-- Install globally `npm install --globally create-guten-block` (Run the same command again to update).
--
+- Install globally `npm install --global create-guten-block` (Run the same command again to update).

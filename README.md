@@ -34,7 +34,7 @@ Just create a project, and you’re good to go.
 
 ## Changelog
 
-### VERSION 1.0.1
+### VERSION 2.0.0
 
 Work in progress.
 
@@ -47,9 +47,6 @@ Work in progress.
 - ⚡️ NEW: Basic Webpack configurations
 - ⚡️ NEW: Dynamic WP Pluing and Gutenberg Block Names
 
+### Docs Init
 
-## License
-
-MIT (c) [Ahmad Awais](https://AhmadAwais.com/) | GitHub: [ahmadawais](https://github.com/ahmadawais)
-
-CREDITS: Many thanks to h5bp, create-react-app, Dan Abramov, WordPress Core Team, Gutenberg contributors, and everyone who have contributed to packages used by create-guten-block for the inspiration.
+- Install globally `npm install --global create-guten-block` (Run the same command again to update).
