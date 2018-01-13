@@ -3,9 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
-		"react": "^16.2.0",
-		"react-dom": "^16.2.0",
-		"cgb-scripts": "1.0.17"
+		"cgb-scripts": "^0.0.1"
 	},
 	"scripts": {
 		"start": "cgb-scripts start",
