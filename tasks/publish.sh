@@ -1,17 +1,13 @@
 #!/bin/bash
-# Copyright (c) 2015-present, Facebook, Inc.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
 
 # ******************************************************************************
-# This releases an update to the `react-scripts` package.
+# This releases an update to the `cgb-scripts` package.
 # Don't use `npm publish` for it.
-# Read the release instructions:
-# https://github.com/facebookincubator/create-react-app/blob/master/CONTRIBUTING.md#cutting-a-release
 # ******************************************************************************
 
-# Start in tasks/ even if run from root directory
+# TODO: Release instructions.
+
+# Start in tasks/ even if run from root directory.
 cd "$(dirname "$0")"
 
 # Exit the script on any command with non 0 return code
@@ -27,7 +23,7 @@ cd ..
 root_path=$PWD
 
 if [ -n "$(git status --porcelain)" ]; then
-  echo "Your git status is not clean. Aborting.";
+  echo "❌ Your git status is not clean. Aborting.";
   exit 1;
 fi
 

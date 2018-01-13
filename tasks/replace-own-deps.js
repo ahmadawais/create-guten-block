@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Replace Deps
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * Replaces internal dependencies in package.json with local package paths.
  */
 'use strict';
-
-// Replaces internal dependencies in package.json with local package paths.
 
 const fs = require( 'fs' );
 const path = require( 'path' );
