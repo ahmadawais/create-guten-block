@@ -26,13 +26,14 @@
 		"update-notifier": "^2.3.0"
 	},
 	"scripts": {
-		"demo": "node tasks/cgb.js demo",
-		"changelog": "lerna-changelog",
 		"create-guten-block": "node tasks/cgb.js",
+		"demo": "node tasks/cgb.js demo",
+		"start": "node packages/cgb-scripts/scripts/start.js",
+		"changelog": "lerna-changelog",
 		"updated": "lerna updated",
 		"beforepublish": "lerna bootstrap",
-		"publish":
-			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
-		"start": "node packages/cgb-scripts/scripts/start.js"
+		"publish": "tasks/publish.sh",
+		"oldpublish":
+			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'"
 	}
 }
