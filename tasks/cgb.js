@@ -38,6 +38,7 @@ process.on( 'uncaughtException', handleError );
 // Pack cgb-scripts so we can verify they work.
 // ******************************************************************************
 
+// The rootDir is where this repo exits. i.e. the dir where lerna.json is.
 const rootDir = path.join( __dirname, '..' );
 const cgbScriptsDir = path.join( rootDir, 'packages', 'cgb-scripts' );
 const packageJsonPath = path.join( cgbScriptsDir, 'package.json' );
@@ -94,11 +95,12 @@ const args = process.argv.slice( 2 );
 const cgbScriptPath = path.join(
 	rootDir,
 	'packages',
-	'create-cgb-app',
+	'create-guten-block',
 	'index.js'
 );
 cp.execSync(
-	`node ${ cgbScriptPath } --scripts-version="${ scriptsPath }" ${ args.join( ' ' ) }`,
+	// `node ${ cgbScriptPath } --scripts-version="${ scriptsPath }" ${ args.join( ' ' ) }`,
+	`node ${ cgbScriptPath } ${ args.join( ' ' ) }`,
 	{
 		cwd: rootDir,
 		stdio: 'inherit',
