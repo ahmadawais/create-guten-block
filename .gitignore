@@ -55,6 +55,7 @@ assets/bower_components/*
 # NPM #
 ##########
 node_modules
+**/node_modules/**
 
 # Compiled Files and Build Dirs #
 ##########

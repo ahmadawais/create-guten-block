@@ -32,6 +32,10 @@ Just create a project, and you’re good to go.
 
 ## Changelog
 
+### VERSION 1.0.1
+
+Work in progress.
+
 ### VERSION 1.0.0
 
 - ⚡️ NEW: NPM Module `create-guten-block`
