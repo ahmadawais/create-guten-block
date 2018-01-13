@@ -1,6 +1,6 @@
 {
   "name": "cgb-dev-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Webpack utilities used by Create Guten Blocks",
   "repository": "ahmadawais/create-guten-block",
   "license": "MIT",
