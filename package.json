@@ -37,8 +37,8 @@
 		"demo": "create-guten-block demo",
 		"changelog": "lerna-changelog",
 		"create-guten-block": "node tasks/cra.js",
-		"postinstall": "node bootstrap.js",
-		"publish": "tasks/publish.sh",
+		"prepublish": "lerna bootstrap",
+		"publish": "bash tasks/publish.sh",
 		"start": "node packages/cgb-scripts/scripts/start.js"
 	}
 }
