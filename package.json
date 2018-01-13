@@ -1,47 +1,48 @@
 {
-	"name": "create-guten-block",
-	"version": "1.0.0",
-	"description": "Create a gutenberg block plugin on the go.",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ahmadawais/create-guten-block.git"
-	},
-	"keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
-	"author": "AhmadAwais",
-	"license": "GPL-3.0",
-	"bugs": {
-		"url": "https://github.com/ahmadawais/create-guten-block/issues"
-	},
-	"homepage": "https://github.com/ahmadawais/create-guten-block#readme",
-	"devDependencies": {
-		"babel-eslint": "^8.2.1",
-		"chalk": "^2.3.0",
-		"eslint": "^4.15.0",
-		"eslint-config-wordpress": "^2.0.0",
-		"eslint-plugin-jest": "^21.6.1",
-		"eslint-plugin-jsx-a11y": "^6.0.3",
-		"eslint-plugin-react": "^7.5.1",
-		"eslint-plugin-wordpress": "^0.1.0",
-		"execa": "^0.8.0",
-		"lerna": "^2.7.0",
-		"ora": "^1.3.0",
-		"shelljs": "^0.7.8",
-		"update-notifier": "^2.3.0"
-	},
-	"bin": {
-		"create-guten-block": "index.js"
-	},
-	"scripts": {
-		"dev": "nodemon index.js demo",
-		"demo": "create-guten-block demo",
-		"changelog": "lerna-changelog",
-		"create-guten-block": "node tasks/cra.js",
-		"updated": "lerna updated",
-		"prepublish": "lerna bootstrap",
-		"publish":
-			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
-		"start": "node packages/cgb-scripts/scripts/start.js"
-	},
-	"workspaces": ["packages/*"]
+  "name": "create-guten-block",
+  "version": "1.0.0",
+  "description": "Create a gutenberg block plugin on the go.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadawais/create-guten-block.git"
+  },
+  "keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
+  "author": "AhmadAwais",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ahmadawais/create-guten-block/issues"
+  },
+  "homepage": "https://github.com/ahmadawais/create-guten-block#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "chalk": "^2.3.0",
+    "eslint": "^4.15.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jest": "^21.6.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-wordpress": "^0.1.0",
+    "execa": "^0.8.0",
+    "lerna": "^2.7.0",
+    "ora": "^1.3.0",
+    "shelljs": "^0.7.8",
+    "update-notifier": "^2.3.0"
+  },
+  "bin": {
+    "create-guten-block": "index.js"
+  },
+  "scripts": {
+    "dev": "nodemon index.js demo",
+    "demo": "create-guten-block demo",
+    "changelog": "lerna-changelog",
+    "create-guten-block": "node tasks/cra.js",
+    "updated": "lerna updated",
+    "prepublish": "lerna bootstrap",
+    "publish":
+      "bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
+    "start": "node packages/cgb-scripts/scripts/start.js"
+  },
+  "workspaces": ["packages/*"],
+  "private": true
 }
