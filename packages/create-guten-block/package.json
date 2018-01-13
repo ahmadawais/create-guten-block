@@ -19,12 +19,12 @@
 	},
 	"homepage": "https://github.com/ahmadawais/create-guten-block#readme",
 	"dependencies": {
+		"cgb-scripts": "^0.0.9",
 		"chalk": "^2.3.0",
 		"execa": "^0.9.0",
 		"ora": "^1.3.0",
 		"shelljs": "^0.8.0",
-		"update-notifier": "^2.3.0",
-		"cgb-scripts": "^0.0.9"
+		"update-notifier": "^2.3.0"
 	},
 	"bin": {
 		"create-guten-block": "./index.js"
