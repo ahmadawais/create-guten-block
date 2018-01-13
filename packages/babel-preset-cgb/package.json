@@ -1,15 +1,13 @@
 {
 	"name": "babel-preset-cgb",
-	"version": "0.0.4",
+	"version": "0.0.4-1",
 	"description": "Babel preset used by Create Guten Block",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
-	"files": [
-		"index.js"
-	],
+	"files": ["index.js"],
 	"dependencies": {
 		"babel-plugin-transform-class-properties": "6.24.1",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
