@@ -1,15 +1,11 @@
 {
-	"name": "create-guten-block",
-	"version": "1.0.0",
-	"description": "Create a gutenberg block plugin on the go.",
-	"main": "index.js",
+	"private": true,
+	"workspaces": ["packages/*"],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ahmadawais/create-guten-block.git"
 	},
-	"keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
 	"author": "AhmadAwais",
-	"license": "GPL-3.0",
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
@@ -29,12 +25,8 @@
 		"shelljs": "^0.7.8",
 		"update-notifier": "^2.3.0"
 	},
-	"bin": {
-		"create-guten-block": "index.js"
-	},
 	"scripts": {
-		"dev": "nodemon index.js demo",
-		"demo": "create-guten-block demo",
+		"demo": "node tasks/cgb.js demo",
 		"changelog": "lerna-changelog",
 		"create-guten-block": "node tasks/cgb.js",
 		"updated": "lerna updated",
@@ -42,7 +34,5 @@
 		"publish":
 			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
 		"start": "node packages/cgb-scripts/scripts/start.js"
-	},
-	"workspaces": ["packages/*"],
-	"private": true
+	}
 }

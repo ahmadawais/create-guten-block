@@ -3,13 +3,14 @@
 	"version": "1.0.0",
 	"description": "Create a gutenberg block plugin on the go.",
 	"main": "index.js",
+
+	"keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
+	"author": "AhmadAwais",
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ahmadawais/create-guten-block.git"
 	},
-	"keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
-	"author": "AhmadAwais",
-	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
