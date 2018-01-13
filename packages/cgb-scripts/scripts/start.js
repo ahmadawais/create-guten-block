@@ -20,62 +20,73 @@ process.on( 'unhandledRejection', err => {
 	throw err;
 } );
 
+const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const config = require( '../config/webpack.config.dev' );
+const config = require( '../config/webpack.config' );
 const clearConsole = require( '../../cgb-dev-utils/clearConsole' );
 const formatWebpackMessages = require( '../../cgb-dev-utils/formatWebpackMessages' );
 
 clearConsole();
-// console.log( 'Webpack starting' );
 
-// const compiler = webpack( config );
-
-// compiler.run( ( err, stats ) => {
-// 	// ...
-// } );
-
+// Init the spinner.
+const spinner = new ora( {
+	text: '',
+	enabled: true,
+} );
 // Create the production build and print the deployment instructions.
-function build( webpackConfig ) {
-	console.log( 'Creating an optimized production build...' );
+async function build( webpackConfig ) {
+	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
+
+	// console.log( chalk.dim( 'Building and compiling blocks...' ) );
 
 	// Compiler Instance.
-	const compiler = webpack( webpackConfig );
+	const compiler = await webpack( webpackConfig );
+	spinner.succeed();
 
-	// Promise.
-	return new Promise( ( resolve, reject ) => {
-		compiler.run( ( err, stats ) => {
-			if ( err ) {
-				return reject( err );
+	compiler.watch( {}, ( err, stats ) => {
+		if ( err ) {
+			return console.log( err );
+		}
+
+		// Get the messages formatted.
+		const messages = formatWebpackMessages( stats.toJson( {}, true ) );
+
+		// If there are errors just show the errors.
+		if ( messages.errors.length ) {
+			// Only keep the first error. Others are often indicative
+			// of the same problem, but confuse the reader with noise.
+			if ( messages.errors.length > 1 ) {
+				messages.errors.length = 1;
 			}
-			const messages = formatWebpackMessages( stats.toJson( {}, true ) );
-			if ( messages.errors.length ) {
-				// Only keep the first error. Others are often indicative
-				// of the same problem, but confuse the reader with noise.
-				if ( messages.errors.length > 1 ) {
-					messages.errors.length = 1;
-				}
-				return reject( new Error( messages.errors.join( '\n\n' ) ) );
-			}
-			if (
-				process.env.CI &&
-				( typeof process.env.CI !== 'string' ||
-					process.env.CI.toLowerCase() !== 'false' ) &&
-				messages.warnings.length
-			) {
-				console.log(
-					chalk.yellow(
-						'\nTreating warnings as errors because process.env.CI = true.\n' +
-							'Most CI servers set it automatically.\n'
-					)
-				);
-				return reject( new Error( messages.warnings.join( '\n\n' ) ) );
-			}
-			return resolve( {
-				stats,
-				warnings: messages.warnings,
-			} );
-		} );
+			// Formatted errors.
+			clearConsole();
+			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile. \n' ) );
+			const logErrors = console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
+			return logErrors;
+		}
+
+		// CI.
+		if (
+			process.env.CI &&
+			( typeof process.env.CI !== 'string' ||
+				process.env.CI.toLowerCase() !== 'false' ) &&
+			messages.warnings.length
+		) {
+			console.log(
+				chalk.yellow(
+					'\nTreating warnings as errors because process.env.CI = true.\n' +
+						'Most CI servers set it automatically.\n'
+				)
+			);
+			return console.log( messages.warnings.join( '\n\n' ) );
+		}
+
+		clearConsole();
+		console.log( '\n✅ ', chalk.black.bgGreen( ' Compiled successfully! \n' ) );
+		return console.log(
+			chalk.dim( ' Watching for changes... (Press CTRL + C to stop). \n\n' )
+		);
 	} );
 }
 
