@@ -7,11 +7,7 @@
 		"type": "git",
 		"url": "git+https://github.com/ahmadawais/create-guten-block.git"
 	},
-	"keywords": [
-		"gutenberg",
-		"create-gutenberg-block",
-		"wordpress"
-	],
+	"keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
 	"author": "AhmadAwais",
 	"license": "GPL-3.0",
 	"bugs": {
@@ -42,7 +38,7 @@
 		"changelog": "lerna-changelog",
 		"create-guten-block": "node tasks/cra.js",
 		"postinstall": "node bootstrap.js",
-		"publish": "tasks/release.sh",
+		"publish": "tasks/publish.sh",
 		"start": "node packages/cgb-scripts/scripts/start.js"
 	}
 }
