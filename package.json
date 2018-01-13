@@ -32,8 +32,6 @@
 		"changelog": "lerna-changelog",
 		"updated": "lerna updated",
 		"beforepublish": "lerna bootstrap",
-		"publish": "tasks/publish.sh",
-		"oldpublish":
-			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'"
+		"publish": "bash tasks/publish.sh && echo 'Now update dependency packages.'"
 	}
 }
