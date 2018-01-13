@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
-		"cgb-scripts": "^0.0.3"
+		"cgb-scripts": "^0.0.4"
 	},
 	"scripts": {
 		"start": "cgb-scripts start",
