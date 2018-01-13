@@ -42,5 +42,6 @@
 		"publish":
 			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
 		"start": "node packages/cgb-scripts/scripts/start.js"
-	}
+	},
+	"workspaces": ["packages/*"]
 }
