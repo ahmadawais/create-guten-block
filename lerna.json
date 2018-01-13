@@ -7,7 +7,7 @@
 	"commands": {
 		"publish": {
 			"message": "🚀 RELEASE",
-			"ignore": ["ignored-file", "*.md"]
+			// "ignore": ["ignored-file", "*.md"]
 		}
 	}
 }
