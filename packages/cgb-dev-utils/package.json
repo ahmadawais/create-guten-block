@@ -11,7 +11,7 @@
     "node": ">=6"
   },
   "dependencies": {
-    "chalk": "1.1.3",
+    "chalk": "2.3.0",
     "cross-spawn": "5.1.0"
   },
   "scripts": {
