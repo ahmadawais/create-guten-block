@@ -1,9 +1,13 @@
 {
   "name": "create-guten-block",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Create a gutenberg block plugin on the go.",
   "main": "index.js",
-  "keywords": ["gutenberg", "create-gutenberg-block", "wordpress"],
+  "keywords": [
+    "gutenberg",
+    "create-gutenberg-block",
+    "wordpress"
+  ],
   "author": "AhmadAwais",
   "license": "MIT",
   "repository": {
