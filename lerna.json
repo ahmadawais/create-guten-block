@@ -6,7 +6,7 @@
 	"useWorkspaces": true,
 	"commands": {
 		"publish": {
-			"message": "🚀 RELEASE",
+			"message": "🚀 RELEASE"
 			// "ignore": ["ignored-file", "*.md"]
 		}
 	}
