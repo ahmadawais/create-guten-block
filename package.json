@@ -39,7 +39,8 @@
 		"create-guten-block": "node tasks/cra.js",
 		"updated": "lerna updated",
 		"prepublish": "lerna bootstrap",
-		"publish": "bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
+		"publish":
+			"bash tasks/publish.sh && echo 'Now Update Dependency packages.'",
 		"start": "node packages/cgb-scripts/scripts/start.js"
 	}
 }
