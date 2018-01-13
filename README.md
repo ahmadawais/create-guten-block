@@ -3,6 +3,8 @@
 
 # Create-Guten-Block [WIP]
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+
 Create WordPress Gutenberg blocks with no build configuration.
 
 Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux.
