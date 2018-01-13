@@ -73,7 +73,7 @@ const npmInstallBuild = () => {
 		// Install.
 		await execa( 'npm', [ 'install', '--slient' ] );
 		// Build.
-		await execa( 'npm', [ 'run', 'build', '--slient' ] );
+		// await execa( 'npm', [ 'run', 'build', '--slient' ] );
 		resolve();
 	} );
 };
