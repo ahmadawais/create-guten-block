@@ -9,12 +9,35 @@ const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const pkg = require( './package.json' );
 const template = path.join( __dirname, '/packages/cgb-scripts/template/' );
+const clearConsole = require( './packages/cgb-dev-utils/clearConsole' );
 
 // Update notifier.
 updateNotifier( { pkg } ).notify();
 
+// Is there a name provided?
+const getBlockName = process.argv[ 2 ] === undefined ? false : process.argv[ 2 ];
+
+// Stop if there's no plugin dir name.
+if ( getBlockName === false ) {
+	clearConsole();
+	console.log(
+		'\n❌ ',
+		chalk.black.bgRed( ' Kindly, specify the plugin directory: \n' )
+	);
+	console.log(
+		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( '<plugin-directory>' ) }`
+	);
+	console.log();
+	console.log( chalk.dim( 'For example: \n' ) );
+	console.log(
+		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'my-block' ) }`
+	);
+	console.log();
+	process.exit( 1 );
+}
+
 // Create block name from 2nd Argument.
-const blockName = process.argv[ 2 ]
+const blockName = getBlockName
 	.toLowerCase()
 	.split( ' ' )
 	.join( '-' );
