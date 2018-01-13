@@ -19,8 +19,7 @@
 		"execa": "^0.8.0",
 		"ora": "^1.3.0",
 		"shelljs": "^0.7.8",
-		"update-notifier": "^2.3.0",
-		"cgb-dev-utils": "^0.0.2"
+		"update-notifier": "^2.3.0"
 	},
 	"bin": {
 		"create-guten-block": "./index.js"
