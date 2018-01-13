@@ -73,7 +73,6 @@ Rails
 # CGB
 .idea/
 .vscode/
-node_modules/
 .DS_Store
 *.tgz
 my-app*
