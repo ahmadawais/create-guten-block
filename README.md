@@ -46,3 +46,10 @@ Work in progress.
 - ⚡️ NEW: Build custom Gutenberg Block
 - ⚡️ NEW: Basic Webpack configurations
 - ⚡️ NEW: Dynamic WP Pluing and Gutenberg Block Names
+
+
+## License
+
+MIT (c) [Ahmad Awais](https://AhmadAwais.com/) | GitHub: [ahmadawais](https://github.com/ahmadawais)
+
+CREDITS: Many thanks to h5bp, create-react-app, Dan Abramov, WordPress Core Team, Gutenberg contributors, and everyone who have contributed to packages used by create-guten-block for the inspiration.
