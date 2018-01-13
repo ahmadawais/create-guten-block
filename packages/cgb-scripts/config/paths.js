@@ -14,5 +14,5 @@ const resolveApp = relativePath => path.resolve( pluginDir, relativePath );
 module.exports = {
 	dotenv: resolveApp( '.env' ),
 	pluginBlocksJs: resolveApp( 'src/blocks.js' ),
-	pluginDist: resolveApp( 'dist' ),
+	pluginDist: resolveApp( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
 };
