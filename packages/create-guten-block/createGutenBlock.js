@@ -110,7 +110,9 @@ const prePrint = () => {
 	console.log( '\n' );
 	console.log(
 		'📦 ',
-		chalk.black.bgYellow( ' CGB: Creating a Gutenberg Block...\n' )
+		chalk.black.bgYellow(
+			' CGB: Creating a Gutenberg Block plguin in this directory...\n'
+		)
 	);
 };
 // Prints next steps.
@@ -135,7 +137,7 @@ const printNextSteps = () => {
 	console.log(
 		'\n👉 ',
 		' Use',
-		chalk.black.bgWhite( ' npm run dev ' ),
+		chalk.black.bgWhite( ' npm start ' ),
 		'to build and watch your block.'
 	);
 	console.log(
