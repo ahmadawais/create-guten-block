@@ -17,7 +17,7 @@ console.log( template );
 updateNotifier( { pkg } ).notify();
 
 // Is there a plugin-name provided as the third argument?
-const theThirdArgument = process.argv.slice( 2, 3 );
+const theThirdArgument = process.argv[ 2 ];
 const getBlockName = theThirdArgument === undefined ? false : theThirdArgument;
 
 // Stop if there's no plugin dir name.
