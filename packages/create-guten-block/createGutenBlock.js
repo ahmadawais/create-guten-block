@@ -8,8 +8,16 @@ const execa = require( 'execa' );
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const pkg = require( './package.json' );
-const template = path.join( __dirname, '../cgb-scripts/template/' );
-const clearConsole = require( '../cgb-dev-utils/clearConsole' );
+const template = path.join( __dirname, './node_modules/cgb-scripts/template/' );
+
+/**
+ * Cross platform clear console.
+ */
+function clearConsole() {
+	process.stdout.write(
+		process.platform === 'win32' ? '\x1B[2J\x1B[0f' : '\x1B[2J\x1B[3J\x1B[H'
+	);
+}
 
 console.log( template );
 
@@ -180,7 +188,8 @@ const run = async() => {
 	await printNextSteps();
 };
 
-console.clear();
+// console.clear();
+clearConsole();
 
 // Run the CLI.
 run();
