@@ -28,3 +28,4 @@ First of all, I'd like to welcome you for thinking about contributing to this pr
 - Run `npm start` or `yarn start`
 - This will compile your code in `dist` and you're good to go.
 - Run `yarn updated` to check which npm packages were updated
+- Finally publish with 'yarn publishNPM' since yarn has some issues with publishing with lerna not sure why.
