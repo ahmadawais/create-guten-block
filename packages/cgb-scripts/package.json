@@ -1,6 +1,6 @@
 {
 	"name": "cgb-scripts",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Configuration and scripts for Create Guten Blocks.",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
@@ -33,9 +33,9 @@
 		"ora": "^1.3.0",
 		"postcss-loader": "^2.0.10",
 		"raw-loader": "^0.5.1",
+		"resolve-pkg": "^1.0.0",
 		"sass-loader": "^6.0.6",
 		"style-loader": "^0.19.1",
-		"webpack": "^3.1.0",
-		"resolve-pkg": "^1.0.0"
+		"webpack": "^3.1.0"
 	}
 }
