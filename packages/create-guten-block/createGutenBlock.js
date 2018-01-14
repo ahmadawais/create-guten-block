@@ -1,14 +1,25 @@
 #!/usr/bin/env node
 // create-guten-block CLI!
-const shell = require( 'shelljs' );
-const updateNotifier = require( 'update-notifier' );
-const execa = require( 'execa' );
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
-const pkg = require( './package.json' );
+const execa = require( 'execa' );
+const shell = require( 'shelljs' );
 const resolvePkg = require( 'resolve-pkg' );
 const template = resolvePkg( 'cgb-scripts/template', { cwd: __dirname } );
 const directoryExists = require( 'directory-exists' );
+
+// Update notifier.
+const updateNotifier = require( 'update-notifier' );
+const pkg = require( './package.json' );
+const notifier = updateNotifier( {
+	pkg: pkg,
+	updateCheckInterval: 1000 * 60 * 60 * 24, // 1 day.
+} );
+
+if ( notifier.update ) {
+	notifier.notify();
+	process.exit( 0 );
+}
 
 /**
  * Cross platform clear console.
@@ -19,10 +30,7 @@ function clearConsole() {
 	);
 }
 
-console.log( template );
-
-// Update notifier.
-updateNotifier( { pkg } ).notify();
+// console.log( template );
 
 // Is there a plugin-name provided as the third argument?
 const theThirdArgument = process.argv[ 2 ];
