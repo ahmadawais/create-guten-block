@@ -4,8 +4,6 @@ const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const execa = require( 'execa' );
 const shell = require( 'shelljs' );
-const resolvePkg = require( 'resolve-pkg' );
-const template = resolvePkg( 'cgb-scripts/template', { cwd: __dirname } );
 const directoryExists = require( 'directory-exists' );
 
 /**
@@ -104,6 +102,9 @@ const createPluginDir = () => {
 
 // Copy template to the plugin dir.
 const copyTemplateToPluginDir = () => {
+	const resolvePkg = require( 'resolve-pkg' );
+	const template = resolvePkg( 'cgb-scripts/template', { cwd: __dirname } );
+
 	return new Promise( resolve => {
 		shell.cd( blockDir );
 		shell.cp( '-RL', `${ template }/*`, './' );
@@ -131,8 +132,15 @@ const npmInstallBuild = () => {
 
 		// Install latest cgb-scripts.
 		await execa( 'npm', [ 'install', 'cgb-scripts', '--slient' ] );
+		resolve();
+	} );
+};
+
+// Final npm run build to build the block.
+const finalNpmBuild = () => {
+	return new Promise( async resolve => {
 		// Build.
-		// await execa( 'npm', [ 'run', 'build', '--slient' ] );
+		await execa( 'npm', [ 'run', 'build', '--slient' ] );
 		resolve();
 	} );
 };
@@ -205,12 +213,16 @@ const run = async() => {
 	await createPluginDir();
 	spinner.succeed();
 
-	spinner.start( '2. Building plugin files in the block directory...' );
+	spinner.start( '2. Installing npm packages...' );
+	await npmInstallBuild();
+	spinner.succeed();
+
+	spinner.start( '3. Creating plugin files...' );
 	await copyTemplateToPluginDir();
 	spinner.succeed();
 
-	spinner.start( '3. Installing node packages & building the block...' );
-	await npmInstallBuild();
+	spinner.start( '4. Finally building the block...' );
+	finalNpmBuild();
 	spinner.succeed();
 
 	await printNextSteps();
@@ -218,6 +230,11 @@ const run = async() => {
 
 // console.clear();
 clearConsole();
+
+// Update notifier.
+const updateNotifier = require( 'update-notifier' );
+const pkg = require( './package.json' );
+updateNotifier( { pkg } ).notify();
 
 // Run the CLI.
 run();
