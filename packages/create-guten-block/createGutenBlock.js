@@ -33,17 +33,15 @@ if ( getBlockName === false ) {
 	clearConsole();
 	console.log(
 		'\n❌ ',
-		chalk.black.bgRed( ' Kindly, specify the plugin directory: \n' )
+		chalk.black.bgRed( ' You forgot to specify a block name: \n' )
 	);
 	console.log(
-		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( '<plugin-directory>' ) }`
+		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( '<block-name>' ) }`
 	);
-	console.log();
-	console.log( chalk.dim( 'For example: \n' ) );
+	console.log( chalk.dim( '\nFor example: \n' ) );
 	console.log(
-		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'my-block' ) }`
+		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'my-block' ) }\n`
 	);
-	console.log();
 	process.exit( 1 );
 }
 
@@ -85,7 +83,11 @@ const createPluginDir = () => {
 				` A directory with this name already exists: ${ blockName }\n`
 			)
 		);
-		console.log( `  ${ chalk.dim( 'Provide a different name for your block.\n' ) }` );
+		console.log( `  ${ chalk.dim( 'Provide a different name for your block.' ) }` );
+		console.log( chalk.dim( '\nFor example: \n' ) );
+		console.log(
+			`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'new-block-name' ) }\n`
+		);
 		process.exit( 1 );
 	} else {
 		return new Promise( resolve => {
