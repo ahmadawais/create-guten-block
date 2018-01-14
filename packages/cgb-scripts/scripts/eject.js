@@ -83,7 +83,7 @@ inquirer
 		}
 
 		// Checks passed now let's start ejecting.
-		console.log( '\n\n' + chalk.black.bgGreen( '⏳ Ejecting...' ), '\n\n' );
+		console.log( '\n\n' + chalk.black.bgGreen( ' Ejecting...' ) );
 
 		const ownPath = paths.ownPath;
 		const appPath = paths.appPath;
@@ -123,8 +123,10 @@ inquirer
 		files.forEach( verifyAbsent );
 
 		console.log(
-			`\n\n 👉 ${ chalk.black.bgYellow( ' Copying files to your plugin... ' ) }
-		  	${ chalk.dim( 'In the directory: ', appPath ) }`
+			'\n\n 👉 ',
+			`${ chalk.black.bgYellow( ' Copying files to your plugin... ' ) }`,
+			`${ chalk.dim( 'In the directory: ', appPath ) }`,
+			'\n'
 		);
 
 		// Go through all folders to build paths.
@@ -168,7 +170,9 @@ inquirer
 		const appPackage = require( path.join( appPath, 'package.json' ) );
 
 		console.log(
-			`\n\n 👉 ${ chalk.black.bgYellow( ' Updating the dependencies... ' ) }`
+			'\n\n 👉 ',
+			`${ chalk.black.bgYellow( ' Updating the dependencies... ' ) }`,
+			'\n'
 		);
 
 		// Name: cgb-scripts.
@@ -179,7 +183,7 @@ inquirer
 			// We used to put cgb-scripts in devDependencies.
 			if ( appPackage.devDependencies[ ownPackageName ] ) {
 				console.log(
-					`  ➖ Removing ${ cyan( ownPackageName ) } from devDependencies.`
+					`  ➖  Removing ${ cyan( ownPackageName ) } from devDependencies.`
 				);
 				delete appPackage.devDependencies[ ownPackageName ];
 			}
@@ -189,7 +193,7 @@ inquirer
 		appPackage.dependencies = appPackage.dependencies || {};
 		if ( appPackage.dependencies[ ownPackageName ] ) {
 			// Del cgb-scripts from dependencies now.
-			console.log( `  ➖ Removing ${ cyan( ownPackageName ) } from dependencies.` );
+			console.log( `  ➖  Removing ${ cyan( ownPackageName ) } from dependencies.` );
 			delete appPackage.dependencies[ ownPackageName ];
 		}
 
@@ -199,7 +203,7 @@ inquirer
 			// if ( ownPackage.optionalDependencies[ key ] ) {
 			// 	return;
 			// }
-			console.log( `  ➕ Adding ${ green( key ) } to dependencies.` );
+			console.log( `  ➕  Adding ${ green( key ) } to dependencies.` );
 			appPackage.dependencies[ key ] = ownPackage.dependencies[ key ];
 		} );
 
@@ -211,11 +215,15 @@ inquirer
 			.forEach( key => {
 				appPackage.dependencies[ key ] = unsortedDependencies[ key ];
 			} );
-		console.log( `  ♻ ${ green( 'Sorting... ' ) }` );
+		console.log( `  ♻  ${ green( 'Sorting... ' ) }` );
 		console.log();
 
 		// Update the scripts.
-		console.log( `\n\n 👉 ${ chalk.black.bgYellow( ' Updating the scripts... ' ) }` );
+		console.log(
+			'\n\n 👉 ',
+			`${ chalk.black.bgYellow( ' Updating the scripts... ' ) }`,
+			'\n'
+		);
 
 		// Del the eject script.
 		delete appPackage.scripts.eject;
@@ -232,7 +240,7 @@ inquirer
 					'node scripts/$1.js'
 				);
 				console.log(
-					`  ♻ Replacing ${ cyan( `"${ binKey } ${ key }"` ) } with ${ green(
+					`  ♻  Replacing ${ cyan( `"${ binKey } ${ key }"` ) } with ${ green(
 						`"node scripts/${ key }.js"`
 					) }`
 				);
@@ -241,11 +249,13 @@ inquirer
 
 		console.log();
 		console.log(
-			`\n\n 👉 ${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`
+			'\n\n 👉 ',
+			`${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`,
+			'\n'
 		);
 
 		// Add Babel config.
-		console.log( `  ➕ Adding ${ green( 'Babel' ) } preset.` );
+		console.log( `  ➕  Adding ${ green( 'Babel' ) } preset.` );
 		appPackage.babel = {
 			presets: [
 				[
@@ -331,13 +341,15 @@ inquirer
 			// spawnSync('yarnpkg', [], { stdio: 'inherit' });
 		} else {
 			console.log(
-				`\n\n 👉 ${ chalk.black.bgYellow( ' Running npm install... ' ) }`
+				'\n\n 👉 ',
+				`${ chalk.black.bgYellow( ' Running npm install... ' ) }`,
+				'\n'
 			);
 			spawnSync( 'npm', [ 'install', '--loglevel', 'error' ], {
 				stdio: 'inherit',
 			} );
 		}
-		console.log( '\n\n✅ ', chalk.black.bgGreen( ' Ejected successfully! \n' ) );
+		console.log( '\n\n✅ ', chalk.black.bgGreen( ' Ejected successfully!' ), '\n' );
 		console.log();
 
 		console.log(
