@@ -24,10 +24,16 @@ const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
 const config = require( '../config/webpack.config.dev' );
-const clearConsole = require( '../../cgb-dev-utils/clearConsole' );
-const formatWebpackMessages = require( '../../cgb-dev-utils/formatWebpackMessages' );
+const resolvePkg = require( 'resolve-pkg' );
+const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
+const cgbDevUtils = require( cgbDevUtilsPath );
+const clearConsole = cgbDevUtils.clearConsole();
+const formatWebpackMessages = cgbDevUtils.formatWebpackMessages();
+// const clearConsole = require( '../../cgb-dev-utils/clearConsole' );
+// const formatWebpackMessages = require( '../../cgb-dev-utils/formatWebpackMessages' );
 
 clearConsole();
+console.log( 'cgbDevUtilsPath', cgbDevUtilsPath );
 
 // Init the spinner.
 const spinner = new ora( {

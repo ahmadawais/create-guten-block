@@ -1,1 +1,14 @@
-console.log( 'OOPS: Eject script is a work in progress at the moment' );
+/**
+ * Eject
+ *
+ * The create-guten-block CLI ejects here.
+ * Eject the following things:
+ *  - Webpack configs
+ *  - .babelrc
+ *  - Packages from package.json
+ *
+ * TODO:
+ *  - checkRequiredFiles
+ *  - printBuildError
+ */
+'use strict';
