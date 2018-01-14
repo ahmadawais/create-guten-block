@@ -20,15 +20,38 @@ process.on( 'unhandledRejection', err => {
 	throw err;
 } );
 
+// Modules.
+const fs = require( 'fs' );
 const ora = require( 'ora' );
+const path = require( 'path' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const config = require( '../config/webpack.config.dev' );
+const fileSize = require( 'filesize' );
+const gzipSize = require( 'gzip-size' );
 const resolvePkg = require( 'resolve-pkg' );
+const config = require( '../config/webpack.config.prod' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 const formatWebpackMessages = require( cgbDevUtilsPath +
 	'/formatWebpackMessages' );
+
+// Build file paths.
+const theCWD = process.cwd();
+const fileBuildJS = path.resolve( theCWD, './dist/blocks.build.js' );
+const fileEditorCSS = path.resolve( theCWD, './dist/blocks.editor.build.css' );
+const fileStyleCSS = path.resolve( theCWD, './dist/blocks.style.build.css' );
+
+/**
+ * Get File Size
+ *
+ * Get filesizes of all the files.
+ *
+ * @param {string} filePath path.
+ * @returns {string} then size result.
+ */
+const getFileSize = filePath => {
+	return fileSize( gzipSize.sync( fs.readFileSync( filePath ) ) );
+};
 
 clearConsole();
 
@@ -37,15 +60,23 @@ const spinner = new ora( {
 	text: '',
 	enabled: true,
 } );
-// Create the production build and print the deployment instructions.
+
+/**
+ * Build function
+ *
+ * Create the production build and print the deployment instructions.
+ *
+ * @param {json} webpackConfig config
+ */
 async function build( webpackConfig ) {
+	// Start the build.
 	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
 
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
 	spinner.succeed();
 
-	compiler.run( {}, ( err, stats ) => {
+	compiler.run( ( err, stats ) => {
 		if ( err ) {
 			return console.log( err );
 		}
@@ -84,7 +115,29 @@ async function build( webpackConfig ) {
 		}
 
 		clearConsole();
-		return console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
+		console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
+
+		console.log(
+			'\n\n',
+			'File sizes after gzip:',
+			'\n\n',
+			getFileSize( fileBuildJS ),
+			`${ chalk.dim( '— ./dist/' ) }`,
+			`${ chalk.green( 'blocks.build.js' ) }`,
+			'\n',
+			getFileSize( fileEditorCSS ),
+			`${ chalk.dim( '— ./dist/' ) }`,
+			`${ chalk.green( 'blocks.editor.build.css' ) }`,
+
+			'\n',
+			getFileSize( fileStyleCSS ),
+			`${ chalk.dim( '— ./dist/' ) }`,
+			`${ chalk.green( 'blocks.style.build.css' ) }`,
+
+			'\n\n'
+		);
+
+		return true;
 	} );
 }
 

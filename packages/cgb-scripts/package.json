@@ -29,6 +29,8 @@
 		"eslint-plugin-react": "^7.5.1",
 		"eslint-plugin-wordpress": "^0.1.0",
 		"extract-text-webpack-plugin": "^3.0.2",
+		"filesize": "^3.5.11",
+		"gzip-size": "^4.1.0",
 		"node-sass": "^4.7.2",
 		"ora": "^1.3.0",
 		"postcss-loader": "^2.0.10",
