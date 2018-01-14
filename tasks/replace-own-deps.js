@@ -3,6 +3,8 @@
  * Replace Deps
  *
  * Replaces internal dependencies in package.json with local package paths.
+ *
+ * TODO: Implement for all packages and with better flow control.
  */
 'use strict';
 
