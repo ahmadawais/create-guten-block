@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 // create-guten-block CLI!
-// TODO: sed has issues creating the same dir again.
-// const path = require( 'path' );
 const shell = require( 'shelljs' );
 const updateNotifier = require( 'update-notifier' );
 const execa = require( 'execa' );
@@ -9,8 +7,8 @@ const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const pkg = require( './package.json' );
 const resolvePkg = require( 'resolve-pkg' );
-// const template = path.join( __dirname, './node_modules/cgb-scripts/template/' );
 const template = resolvePkg( 'cgb-scripts/template', { cwd: __dirname } );
+const directoryExists = require( 'directory-exists' );
 
 /**
  * Cross platform clear console.
@@ -75,12 +73,28 @@ const spinner = new ora( {
 
 // Create Plugin Directory.
 const createPluginDir = () => {
-	return new Promise( resolve => {
-		// Where user is at the moment.
-		shell.exec( `mkdir -p ${ blockName }`, () => {
-			resolve( true );
+	// Check if the plugin dir is already presnet.
+	const dirAlreadyExist = directoryExists.sync( `./${ blockName }` );
+
+	// If exists then exit.
+	if ( dirAlreadyExist ) {
+		clearConsole();
+		console.log(
+			'\n❌ ',
+			chalk.black.bgRed(
+				` A directory with this name already exists: ${ blockName }\n`
+			)
+		);
+		console.log( `  ${ chalk.dim( 'Provide a different name for your block.\n' ) }` );
+		process.exit( 1 );
+	} else {
+		return new Promise( resolve => {
+			// Where user is at the moment.
+			shell.exec( `mkdir -p ${ blockName }`, () => {
+				resolve( true );
+			} );
 		} );
-	} );
+	}
 };
 
 // Copy template to the plugin dir.
