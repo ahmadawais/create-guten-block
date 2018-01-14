@@ -2,14 +2,6 @@
  * Eject
  *
  * The create-guten-block CLI ejects here.
- * Eject the following things:
- *  - Webpack configs
- *  - .babelrc
- *  - Packages from package.json
- *
- * TODO:
- *  - checkRequiredFiles
- *  - printBuildError
  */
 'use strict';
 
@@ -22,15 +14,17 @@ process.on( 'unhandledRejection', err => {
 	throw err;
 } );
 
-const fs = require( 'fs-extra' );
 const path = require( 'path' );
+const fs = require( 'fs-extra' );
 const execSync = require( 'child_process' ).execSync;
 const chalk = require( 'chalk' );
 const paths = require( '../config/paths' );
 const inquirer = require( 'inquirer' );
 const spawnSync = require( 'cross-spawn' ).sync;
 const resolvePkg = require( 'resolve-pkg' );
-const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
+const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', {
+	cwd: __dirname,
+} );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 
 const green = chalk.green;
@@ -49,6 +43,8 @@ function getGitStatus() {
 	}
 }
 
+console.log( '\n ', chalk.black.bgGreen( ' Getting started to eject. \n' ) );
+
 inquirer
 	.prompt( {
 		type: 'confirm',
@@ -58,30 +54,36 @@ inquirer
 	} )
 	.then( answer => {
 		if ( ! answer.shouldEject ) {
-			console.log( cyan( '\n\nClose one! Eject aborted.\n\n' ) );
+			console.log(
+				'\n\n— ' + chalk.black.bgWhite( ' Close one! Eject aborted. ' ),
+				'\n\n'
+			);
 			return;
 		}
 
 		const gitStatus = getGitStatus();
 		if ( gitStatus ) {
 			console.error(
-				chalk.red(
-					'This git repository has untracked files or uncommitted changes:'
-				) +
+				'\n\n' +
+					chalk.black.bgRed(
+						' This git repository has untracked files or uncommitted changes: '
+					) +
 					'\n\n' +
 					gitStatus
 						.split( '\n' )
 						.map( line => line.match( / .*/g )[ 0 ].trim() )
 						.join( '\n' ) +
 					'\n\n' +
-					chalk.red(
-						'Remove untracked files, stash or commit any changes, and try again.'
-					)
+					chalk.black.bgRed(
+						' Remove untracked files, stash or commit any changes, and try again. '
+					),
+				'\n\n'
 			);
 			process.exit( 1 );
 		}
 
-		console.log( 'Ejecting...' );
+		// Checks passed now let's start ejecting.
+		console.log( '\n\n' + chalk.black.bgGreen( '⏳ Ejecting...' ), '\n\n' );
 
 		const ownPath = paths.ownPath;
 		const appPath = paths.appPath;
@@ -89,7 +91,10 @@ inquirer
 		function verifyAbsent( file ) {
 			if ( fs.existsSync( path.join( appPath, file ) ) ) {
 				console.error(
-					`\`${ file }\` already exists in your app folder. We cannot ` +
+					'\n\n' +
+						`\`${ chalk.red(
+							file
+						) }\` already exists in your plugin's folder. We cannot ` +
 						'continue as you would lose all the changes in that file or directory. ' +
 						'Please move or delete it (maybe make a copy for backup) and run this ' +
 						'command again.'
@@ -98,6 +103,7 @@ inquirer
 			}
 		}
 
+		// Folders to be moved.
 		const folders = [ 'config', 'scripts' ];
 
 		// Make shallow array of files paths.
@@ -116,13 +122,17 @@ inquirer
 		folders.forEach( verifyAbsent );
 		files.forEach( verifyAbsent );
 
-		console.log();
-		console.log( cyan( `Copying files into ${ appPath }` ) );
+		console.log(
+			`\n\n 👉 ${ chalk.black.bgYellow( ' Copying files to your plugin... ' ) }
+		  	${ chalk.dim( 'In the directory: ', appPath ) }`
+		);
 
+		// Go through all folders to build paths.
 		folders.forEach( folder => {
 			fs.mkdirSync( path.join( appPath, folder ) );
 		} );
 
+		// Read all files and skip content that needs to be skipped.
 		files.forEach( file => {
 			let content = fs.readFileSync( file, 'utf8' );
 
@@ -143,9 +153,12 @@ inquirer
 						''
 					)
 					.trim() + '\n';
-			console.log( `  Adding ${ cyan( file.replace( ownPath, '' ) ) } to the project` );
+			console.log(
+				`  ➕ Adding ${ green( file.replace( ownPath, '' ) ) } to your plugin.`
+			);
 			fs.writeFileSync( file.replace( ownPath, appPath ), content );
 		} );
+
 		console.log();
 
 		// Select cgb-scripts/package.json file.
@@ -154,7 +167,9 @@ inquirer
 		// Assume a file called package.json file in current folder.
 		const appPackage = require( path.join( appPath, 'package.json' ) );
 
-		console.log( cyan( 'Updating the dependencies' ) );
+		console.log(
+			`\n\n 👉 ${ chalk.black.bgYellow( ' Updating the dependencies... ' ) }`
+		);
 
 		// Name: cgb-scripts.
 		const ownPackageName = ownPackage.name;
@@ -163,7 +178,9 @@ inquirer
 		if ( appPackage.devDependencies ) {
 			// We used to put cgb-scripts in devDependencies.
 			if ( appPackage.devDependencies[ ownPackageName ] ) {
-				console.log( `  Removing ${ cyan( ownPackageName ) } from devDependencies` );
+				console.log(
+					`  ➖ Removing ${ cyan( ownPackageName ) } from devDependencies.`
+				);
 				delete appPackage.devDependencies[ ownPackageName ];
 			}
 		}
@@ -172,7 +189,7 @@ inquirer
 		appPackage.dependencies = appPackage.dependencies || {};
 		if ( appPackage.dependencies[ ownPackageName ] ) {
 			// Del cgb-scripts from dependencies now.
-			console.log( `  Removing ${ cyan( ownPackageName ) } from dependencies` );
+			console.log( `  ➖ Removing ${ cyan( ownPackageName ) } from dependencies.` );
 			delete appPackage.dependencies[ ownPackageName ];
 		}
 
@@ -182,7 +199,7 @@ inquirer
 			// if ( ownPackage.optionalDependencies[ key ] ) {
 			// 	return;
 			// }
-			console.log( `  Adding ${ cyan( key ) } to dependencies` );
+			console.log( `  ➕ Adding ${ green( key ) } to dependencies.` );
 			appPackage.dependencies[ key ] = ownPackage.dependencies[ key ];
 		} );
 
@@ -194,10 +211,11 @@ inquirer
 			.forEach( key => {
 				appPackage.dependencies[ key ] = unsortedDependencies[ key ];
 			} );
+		console.log( `  ♻ ${ green( 'Sorting... ' ) }` );
 		console.log();
 
 		// Update the scripts.
-		console.log( cyan( 'Updating the scripts' ) );
+		console.log( `\n\n 👉 ${ chalk.black.bgYellow( ' Updating the scripts... ' ) }` );
 
 		// Del the eject script.
 		delete appPackage.scripts.eject;
@@ -214,7 +232,7 @@ inquirer
 					'node scripts/$1.js'
 				);
 				console.log(
-					`  Replacing ${ cyan( `"${ binKey } ${ key }"` ) } with ${ cyan(
+					`  ♻ Replacing ${ cyan( `"${ binKey } ${ key }"` ) } with ${ green(
 						`"node scripts/${ key }.js"`
 					) }`
 				);
@@ -222,10 +240,12 @@ inquirer
 		} );
 
 		console.log();
-		console.log( cyan( 'Configuring package.json' ) );
+		console.log(
+			`\n\n 👉 ${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`
+		);
 
 		// Add Babel config.
-		console.log( `  Adding ${ cyan( 'Babel' ) } preset` );
+		console.log( `  ➕ Adding ${ green( 'Babel' ) } preset.` );
 		appPackage.babel = {
 			presets: [
 				[
@@ -310,17 +330,19 @@ inquirer
 			// console.log(cyan('Running yarn...'));
 			// spawnSync('yarnpkg', [], { stdio: 'inherit' });
 		} else {
-			console.log( cyan( 'Running npm install...' ) );
+			console.log(
+				`\n\n 👉 ${ chalk.black.bgYellow( ' Running npm install... ' ) }`
+			);
 			spawnSync( 'npm', [ 'install', '--loglevel', 'error' ], {
 				stdio: 'inherit',
 			} );
 		}
-		console.log( green( 'Ejected successfully!' ) );
+		console.log( '\n\n✅ ', chalk.black.bgGreen( ' Ejected successfully! \n' ) );
 		console.log();
 
 		console.log(
 			green( 'Please consider sharing why you ejected in this survey:' )
 		);
-		console.log( green( '  http://goo.gl/forms/ADDDDD' ) );
+		console.log( green( '  https://goo.gl/forms/T901kvHr1kNsJGaJ3 ' ) );
 		console.log();
 	} );
