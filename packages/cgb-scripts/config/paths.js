@@ -32,5 +32,4 @@ module.exports = {
 	// These properties only exist before ejecting:
 	ownPath: resolveOwn( '.' ),
 };
-
-console.log( resolveApp( '.' ) );
+// @remove-on-eject-end

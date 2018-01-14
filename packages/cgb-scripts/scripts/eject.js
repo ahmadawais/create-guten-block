@@ -29,9 +29,14 @@ const chalk = require( 'chalk' );
 const paths = require( '../config/paths' );
 const inquirer = require( 'inquirer' );
 const spawnSync = require( 'cross-spawn' ).sync;
+const resolvePkg = require( 'resolve-pkg' );
+const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
+const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 
 const green = chalk.green;
 const cyan = chalk.cyan;
+
+clearConsole();
 
 function getGitStatus() {
 	try {
@@ -53,7 +58,7 @@ inquirer
 	} )
 	.then( answer => {
 		if ( ! answer.shouldEject ) {
-			console.log( cyan( 'Close one! Eject aborted.' ) );
+			console.log( cyan( '\n\nClose one! Eject aborted.\n\n' ) );
 			return;
 		}
 
@@ -171,11 +176,12 @@ inquirer
 			delete appPackage.dependencies[ ownPackageName ];
 		}
 
-		// For some reason optionalDependencies end up in dependencies after install.
+		// Add deps to appPackage.
 		Object.keys( ownPackage.dependencies ).forEach( key => {
-			if ( ownPackage.optionalDependencies[ key ] ) {
-				return;
-			}
+			// // For some reason optionalDependencies end up in dependencies after install.
+			// if ( ownPackage.optionalDependencies[ key ] ) {
+			// 	return;
+			// }
 			console.log( `  Adding ${ cyan( key ) } to dependencies` );
 			appPackage.dependencies[ key ] = ownPackage.dependencies[ key ];
 		} );
