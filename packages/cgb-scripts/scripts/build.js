@@ -1,7 +1,7 @@
 /**
- * Start
+ * Build
  *
- * The create-guten-block CLI starts here.
+ * The create-guten-block CLI builds here.
  *
  * TODO:
  *  - checkRequiredFiles
@@ -23,7 +23,7 @@ process.on( 'unhandledRejection', err => {
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const config = require( '../config/webpack.config.prod' );
+const config = require( '../config/webpack.config.dev' );
 const clearConsole = require( '../../cgb-dev-utils/clearConsole' );
 const formatWebpackMessages = require( '../../cgb-dev-utils/formatWebpackMessages' );
 
@@ -59,7 +59,7 @@ async function build( webpackConfig ) {
 			}
 			// Formatted errors.
 			clearConsole();
-			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile. \n' ) );
+			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile build. \n' ) );
 			const logErrors = console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
 			return logErrors;
 		}
@@ -81,7 +81,6 @@ async function build( webpackConfig ) {
 		}
 
 		clearConsole();
-
 		return console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
 	} );
 }
