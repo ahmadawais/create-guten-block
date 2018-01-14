@@ -29,3 +29,17 @@ First of all, I'd like to welcome you for thinking about contributing to this pr
 - This will compile your code in `dist` and you're good to go.
 - Run `yarn updated` to check which npm packages were updated
 - Finally publish with 'yarn publishNPM' since yarn has some issues with publishing with lerna not sure why.
+- Check caveats for publishing.
+
+### 🤔 Caveats
+
+- Some issue with yarn not being able to publish via lerna
+- Use yarn with everything else but lerna
+- To publish always run via `npm` this command `npm run lerna`
+
+
+### 🐵 Other Stuff
+
+- Use `// @remove-file-on-eject` to do just that.
+- Use `// @remove-on-eject-begin` to do just that.
+- Use `// @remove-on-eject-end` to do just that.

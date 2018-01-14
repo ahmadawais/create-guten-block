@@ -1,6 +1,6 @@
 {
 	"name": "create-guten-block",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"description": "Create a gutenberg block plugin on the go.",
 	"main": "index.js",
 	"keywords": [
@@ -19,7 +19,7 @@
 	},
 	"homepage": "https://github.com/ahmadawais/create-guten-block#readme",
 	"dependencies": {
-		"cgb-scripts": "^0.1.4",
+		"cgb-scripts": "^0.1.6",
 		"chalk": "^2.3.0",
 		"directory-exists": "^1.0.2",
 		"execa": "^0.9.0",
