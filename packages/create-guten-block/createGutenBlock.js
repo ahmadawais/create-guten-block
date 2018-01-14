@@ -197,15 +197,15 @@ const run = async() => {
 			` ${ blockName } `
 		) }`
 	);
-	// await createPluginDir();
+	await createPluginDir();
 	spinner.succeed();
 
 	spinner.start( '2. Building plugin files in the block directory...' );
-	// await copyTemplateToPluginDir();
+	await copyTemplateToPluginDir();
 	spinner.succeed();
 
 	spinner.start( '3. Installing node packages & building the block...' );
-	// await npmInstallBuild();
+	await npmInstallBuild();
 	spinner.succeed();
 
 	await printNextSteps();
