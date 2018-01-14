@@ -124,8 +124,8 @@ inquirer
 
 		console.log(
 			'\n 👉 ',
-			`${ chalk.black.bgYellow( ' Copying files to your plugin... \n' ) }`,
-			`${ chalk.dim( 'In the directory: ', appPath ) }`,
+			`${ chalk.black.bgYellow( ' Copying files to your plugin... \n\n' ) }`,
+			`${ chalk.dim( '  In the directory: ', appPath ) }`,
 			'\n'
 		);
 
@@ -344,10 +344,14 @@ inquirer
 				stdio: 'inherit',
 			} );
 		}
-		console.log( '\n\n✅ ', chalk.black.bgGreen( ' Ejected successfully!' ), '\n' );
+		console.log(
+			'\n\n✅ ',
+			chalk.black.bgGreen( ' Ejected successfully! ' ),
+			'\n'
+		);
 
 		console.log(
-			green( 'Kindly, consider sharing why you ejected in this survey:\n' )
+			green( '  Kindly, consider sharing why you ejected in this survey:\n' )
 		);
-		console.log( green( '→  https://goo.gl/forms/T901kvHr1kNsJGaJ3 \n' ) );
+		console.log( green( '  →  https://goo.gl/forms/T901kvHr1kNsJGaJ3 \n' ) );
 	} );
