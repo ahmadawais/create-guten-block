@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 // create-guten-block CLI!
-// TODO: sed has issues create the same dir again.
-const path = require( 'path' );
+// TODO: sed has issues creating the same dir again.
+// const path = require( 'path' );
 const shell = require( 'shelljs' );
 const updateNotifier = require( 'update-notifier' );
 const execa = require( 'execa' );
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const pkg = require( './package.json' );
-const template = path.join( __dirname, './node_modules/cgb-scripts/template/' );
+const resolvePkg = require( 'resolve-pkg' );
+// const template = path.join( __dirname, './node_modules/cgb-scripts/template/' );
+const template = resolvePkg( 'cgb-scripts/template', { cwd: __dirname } );
 
 /**
  * Cross platform clear console.
@@ -85,8 +87,8 @@ const createPluginDir = () => {
 const copyTemplateToPluginDir = () => {
 	return new Promise( resolve => {
 		shell.cd( blockDir );
-		shell.cp( '-RL', `${ template }*`, './' );
-		shell.cp( '-RL', `${ template }.*`, './' );
+		shell.cp( '-RL', `${ template }/*`, './' );
+		shell.cp( '-RL', `${ template }/.*`, './' );
 
 		// Replace dynamic content for block name in the code.
 		shell.ls( '**/**.*' ).forEach( function( file ) {

@@ -63,8 +63,7 @@ const extractConfig = {
 			options: {
 				// Add common CSS file for variables and mixins.
 				data: '@import "./src/common.scss";\n',
-				outputStyle:
-          'production' === process.env.NODE_ENV ? 'compressed' : 'nested',
+				outputStyle: 'nested',
 			},
 		},
 	],

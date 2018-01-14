@@ -23,7 +23,7 @@ process.on( 'unhandledRejection', err => {
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const config = require( '../config/webpack.config' );
+const config = require( '../config/webpack.config.dev' );
 const clearConsole = require( '../../cgb-dev-utils/clearConsole' );
 const formatWebpackMessages = require( '../../cgb-dev-utils/formatWebpackMessages' );
 
@@ -37,8 +37,6 @@ const spinner = new ora( {
 // Create the production build and print the deployment instructions.
 async function build( webpackConfig ) {
 	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
-
-	// console.log( chalk.dim( 'Building and compiling blocks...' ) );
 
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
