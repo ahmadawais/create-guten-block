@@ -53,5 +53,10 @@ if ( major < 8 ) {
 	process.exit( 1 );
 }
 
+// Update notifier.
+const updateNotifier = require( 'update-notifier' );
+const pkg = require( './package.json' );
+updateNotifier( { pkg } ).notify();
+
 // Otherwise, run the app.
 require( './createGutenBlock' );

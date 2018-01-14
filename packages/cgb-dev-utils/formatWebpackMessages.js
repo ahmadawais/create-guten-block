@@ -10,15 +10,7 @@
 // Update notifier.
 const updateNotifier = require( 'update-notifier' );
 const pkg = require( './package.json' );
-const notifier = updateNotifier( {
-	pkg: pkg,
-	updateCheckInterval: 1000 * 60 * 60 * 24, // 1 day.
-} );
-
-if ( notifier.update ) {
-	notifier.notify();
-	process.exit( 0 );
-}
+updateNotifier( { pkg } ).notify();
 
 // WARNING: this code is untranspiled and is used in browser too.
 // Please make sure any changes are in ES5 or contribute a Babel compile step.

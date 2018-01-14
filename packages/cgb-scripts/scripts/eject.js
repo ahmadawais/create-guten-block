@@ -83,7 +83,7 @@ inquirer
 		}
 
 		// Checks passed now let's start ejecting.
-		console.log( '\n\n' + chalk.black.bgGreen( ' Ejecting...' ) );
+		console.log( '\n\n— ' + chalk.black.bgGreen( ' Ejecting...' ) );
 
 		const ownPath = paths.ownPath;
 		const appPath = paths.appPath;
@@ -123,8 +123,8 @@ inquirer
 		files.forEach( verifyAbsent );
 
 		console.log(
-			'\n\n 👉 ',
-			`${ chalk.black.bgYellow( ' Copying files to your plugin... ' ) }`,
+			'\n 👉 ',
+			`${ chalk.black.bgYellow( ' Copying files to your plugin... \n' ) }`,
 			`${ chalk.dim( 'In the directory: ', appPath ) }`,
 			'\n'
 		);
@@ -161,8 +161,6 @@ inquirer
 			fs.writeFileSync( file.replace( ownPath, appPath ), content );
 		} );
 
-		console.log();
-
 		// Select cgb-scripts/package.json file.
 		const ownPackage = require( path.join( ownPath, 'package.json' ) );
 
@@ -170,7 +168,7 @@ inquirer
 		const appPackage = require( path.join( appPath, 'package.json' ) );
 
 		console.log(
-			'\n\n 👉 ',
+			'\n 👉 ',
 			`${ chalk.black.bgYellow( ' Updating the dependencies... ' ) }`,
 			'\n'
 		);
@@ -216,11 +214,10 @@ inquirer
 				appPackage.dependencies[ key ] = unsortedDependencies[ key ];
 			} );
 		console.log( `  ♻  ${ green( 'Sorting... ' ) }` );
-		console.log();
 
 		// Update the scripts.
 		console.log(
-			'\n\n 👉 ',
+			'\n 👉 ',
 			`${ chalk.black.bgYellow( ' Updating the scripts... ' ) }`,
 			'\n'
 		);
@@ -247,9 +244,8 @@ inquirer
 			} );
 		} );
 
-		console.log();
 		console.log(
-			'\n\n 👉 ',
+			'\n 👉 ',
 			`${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`,
 			'\n'
 		);
@@ -308,7 +304,6 @@ inquirer
 			path.join( appPath, 'package.json' ),
 			JSON.stringify( appPackage, null, 2 ) + '\n'
 		);
-		console.log();
 
 		// "Don't destroy what isn't ours".
 		if ( ownPath.indexOf( appPath ) === 0 ) {
@@ -350,11 +345,9 @@ inquirer
 			} );
 		}
 		console.log( '\n\n✅ ', chalk.black.bgGreen( ' Ejected successfully!' ), '\n' );
-		console.log();
 
 		console.log(
-			green( 'Please consider sharing why you ejected in this survey:' )
+			green( 'Kindly, consider sharing why you ejected in this survey:\n' )
 		);
-		console.log( green( '  https://goo.gl/forms/T901kvHr1kNsJGaJ3 ' ) );
-		console.log();
+		console.log( green( '→  https://goo.gl/forms/T901kvHr1kNsJGaJ3 \n' ) );
 	} );
