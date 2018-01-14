@@ -35,6 +35,8 @@
 		"beforepublish": "lerna bootstrap",
 		"publish":
 			"bash tasks/publish.sh && echo 'Now update dependency packages.'",
-		"publishNPM": "bash tasks/publish.sh --npm-client=npm"
+		"publishNPM": "bash tasks/publish.sh --npm-client=npm",
+		"lerna":
+			"lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm"
 	}
 }
