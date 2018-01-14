@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // create-guten-block CLI!
 const ora = require( 'ora' );
+const path = require( 'path' );
 const chalk = require( 'chalk' );
+const fs = require( 'fs-extra' );
 const execa = require( 'execa' );
 const shell = require( 'shelljs' );
 const directoryExists = require( 'directory-exists' );
@@ -14,8 +16,6 @@ function clearConsole() {
 		process.platform === 'win32' ? '\x1B[2J\x1B[0f' : '\x1B[2J\x1B[3J\x1B[H'
 	);
 }
-
-// console.log( template );
 
 // Is there a plugin-name provided as the third argument?
 const theThirdArgument = process.argv[ 2 ];
@@ -126,9 +126,24 @@ const copyTemplateToPluginDir = () => {
 
 // NPM install and npm run build to build the block.
 const npmInstallBuild = () => {
+	// Write a package.json file since npm install needs it.
+	const appPackage = {
+		name: `${ blockName }-cgb-guten-block`,
+		version: '1.0.0',
+		private: true,
+		scripts: {
+			start: 'cgb-scripts start',
+			build: 'cgb-scripts build',
+			eject: 'cgb-scripts eject',
+		},
+	};
+	fs.writeFileSync(
+		path.join( process.cwd(), 'package.json' ),
+		JSON.stringify( appPackage, null, 2 ) + '\n'
+	);
 	return new Promise( async resolve => {
 		// Install.
-		await execa( 'npm', [ 'install', '--slient' ] );
+		// await execa( 'npm', [ 'install', '--slient' ] );
 
 		// Install latest cgb-scripts.
 		await execa( 'npm', [ 'install', 'cgb-scripts', '--slient' ] );
