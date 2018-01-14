@@ -1,20 +1,17 @@
 {
-  "name": "cgb-dev-utils",
-  "version": "0.0.6",
-  "description": "Webpack utilities used by Create Guten Blocks",
-  "repository": "ahmadawais/create-guten-block",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ahmadawais/create-guten-block/issues"
-  },
-  "engines": {
-    "node": ">=6"
-  },
-  "dependencies": {
-    "chalk": "2.3.0",
-    "cross-spawn": "5.1.0"
-  },
-  "scripts": {
-    "test": ""
-  }
+	"name": "cgb-dev-utils",
+	"version": "0.0.7",
+	"description": "Webpack utilities used by Create Guten Blocks",
+	"repository": "ahmadawais/create-guten-block",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ahmadawais/create-guten-block/issues"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+		"chalk": "2.3.0",
+		"cross-spawn": "5.1.0"
+	}
 }
