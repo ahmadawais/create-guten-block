@@ -80,7 +80,7 @@ const createPluginDir = () => {
 		console.log(
 			'\n❌ ',
 			chalk.black.bgRed(
-				` A directory with this name already exists: ${ blockName }\n`
+				` A directory with this name already exists: ${ blockName } \n`
 			)
 		);
 		console.log( `  ${ chalk.dim( 'Provide a different name for your block.' ) }` );
