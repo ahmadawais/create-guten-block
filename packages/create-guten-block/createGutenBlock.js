@@ -83,7 +83,15 @@ const createPluginDir = () => {
 				` A directory with this name already exists: ${ blockName } \n`
 			)
 		);
-		console.log( `  ${ chalk.dim( 'Provide a different name for your block.' ) }` );
+
+		console.log(
+			`  ${ chalk.dim(
+				'Please move or delete it (maybe make a copy for backup) and run this command again.'
+			) }`
+		);
+		console.log(
+			`  ${ chalk.dim( 'Or provide a different name for your block.' ) }`
+		);
 		console.log( chalk.dim( '\nFor example: \n' ) );
 		console.log(
 			`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'new-block-name' ) }\n`
