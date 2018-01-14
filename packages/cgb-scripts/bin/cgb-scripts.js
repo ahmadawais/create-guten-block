@@ -3,7 +3,7 @@
 
 // Update notifier.
 const updateNotifier = require( 'update-notifier' );
-const pkg = require( './package.json' );
+const pkg = require( '../package.json' );
 updateNotifier( { pkg } ).notify();
 
 const spawn = require( 'cgb-dev-utils/crossSpawn' );
