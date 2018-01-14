@@ -87,8 +87,14 @@ async function build( webpackConfig ) {
 
 		clearConsole();
 		console.log( '\n✅ ', chalk.black.bgGreen( ' Compiled successfully! \n' ) );
-		return console.log(
+		console.log(
 			chalk.dim( ' Watching for changes... (Press CTRL + C to stop). \n\n' )
+		);
+		return console.log(
+			chalk.dim( ' Note that the development build is not optimized. \n' ),
+			chalk.dim( 'To create a production build, use' ),
+			chalk.green( 'npm' ),
+			chalk.white( 'run build' )
 		);
 	} );
 }
