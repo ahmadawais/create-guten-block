@@ -1,6 +1,6 @@
 {
 	"name": "cgb-scripts",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Configuration and scripts for Create Guten Blocks.",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
@@ -18,8 +18,8 @@
 		"babel-core": "^6.25.0",
 		"babel-eslint": "^8.2.1",
 		"babel-loader": "^7.1.1",
-		"babel-preset-cgb": "^1.0.0",
-		"cgb-dev-utils": "^1.0.0",
+		"babel-preset-cgb": "^1.0.1",
+		"cgb-dev-utils": "^1.0.1",
 		"chalk": "2.3.0",
 		"cross-env": "^5.0.1",
 		"cross-spawn": "^5.1.0",
