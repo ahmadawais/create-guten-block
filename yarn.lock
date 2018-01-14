@@ -1644,6 +1644,10 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+directory-exists@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/directory-exists/-/directory-exists-1.0.2.tgz#cef344045e74f1e2b06511a8d4588b6f80ee10b1"
+
 doctrine@^2.0.0, doctrine@^2.0.2:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
