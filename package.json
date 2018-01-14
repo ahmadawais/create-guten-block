@@ -28,7 +28,8 @@
 	"scripts": {
 		"create-guten-block": "node tasks/cgb.js",
 		"demo": "node tasks/cgb.js demo",
-		"start": "node packages/cgb-scripts/scripts/start.js",
+		"cgb": "node packages/create-guten-block/index.js",
+		"startCGB": "node packages/cgb-scripts/scripts/start.js",
 		"changelog": "lerna-changelog",
 		"updated": "lerna updated",
 		"beforepublish": "lerna bootstrap",

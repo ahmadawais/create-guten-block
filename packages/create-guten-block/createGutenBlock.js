@@ -138,40 +138,53 @@ const prePrint = () => {
 	console.log(
 		'📦 ',
 		chalk.black.bgYellow(
-			' CGB: Creating a Gutenberg Block plguin in this directory...\n'
-		)
+			` Creating a WP Gutenberg Block plguin called: ${ chalk.bgGreen(
+				` ${ blockName } `
+			) }\n`
+		),
+		chalk.dim( `\n In the directory: ${ blockDir }\n` ),
+		chalk.dim( 'This might take a couple of minutes.\n' )
 	);
 };
 // Prints next steps.
 const printNextSteps = () => {
 	console.log(
-		'\n✅ ',
-		chalk.black.bgGreen( ' All done! Go build some Gutenberg blocks.\n' )
+		'\n\n✅ ',
+		chalk.black.bgGreen( ' All done! Go build some Gutenberg blocks. \n' )
 	);
-	console.log( '\n\n\n', chalk.black.bgYellow( ' What\'s Next: ' ) );
 	console.log(
-		chalk.dim( '\n create-guten-block' ),
-		'has created a Gutenberg block WordPress plugin called ',
-		chalk.dim( `${ blockName }` ),
-		' that you can use with zero configurations and benefit from ESNext (i.e. ES6/7/8), React.js, JSX, Webpack, ESLint, etc.\n'
+		// chalk.black.bgWhite( ' create-guten-block ' ),
+		`CGB ${ chalk.dim(
+			'(create-guten-block)'
+		) } has created a WordPress plugin called `,
+		chalk.dim( blockName ),
+		' that you can use with zero configurations to build Gutenberg blocks with ESNext (i.e. ES6/7/8), React.js, JSX, Webpack, ESLint, etc.'
 	);
+	console.log(
+		`\nCreated ${ chalk.dim( blockName ) } plugin at: ${ chalk.dim( blockDir ) }`,
+		'\nInside that directory, you can run several commands:\n'
+	);
+
 	console.log(
 		'\n👉 ',
-		' Go to your block folder',
-		chalk.black.bgWhite( ` cd ${ blockName } ` ),
-		'to start developing your block.'
-	);
-	console.log(
-		'\n👉 ',
-		' Use',
+		' Type',
 		chalk.black.bgWhite( ' npm start ' ),
-		'to build and watch your block.'
+		'to compile and develop your block.'
 	);
 	console.log(
 		'\n👉 ',
-		' Use',
+		' Type',
 		chalk.black.bgWhite( ' npm run build ' ),
 		'to build production code for your block.\n'
+	);
+
+	console.log( '\n\n', chalk.black.bgGreen( ' Get Started → \n' ) );
+	console.log( ' We suggest that you begin by typing: \n' );
+	console.log(
+		`  ${ chalk.green( 'cd' ) } ${ blockName }`,
+		'\n',
+		` ${ chalk.green( 'npm' ) } start`,
+		'\n\n'
 	);
 };
 
@@ -179,26 +192,20 @@ const printNextSteps = () => {
 const run = async() => {
 	await prePrint();
 
-	if ( ! blockName ) {
-		spinner.fail( 'FAILED: Provide a plugin name in the following format: ' );
-		console.log( chalk.dim( '\ncreate-guten-block' ), 'plugin-name \n' );
-		return false;
-	}
-
 	spinner.start(
 		`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
 			` ${ blockName } `
 		) }`
 	);
-	await createPluginDir();
+	// await createPluginDir();
 	spinner.succeed();
 
 	spinner.start( '2. Building plugin files in the block directory...' );
-	await copyTemplateToPluginDir();
+	// await copyTemplateToPluginDir();
 	spinner.succeed();
 
 	spinner.start( '3. Installing node packages & building the block...' );
-	await npmInstallBuild();
+	// await npmInstallBuild();
 	spinner.succeed();
 
 	await printNextSteps();
