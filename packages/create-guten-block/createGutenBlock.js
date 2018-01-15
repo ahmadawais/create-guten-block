@@ -100,32 +100,11 @@ const createPluginDir = () => {
 	}
 };
 
-// Copy template to the plugin dir.
-const copyTemplateToPluginDir = () => {
-	const resolvePkg = require( 'resolve-pkg' );
-	const template = resolvePkg( 'cgb-scripts/template', { cwd: __dirname } );
-
-	return new Promise( resolve => {
-		shell.cd( blockDir );
-		shell.cp( '-RL', `${ template }/*`, './' );
-		shell.cp( '-RL', `${ template }/.*`, './' );
-
-		// Replace dynamic content for block name in the code.
-		shell.ls( '**/**.*' ).forEach( function( file ) {
-			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
-			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
-			shell.sed( '-i', '<% blockNamePHPLower %>', `${ blockNamePHPLower }`, file );
-			shell.sed( '-i', '<% blockNamePHPLower % >', `${ blockNamePHPLower }`, file );
-			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPUpper }`, file );
-			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPUpper }`, file );
-		} );
-
-		resolve();
-	} );
-};
-
 // NPM install and npm run build to build the block.
-const npmInstallBuild = () => {
+const npmInstallScripts = () => {
+	shell.cd( blockDir );
+	shell.touch( 'package.json' );
+
 	// Write a package.json file since npm install needs it.
 	const appPackage = {
 		name: `${ blockName }-cgb-guten-block`,
@@ -137,26 +116,61 @@ const npmInstallBuild = () => {
 			eject: 'cgb-scripts eject',
 		},
 	};
+
+	// Write the file.
 	fs.writeFileSync(
 		path.join( process.cwd(), 'package.json' ),
 		JSON.stringify( appPackage, null, 2 ) + '\n'
 	);
-	return new Promise( async resolve => {
-		// Install.
-		// await execa( 'npm', [ 'install', '--slient' ] );
 
-		// Install latest cgb-scripts.
-		await execa( 'npm', [ 'install', 'cgb-scripts', '--slient' ] );
-		resolve();
+	// Install latest cgb-scripts.
+	return new Promise( async resolve => {
+		await execa( 'npm', [ 'install', 'cgb-scripts', '--save', '--slient' ] );
+		resolve( true );
+	} );
+};
+
+// Copy template to the plugin dir.
+const copyTemplateFiles = () => {
+	// Since we ran npm install cgb-scripts we have it in the node_modules now.
+	const template = path.resolve(
+		blockDir,
+		'./node_modules/cgb-scripts/template'
+	);
+
+	return new Promise( resolve => {
+		shell.cd( blockDir );
+		// Create a tmp folder to avoid globbing through node_modules.
+		shell.exec( 'mkdir -p ./tmp' );
+		shell.cp( '-RL', `${ template }/*`, './tmp' );
+		shell.cp( '-RL', `${ template }/.*`, './tmp' );
+
+		// Replace dynamic content for block name in the code.
+		shell.ls( 'tmp/**/**.*' ).forEach( function( file ) {
+			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
+			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
+			shell.sed( '-i', '<% blockNamePHPLower %>', `${ blockNamePHPLower }`, file );
+			shell.sed( '-i', '<% blockNamePHPLower % >', `${ blockNamePHPLower }`, file );
+			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPUpper }`, file );
+			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPUpper }`, file );
+		} );
+
+		// Move all processed files back to the main folder.
+		shell.cp( '-RL', `${ blockDir }/tmp/*`, './' );
+		shell.cp( '-RL', `${ blockDir }/tmp/.*`, './' );
+
+		// Thank you, tmp — you've been a useful friend.
+		shell.rm( '-rf', './tmp' );
+		resolve( true );
 	} );
 };
 
 // Final npm run build to build the block.
-const finalNpmBuild = () => {
+const npmBuildBlock = () => {
 	return new Promise( async resolve => {
 		// Build.
 		await execa( 'npm', [ 'run', 'build', '--slient' ] );
-		resolve();
+		resolve( true );
 	} );
 };
 
@@ -174,6 +188,7 @@ const prePrint = () => {
 		chalk.dim( 'This might take a couple of minutes.\n' )
 	);
 };
+
 // Prints next steps.
 const printNextSteps = () => {
 	console.log(
@@ -181,7 +196,6 @@ const printNextSteps = () => {
 		chalk.black.bgGreen( ' All done! Go build some Gutenberg blocks. \n' )
 	);
 	console.log(
-		// chalk.black.bgWhite( ' create-guten-block ' ),
 		`CGB ${ chalk.dim(
 			'(create-guten-block)'
 		) } has created a WordPress plugin called `,
@@ -229,15 +243,15 @@ const run = async() => {
 	spinner.succeed();
 
 	spinner.start( '2. Installing npm packages...' );
-	await npmInstallBuild();
+	await npmInstallScripts();
 	spinner.succeed();
 
 	spinner.start( '3. Creating plugin files...' );
-	await copyTemplateToPluginDir();
+	await copyTemplateFiles();
 	spinner.succeed();
 
 	spinner.start( '4. Finally building the block...' );
-	finalNpmBuild();
+	await npmBuildBlock();
 	spinner.succeed();
 
 	await printNextSteps();
