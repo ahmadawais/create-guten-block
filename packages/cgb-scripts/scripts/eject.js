@@ -156,7 +156,7 @@ inquirer
 					)
 					.trim() + '\n';
 			console.log(
-				`  ➕ Adding ${ green( file.replace( ownPath, '' ) ) } to your plugin.`
+				`  ➕  Adding ${ green( file.replace( ownPath, '' ) ) } to your plugin.`
 			);
 			fs.writeFileSync( file.replace( ownPath, appPath ), content );
 		} );
