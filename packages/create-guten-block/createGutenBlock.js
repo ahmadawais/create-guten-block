@@ -165,15 +165,6 @@ const copyTemplateFiles = () => {
 	} );
 };
 
-// Final npm run build to build the block.
-const npmBuildBlock = () => {
-	return new Promise( async resolve => {
-		// Build.
-		await execa( 'npm', [ 'run', 'build', '--slient' ] );
-		resolve( true );
-	} );
-};
-
 // Print anything in the start.
 const prePrint = () => {
 	console.log( '\n' );
@@ -248,10 +239,6 @@ const run = async() => {
 
 	spinner.start( '3. Creating plugin files...' );
 	await copyTemplateFiles();
-	spinner.succeed();
-
-	spinner.start( '4. Finally building the block...' );
-	await npmBuildBlock();
 	spinner.succeed();
 
 	await printNextSteps();
