@@ -107,57 +107,23 @@ Well, it's really hard and it takes a lot of time to configure things like Webpa
 - Browse: `cd my-block`
 - Run: `npm start` | `npm run build` | `npm run eject`
 
-
-
+Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux. If something doesn’t work, please file [an issue](https://github.com/ahmadawais/create-guten-block/issues/new).
 
 ---
 
-
-
-
-
-
-
-> **[WORK-IN-PROGRESS] Stricly, WIP at the moment. Do NOT use it or announce, share it anywhere until I remove this notice and release it to the public.**
-
-# Create-Guten-Block [WIP]
-
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
-
-Create WordPress Gutenberg blocks with no build configuration.
-
-Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux.
-If something doesn’t work, please file [an issue](https://github.com/ahmadawais/create-guten-block/issues/new).
-
-## Quick Overview
-
-Go to your local WordPress installation and then in to the `wp-content/plugins` folder. As the `create-guten-block` cli will create a new ready to use WordPress plugin.
-
-```shell
-npm create-guten-block my-block
-cd my-block
-npm run dev
-```
-
 ![Create-guten-block](http://on.ahmda.ws/okiU/c)
 
-Then open your WordPress installation with Gutenberg plugin active and activate the `CGB: my-block Gutenberg Block` plugin you just created.
-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+---
 
-## Get Started Immediately
+## 🔰 Changelog
 
-You don’t need to install or configure tools like Webpack or Babel.
-They are preconfigured so that you can focus on the code.
+Read what's new, improved, and fixed in the latest version. To update to the latest version, just run `npm i -g create-guten-block` anytime.
 
-Just create a project, and you’re good to go.
-
-## Changelog
-
-### VERSION 2.0.0
+### 🦁 VERSION 2.0.0
 
 🚧 Work in Progress! 🚧
 
-### VERSION 1.0.0
+### 🐨 VERSION 1.0.0
 
 - ⚡️ NEW: NPM Module `create-guten-block`
 - ⚡️ NEW: Create WordPress plugin folder
@@ -166,22 +132,22 @@ Just create a project, and you’re good to go.
 - ⚡️ NEW: Basic Webpack configurations
 - ⚡️ NEW: Dynamic WP Pluing and Gutenberg Block Names
 
+---
+
+#### 🙌 **Hello, we're the [WPCouple](https://WPCouple.com)**!
+
+I ([Ahmad Awais](https://AhmadAwais.com/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My wife ([Maedah Batool](https://MaedahBatool.com/)) is a WordPress Journalist/Dev/Core Contributor. If you'd like to get insights into professional full stack development, WordPress community news, growth of JavaScript, growing up a family, building and bootstrapping a business then subscribe to our premium newsletter called ↣ [The WordPress Takeaway](https://WPTakeaway.club)!
+
 
 ---
 
-🙌 Hello, from the [WPCouple](https://WPCouple.com)! I ([Ahmad Awais](https://AhmadAwais.com/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My wife ([Maedah Batool](https://MaedahBatool.com/)) is a WordPress Journalist/Dev/Core Contributor. If you'd like to get insights into professional full stack development, DevOps, WordPress community news, growing up a family, building and bootstrapping a business then subscribe to our premium newsletter called ↣ [The WordPress Takeaway](https://WPTakeaway.club)!
+#### 🎩 [**Support Ahmad's Open Source Projects!**](https://pay.paddle.com/checkout/515568)
 
-
----
-
-🎩 [**Support Ahmad's Open Source Projects!**](https://pay.paddle.com/checkout/515568)
-
-If you'd like me to keep producing professional free and open source software (FOSS). Consider [paying for an hour of my time](https://pay.paddle.com/checkout/515568). I'll spend two hours on open source for each contribution.
-
+If you'd like me to keep producing professional free and open source software (FOSS). Consider [paying for an hour of my time](https://pay.paddle.com/checkout/515568). I'll spend two hours on open source for each contribution. Yeah, that's right, you pay for and I spend one more as a thank you.
 
 ---
 ### 🙌 [WPCOUPLE PARTNERS](https://WPCouple.com/partners):
-This open source project is maintained by the help of awesome businesses listed below. What? [Read more about it →](https://WPCouple.com/partners)
+This open source project is maintained by the help of awesome businesses listed below. Without the support from these amazing companies, this project would not have been possible. — _What/How? [Read more about it →](https://WPCouple.com/partners)_
 
 <table width='100%'>
 	<tr>
@@ -210,3 +176,9 @@ This open source project is maintained by the help of awesome businesses listed 
 		<td width='333.33'><a target='_blank' href='https://WPCouple.com/contact?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu3F/c' /></a></td>
 	</tr>
 </table>
+
+## License & Attribution
+
+MIT © [Ahmad Awais](https://AhmadAwais.com/).
+
+This project is inspired by the work of Dan from CRA, Andre, Kent C, WordPress Core Contributors, Gutenberg developers and contributors, and icons from Icons8.
