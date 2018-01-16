@@ -161,7 +161,8 @@ There are just three scripts that you can use in your `create-guten-block` workf
 - It's a one way street, `eject` and you have to maintain everything yourself.
 - You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
 
-_That's about it._
+_Make sure, you have Gutenberg ([plugin](https://wordpress.org/plugins/gutenberg/) / [dev](https://github.com/WordPress/gutenberg)) installed.
+That's about it._
 
 <br>
 
