@@ -7,9 +7,6 @@
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
-	"engines": {
-		"node": ">=6"
-	},
 	"dependencies": {
 		"chalk": "2.3.0",
 		"cross-spawn": "5.1.0",

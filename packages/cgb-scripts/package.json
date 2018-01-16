@@ -4,9 +4,6 @@
 	"description": "Configuration and scripts for Create Guten Blocks.",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
-	"engines": {
-		"node": ">=6"
-	},
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
