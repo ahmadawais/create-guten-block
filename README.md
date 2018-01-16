@@ -1,12 +1,3 @@
->🚧 **WORK IN PROGRESS!** 🚧
-
->DO NOT INSTALL OR DOWNLOAD UNTIL I REMOVE THIS NOTICE.
-
-> Launching `2018-01-16` ‼️
-
----
-<br><br><br>
-
 ![CGB-logo](http://on.ahmda.ws/orxb/c)
 
 <table width='100%'>
