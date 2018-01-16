@@ -1,3 +1,119 @@
+![CGB-logo](http://on.ahmda.ws/orxb/c)
+
+<table width='100%'>
+    <tr>
+        <td align='left' width='100%' colspan='2'>
+            <strong><code>create-guten-block</code></strong><br />
+            A zero-configuration developer toolkit for building WordPress Gutenberg block plugins with React, Webpack, ES 6/7/8/Next, ESLint, Babel, etc.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            A FOSS (Free & Open Source Software) project developed by Ahmad Awais. <br/><small> 🙌 Follow Ahmad on GitHub (<a href='https://github.com/ahmadawais'>@AhmadAwais</a>)  OR  👋 Say Hi on Twitter (<a href="https://twitter.com/mrahmadawais/">@MrAhmadAwais</a>).</small>
+        </td>
+        <td align='center'>
+            <a href='https://AhmadAwais.com/'>
+                <img src='https://i.imgur.com/Asg4d3k.png' width='100' />
+            </a>
+        </td>
+    </tr>
+</table>
+
+# 📦 Create-Guten-Block
+
+Create-Guten-Block is _zero configuration dev-toolkit_ through which you can start developing WordPress Gutenberg block in a matter of minutes. It's not like other starter-kits or boilerplates. It's a versioned, updateable, sane-defaults CLI utility which is constantly updated.
+
+## 👌 GETTING STARTED!
+
+It's really easy to get started with `create-guen-block`. Just install it as a global module and you're in business. Let's start by doing that.
+
+
+<details>
+ <summary><strong>Step #0</strong> — If you don't have node installed then read this. (CLICK TO EXPAND!)</summary>
+
+In case you are an absolute beginner to the world of Node.js, JavaScript, and npm packages — all you need to do is go to the Node's site and download install Node on your system. This will install both Node.js and `npm` i.e. node package manager — the command line interface of Node.js.
+</details>
+
+### ▶ Step #1
+
+Install `create-guen-block` globally on your system. Make sure you are using at least Node >= 8. You can use nvm to use different versions of Node at the same time.
+
+```sh
+npm install --global create-guen-block
+```
+
+### ▶ Step #2
+
+Now all you have to do is create a gutenberg block and start building. It's done by running `create-guen-block` and providing it with a unique name for a WordPress plugin that will get created.
+
+```sh
+create-guen-block my-block
+```
+
+> Make sure you have some sort of local WordPress install ready and run this command in your `https://site.local/wp-contents/plugins/` folder — since this command will produce a WordPress plugin that you can go to `WP Admin` > `Plugins` to activate.
+
+
+### ️▶ STEP #3
+
+From here on out you can browse your plugin and run the start script. Let's do that.
+
+```sh
+cd my-block
+npm start
+```
+
+And just like that you're buidling your next WordPress plugin with Gutenberg, React.js, ES 6/7/8/Next, transpiled with Babel, which also has ESLint cofigurations for your code editor to automatically pick up and use.
+
+### ✅ More Scripts!
+
+There are just three scripts that you can use.
+
+
+#### 👉 `npm start`
+- Used to compile and develop your block.
+- Watches for any changes and reports back any errors in your code.
+<!-- --- -->
+
+#### 👉 `npm run build`
+- Used to build production code for your block.
+- Runs once and reports back the gzip filesizes of produced code.
+
+<!-- --- -->
+
+#### 👉 `npm run eject`
+- Used to eject your plugin out of `create-guen-block`.
+- Provides all the configurations so you can customize the project as you want.
+- It's a one way street, `eject` and you have to maintain everything yourself.
+
+<!-- --- -->
+
+That's basically it.
+
+## 🔥 Why `create-guen-block`?
+
+Well, it's really hard and it takes a lot of time to configure things like Webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. And then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
+
+`create-guen-block` hides all this configuration away in an optimized pacakge that we call `cgb-scripts`. That package is the only dependency in your projects. We keep `cgb-scripts` up to date while you go ahead and create the next best WordPress themes and plugins.s
+
+## 🎯 TL;DR
+
+>Too long, didn't read? Here's a shroter version.
+
+- Install: `npm install --global create-guen-block`
+- Create: `create-guen-block my-block`
+- Browse: `cd my-block`
+- Run: `npm start` | `npm run build` | `npm run eject`
+
+
+
+
+---
+
+
+
+
+
+
 
 > **[WORK-IN-PROGRESS] Stricly, WIP at the moment. Do NOT use it or announce, share it anywhere until I remove this notice and release it to the public.**
 
