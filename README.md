@@ -34,7 +34,7 @@
 
 >`create-guten-block` is _zero configuration dev-toolkit_ to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 
-Create Guten Block is not like other [starter-kits](https://github.com/ahmadawais/wpgulp) or [boilerplates](https://github.com/ahmadawais/Gutenberg-boilerplate). It's a developer's toolbox which is constantly updated. Since it has zero-configurations, you can always update it without any changes in your code.
+Create Guten Block is not like other [starter-kits](https://github.com/ahmadawais/wpgulp) or [boilerplates](https://github.com/ahmadawais/Gutenberg-boilerplate). It's a developer's toolbox which is continuously updated. Since it has zero-configurations, you can always update it without any changes in your code.
 
 `create-guten-block` is:
 - Versioned ✓
@@ -57,7 +57,7 @@ _Let's get you started!_
 <details>
  <summary><strong> STEP #0</strong> — If you don't have <code>Node.js</code> + <code>npm</code> installed then read this. (CLICK TO EXPAND!)</summary>
 
-In case you are an absolute beginner to the world of `Node.js`, JavaScript, and `npm` packages — all you need to do is go to the Node's site [download + install](https://nodejs.org/en/download/) Node on your system. This will install both `Node.js` and `npm` i.e. node package manager — the command line interface of Node.js.
+In case you are an absolute beginner to the world of `Node.js`, JavaScript, and `npm` packages — all you need to do is go to the Node's site [download + install](https://nodejs.org/en/download/) Node on your system. This will install both `Node.js` and `npm`, i.e., node package manager — the command line interface of Node.js.
 
 You can verify the install by opening your terminal app and typing...
 
@@ -86,7 +86,7 @@ _It'll take a couple of minutes to install._
 
 ### ⚙ STEP #2
 
-Now all you have to do is create a gutenberg block and start building. It's done by running `create-guten-block` command and providing it with a unique name for a WordPress plugin that will get created.
+Now all you have to do is create a gutenberg block and start building. It's done by running the `create-guten-block` command and providing it with a unique name for a WordPress plugin that will get created.
 
 > ⚠️ Make sure run this command in your local WordPress install's plugins folder i.e. `/local_dev_site.tld/wp-content/plugins/` folder — since this command will produce a WordPress plugin that you can go to `WP Admin` ▶︎ `Plugins` to activate.
 
@@ -136,7 +136,7 @@ _You can also use `yarn start` if that's your jam_
 This runs the plugin in development mode.
 You will see the build messages, errors, and lint warnings in the console.
 
->And just like that you're building your next WordPress plugin with Gutenberg, React.js, ES 6/7/8/Next, transpiled with Babel, which also has ESLint configurations for your code editor to automatically pick up and use.
+>And just like that, you're building your next WordPress plugin with Gutenberg, React.js, ES 6/7/8/Next, transpiled with Babel, which also has ESLint configurations for your code editor to pick up and use automatically.
 
 <br>
 
@@ -144,7 +144,7 @@ You will see the build messages, errors, and lint warnings in the console.
 
 ### Workflow!
 
-There are just three scripts that you can use in your `create-guten-block` workflow. With these three scripts you can develop, build, and eject your plugin.
+There are just three scripts that you can use in your `create-guten-block` workflow. With these three scripts, you can develop, build, and eject your plugin.
 
 
 #### 👉  `npm start`
@@ -158,11 +158,10 @@ There are just three scripts that you can use in your `create-guten-block` workf
 #### 👉  `npm run eject`
 - Use to eject your plugin out of `create-guten-block`.
 - Provides all the configurations so you can customize the project as you want.
-- It's a one way street, `eject` and you have to maintain everything yourself.
+- It's a one-way street, `eject` and you have to maintain everything yourself.
 - You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
 
-_Make sure, you have Gutenberg ([plugin](https://wordpress.org/plugins/gutenberg/) / [dev](https://github.com/WordPress/gutenberg)) installed.
-That's about it._
+_That's about it._
 
 <br>
 
@@ -190,7 +189,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 * **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
 
-* **No Configuration Required:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you, so you can focus on writing code.
+* **No Configuration Required:** You don't need to configure anything. A reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
 
 * **No Lock-In:** You can `eject` to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
 
@@ -202,7 +201,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 Well, it's really hard to configure things like Webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
 
-`create-guten-block` hides all this configuration away in an optimized pacakge that we call `cgb-scripts`. This package is the only dependency in your projects. We keep `cgb-scripts` up to date while you go ahead and create the next best WordPress themes and plugins.
+`create-guten-block` hides all this configuration away in an optimized package that we call `cgb-scripts`. This package is the only dependency in your projects. We keep `cgb-scripts` up to date while you go ahead and create the next best WordPress themes and plugins.
 
 <br>
 
@@ -266,7 +265,7 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 > I think of what the world could be
 > A vision of the one I see
 > A million dreams is all it's gonna take
-> A million dreams for the world we're gonna make ....
+> A million dreams for the world we're gonna make ...
 > ```
 > ... _listen to → [A million dreams!](https://www.youtube.com/watch?v=pSQk-4fddDI)_
 
@@ -277,9 +276,9 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 
 #### **Hello, we're the [WordPress Couple](https://WPCouple.com)**!
 
-I ([Ahmad Awais](https://twitter.com/mrahmadawais/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My significant other ([Maedah Batool](https://twitter.com/MaedahBatool/)) is a Technical Project Manager and she's also a WordPress Core Contributor. Together with our [team](https://WPCouple.com/team) we run the [WPCouple.com](https://WPCouple.com/).
+I ([Ahmad Awais](https://twitter.com/mrahmadawais/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My significant other ([Maedah Batool](https://twitter.com/MaedahBatool/)) is a Technical Project Manager, and she's also a WordPress Core Contributor. Together with our [team](https://WPCouple.com/team), we run the [WPCouple.com](https://WPCouple.com/).
 
-If you'd like to get insights into our love for open source software, professional full stack development, WordPress community, growth of JavaScript or growing a family, building, and bootstrapping a business then subscribe to our premium newsletter called ↣ [The WordPress Takeaway](https://WPTakeaway.club)!
+If you'd like to get insights into our love for open source software, professional full stack development, WordPress community, the growth of JavaScript or growing a family, building, and bootstrapping a business, then subscribe to our premium newsletter called ↣ [The WordPress Takeaway](https://WPTakeaway.club)!
 
 #### [**Support our Open Source Projects!**](https://pay.paddle.com/checkout/515568) 🎩
 
@@ -291,7 +290,7 @@ If you'd like us to keep producing professional free and open source software (F
 
 ### Project Backers & [WPCouple Partners](https://WPCouple.com/partners) ⚡️
 
-This FOSS (free and open source software) project is updated and maintained by the help of awesome businesses listed below. Without the support from these amazing companies/individuals, this project would not have been possible.
+This FOSS (free and open source software) project is updated and maintained with the help of awesome businesses listed below. Without the support from these amazing companies/individuals, this project would not have been possible.
 
 — _What/How? [Read more about it →](https://WPCouple.com/partners)_
 
@@ -331,4 +330,4 @@ This FOSS (free and open source software) project is updated and maintained by t
 
 MIT © [Ahmad Awais](https://AhmadAwais.com/).
 
-This project is inspired by the work of more people than I could mention here. But thank you [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), [Sophie Alpert](https://twitter.com/sophiebits) from React.j team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Joen](https://github.com/jasmussen), [Greg](https://twitter.com/gziolo) and contributors, [Morten](https://twitter.com/mor10) for motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
+This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov), for Create React App, [Andrew Clark](https://twitter.com/acdlite), [Sophie Alpert](https://twitter.com/sophiebits) from React.j team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Joen](https://github.com/jasmussen), [Greg](https://twitter.com/gziolo) and contributors, [Morten](https://twitter.com/mor10) for motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
