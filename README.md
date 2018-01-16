@@ -142,7 +142,6 @@ You will see the build messages, errors, and lint warnings in the console.
 
 There are just three scripts that you can use in your `create-guten-block` workflow. With these three scripts, you can develop, build, and eject your plugin.
 
-
 #### 👉  `npm start`
 - Use to compile and run the block in development mode.
 - Watches for any changes and reports back any errors in your code.
@@ -157,9 +156,9 @@ There are just three scripts that you can use in your `create-guten-block` workf
 - It's a one-way street, `eject` and you have to maintain everything yourself.
 - You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
 
-GIF or didn't happen? Sure!
+<!-- GIF or didn't happen? Sure!
 
-![Entire workflow](http://on.ahmda.ws/oryf/cg)
+<img src="https://i.imgur.com/sNpw4AB.gif"/> -->
 
 _That's about it._
 
