@@ -81,7 +81,8 @@ You’ll need to have Node >= 8 on your local development machine (but it’s no
 ```sh
 npm install create-guten-block --global
 ```
-It'll take a couple of minutes to install.
+
+_It'll take a couple of minutes to install._
 
 ### ⚙ STEP #2
 
@@ -255,6 +256,17 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated.
 
 👉 Go read the entire changelog at this link — [CGB Changelog →](https://github.com/ahmadawais/create-guten-block/blob/master/CHANGELOG.md)
 
+Nothing's ever complete, so bear with while we keep iterating towards a better future.
+
+> 'Cause every night I lie in bed
+The brightest colors fill my head
+A million dreams are keeping me awake
+I think of what the world could be
+A vision of the one I see
+A million dreams is all it's gonna take
+A million dreams for the world we're gonna make ...
+... _listen → [A million dreams!](https://www.youtube.com/watch?v=pSQk-4fddDI)_
+
 <br>
 
 ![Hello](http://on.ahmda.ws/os6O/c)
@@ -315,4 +327,4 @@ This FOSS (free and open source software) project is updated and maintained by t
 
 MIT © [Ahmad Awais](https://AhmadAwais.com/).
 
-This project is inspired by the work of Dan from CRA, Andre, Kent C, WordPress Core Contributors, Gutenberg developers and contributors, and icons from Icons8.
+This project is inspired by the work of more people than I could mention here. But thank you [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), [Sophie Alpert](https://twitter.com/sophiebits) from React.j team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Joen](https://github.com/jasmussen), [Greg](https://twitter.com/gziolo), WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers and contributors, [Morten](https://twitter.com/mor10) for motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
