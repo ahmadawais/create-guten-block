@@ -259,7 +259,7 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated.
 Nothing's ever complete, so bear with us while we keep iterating towards a better future.
 
 > ```
-> Cause every night I lie in bed
+> 'Coz every night I lie in bed
 > The brightest colors fill my head
 > A million dreams are keeping me awake
 > I think of what the world could be
