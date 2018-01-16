@@ -159,7 +159,7 @@ There are just three scripts that you can use in your `create-guten-block` workf
 
 GIF or didn't happen? Sure!
 
-![Entire workflow](http://on.ahmda.ws/oryf/c)
+![Entire workflow](http://on.ahmda.ws/oryf/cg)
 
 _That's about it._
 
