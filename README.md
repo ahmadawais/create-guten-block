@@ -258,14 +258,14 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated.
 
 Nothing's ever complete, so bear with while we keep iterating towards a better future.
 
-> 'Cause every night I lie in bed
-The brightest colors fill my head
-A million dreams are keeping me awake
-I think of what the world could be
-A vision of the one I see
-A million dreams is all it's gonna take
-A million dreams for the world we're gonna make ...
-... _listen → [A million dreams!](https://www.youtube.com/watch?v=pSQk-4fddDI)_
+>   'Cause every night I lie in bed
+    The brightest colors fill my head
+    A million dreams are keeping me awake
+    I think of what the world could be
+    A vision of the one I see
+    A million dreams is all it's gonna take
+    A million dreams for the world we're gonna make ...
+    ... _listen to → [A million dreams!](https://www.youtube.com/watch?v=pSQk-4fddDI)_
 
 <br>
 
