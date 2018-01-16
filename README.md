@@ -1,3 +1,6 @@
+>🚧 **WORK IN PROGRESS!** 🚧
+>DO NOT INSTALL OR DOWNLOAD UNTIL I REMOVE THIS NOTICE.
+
 ![CGB-logo](http://on.ahmda.ws/orxb/c)
 
 <table width='100%'>
@@ -29,12 +32,12 @@ It's really easy to get started with `create-guen-block`. Just install it as a g
 
 
 <details>
- <summary><strong>Step #0</strong> — If you don't have node installed then read this. (CLICK TO EXPAND!)</summary>
+ <summary><stron>Step #0</strong> — If you don't have node installed then read this. (CLICK TO EXPAND!)</summary>
 
 In case you are an absolute beginner to the world of Node.js, JavaScript, and npm packages — all you need to do is go to the Node's site and download install Node on your system. This will install both Node.js and `npm` i.e. node package manager — the command line interface of Node.js.
 </details>
 
-### ▶ Step #1
+###  Step #1
 
 Install `create-guen-block` globally on your system. Make sure you are using at least Node >= 8. You can use nvm to use different versions of Node at the same time.
 
@@ -42,7 +45,7 @@ Install `create-guen-block` globally on your system. Make sure you are using at 
 npm install --global create-guen-block
 ```
 
-### ▶ Step #2
+###  Step #2
 
 Now all you have to do is create a gutenberg block and start building. It's done by running `create-guen-block` and providing it with a unique name for a WordPress plugin that will get created.
 
@@ -53,7 +56,7 @@ create-guen-block my-block
 > Make sure you have some sort of local WordPress install ready and run this command in your `https://site.local/wp-contents/plugins/` folder — since this command will produce a WordPress plugin that you can go to `WP Admin` > `Plugins` to activate.
 
 
-### ️▶ STEP #3
+### ️ STEP #3
 
 From here on out you can browse your plugin and run the start script. Let's do that.
 
@@ -152,7 +155,7 @@ Just create a project, and you’re good to go.
 
 ### VERSION 2.0.0
 
-Work in progress.
+🚧 Work in Progress! 🚧
 
 ### VERSION 1.0.0
 
@@ -163,6 +166,47 @@ Work in progress.
 - ⚡️ NEW: Basic Webpack configurations
 - ⚡️ NEW: Dynamic WP Pluing and Gutenberg Block Names
 
-### Docs Init
 
-- Install globally `npm install --global create-guten-block` (Run the same command again to update).
+---
+
+🙌 Hello, from the [WPCouple](https://WPCouple.com)! I ([Ahmad Awais](https://AhmadAwais.com/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My wife ([Maedah Batool](https://MaedahBatool.com/)) is a WordPress Journalist/Dev/Core Contributor. If you'd like to get insights into professional full stack development, DevOps, WordPress community news, growing up a family, building and bootstrapping a business then subscribe to our premium newsletter called ↣ [The WordPress Takeaway](https://WPTakeaway.club)!
+
+
+---
+
+🎩 [**Support Ahmad's Open Source Projects!**](https://pay.paddle.com/checkout/515568)
+
+If you'd like me to keep producing professional free and open source software (FOSS). Consider [paying for an hour of my time](https://pay.paddle.com/checkout/515568). I'll spend two hours on open source for each contribution.
+
+
+---
+### 🙌 [WPCOUPLE PARTNERS](https://WPCouple.com/partners):
+This open source project is maintained by the help of awesome businesses listed below. What? [Read more about it →](https://WPCouple.com/partners)
+
+<table width='100%'>
+	<tr>
+		<td width='333.33'><a target='_blank' href='https://www.gravityforms.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtrE/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://kinsta.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu5O/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wpengine.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mto3/c' /></a></td>
+	</tr>
+	<tr>
+		<td width='333.33'><a target='_blank' href='https://www.sitelock.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtyZ/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wp-rocket.me/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtrv/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://blogvault.net/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtph/c' /></a></td>
+	</tr>
+	<tr>
+		<td width='333.33'><a target='_blank' href='http://cridio.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtmy/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='http://wecobble.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtrW/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.cloudways.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu0C/c' /></a></td>
+	</tr>
+	<tr>
+		<td width='333.33'><a target='_blank' href='https://www.cozmoslabs.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu9W/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wpgeodirectory.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtwv/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.wpsecurityauditlog.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtkh/c' /></a></td>
+	</tr>
+	<tr>
+		<td width='333.33'><a target='_blank' href='https://mythemeshop.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/n3ug/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.liquidweb.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtnt/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://WPCouple.com/contact?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu3F/c' /></a></td>
+	</tr>
+</table>
