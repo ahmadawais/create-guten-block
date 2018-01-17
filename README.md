@@ -1,6 +1,12 @@
-![CGB-logo](http://on.ahmda.ws/orxb/c)
+<img width="300" src="http://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
 
-<table width='100%'>
+<br>
+
+<img src="http://on.ahmda.ws/orxb/c" alt="Create Guten Block">
+
+<br>
+
+<table width='100%' align="center">
     <tr>
         <td align='left' width='100%' colspan='2'>
             <strong><code>create-guten-block</code></strong><br />
