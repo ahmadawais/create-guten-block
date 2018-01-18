@@ -15,7 +15,7 @@ module.exports = ( blockName, blockDir ) => {
 
 	// Get path to cgb-scripts.
 	const scriptsPath = path.resolve(
-		root,
+		blockDir,
 		'node_modules',
 		'cgb-scripts',
 		'scripts',

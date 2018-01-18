@@ -136,26 +136,6 @@ const printNextSteps = ( blockName, blockDir ) => {
 };
 
 /**
- * NPM install cgb-scripts.
- *
- * - Build package.json file.
- * - NPM install the plugin block.
- *
- * @param  {string} blockDir The block directory.
- * @return {promise} promise resolved.
- */
-
-const buildBlockScripts = blockDir => {
-	shell.cd( blockDir );
-
-	// Build the scripts.
-	return new Promise( async resolve => {
-		await execa( 'npm', [ 'run', 'build' ] );
-		resolve( true );
-	} );
-};
-
-/**
  * Initializer function.
  *
  * - Copy templates to the appPath
@@ -189,9 +169,4 @@ module.exports = async( root, blockName, blockDir ) => {
 
 	// 2. Prints next steps.
 	await printNextSteps( blockName, blockDir );
-
-	// 3. Build scripts.
-	spinner.start( '4. Building block scripts...' );
-	await buildBlockScripts( blockDir );
-	spinner.succeed();
 };
