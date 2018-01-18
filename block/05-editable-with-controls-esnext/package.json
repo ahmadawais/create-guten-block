@@ -1,5 +1,5 @@
 {
-  "name": "02-basic-esnext",
+  "name": "05-editable-with-controls-esnext",
   "version": "1.0.0",
   "main": "block.js",
   "devDependencies": {
