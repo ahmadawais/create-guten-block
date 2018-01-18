@@ -1,6 +1,6 @@
 {
 	"name": "create-guten-block",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"description": "Create a gutenberg block plugin on the go.",
 	"main": "index.js",
 	"keywords": [
