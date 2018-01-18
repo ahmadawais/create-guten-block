@@ -29,7 +29,7 @@
 
 # 📦 `create-guten-block`
 
->`create-guten-block` is _zero configuration dev-toolkit_ to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
+>`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 
 Create Guten Block is not like other [starter-kits](https://github.com/ahmadawais/wpgulp) or [boilerplates](https://github.com/ahmadawais/Gutenberg-boilerplate). It's a developer's toolbox which is continuously updated. Since it has zero-configurations, you can always update it without any changes in your code.
 
@@ -38,8 +38,6 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 - Updatable ✓
 - Set of sane-defaults ✓
 - ONE single `cgb-scripts` dependency ✓
-
-
 
 <br>
 
