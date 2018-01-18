@@ -27,7 +27,12 @@ const copyTemplateFiles = (
 	blockNamePHPUpper
 ) => {
 	// Since we ran npm install cgb-scripts we have it in the node_modules now.
-	const template = path.resolve( '../template' );
+	const template = path.join(
+		blockDir,
+		'node_modules',
+		'cgb-scripts',
+		'template'
+	);
 
 	return new Promise( resolve => {
 		shell.cd( blockDir );
