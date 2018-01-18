@@ -20,10 +20,9 @@
  * @since 1.0.0
  */
 
-// const path = require( 'path' );
+const paths = require( './paths' );
 const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const paths = require( './paths' );
 
 // Extract style.css for both editor and frontend styles.
 const blocksCSSPlugin = new ExtractTextPlugin( {
@@ -72,13 +71,11 @@ const extractConfig = {
 // Export configuration.
 module.exports = {
 	entry: {
-		// './dist/blocks.build': './src/blocks.js', // 'name' : 'path/file.ext'.
 		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
 		pathinfo: true,
-		// path: path.resolve( __dirname ),
 		// The dist folder.
 		path: paths.pluginDist,
 		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.

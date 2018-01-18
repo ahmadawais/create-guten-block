@@ -20,10 +20,13 @@
  * @since 1.0.0
  */
 
-// const path = require( 'path' );
+const paths = require( './paths' );
+const webpack = require( 'webpack' );
 const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const paths = require( './paths' );
+
+// Source maps are resource heavy and can cause out of memory issue for large source files.
+const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
 // Extract style.css for both editor and frontend styles.
 const blocksCSSPlugin = new ExtractTextPlugin( {
@@ -72,13 +75,11 @@ const extractConfig = {
 // Export configuration.
 module.exports = {
 	entry: {
-		// './dist/blocks.build': './src/blocks.js', // 'name' : 'path/file.ext'.
 		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
 		pathinfo: true,
-		// path: path.resolve( __dirname ),
 		// The dist folder.
 		path: paths.pluginDist,
 		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
@@ -117,7 +118,31 @@ module.exports = {
 		],
 	},
 	// Add plugins.
-	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
+	plugins: [
+		blocksCSSPlugin,
+		editBlocksCSSPlugin,
+		// Minify the code.
+		new webpack.optimize.UglifyJsPlugin( {
+			compress: {
+				warnings: false,
+				// Disabled because of an issue with Uglify breaking seemingly valid code:
+				// https://github.com/facebookincubator/create-react-app/issues/2376
+				// Pending further investigation:
+				// https://github.com/mishoo/UglifyJS2/issues/2011
+				comparisons: false,
+			},
+			mangle: {
+				safari10: true,
+			},
+			output: {
+				comments: false,
+				// Turned on because emoji and regex is not minified properly using default
+				// https://github.com/facebookincubator/create-react-app/issues/2488
+				ascii_only: true,
+			},
+			sourceMap: shouldUseSourceMap,
+		} ),
+	],
 	stats: 'minimal',
 	// stats: 'errors-only',
 };
