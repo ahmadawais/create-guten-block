@@ -1,8 +1,7 @@
 {
 	"name": "create-guten-block",
-	"version": "1.7.0",
-	"description":
-		"Create a WordPress Gutenberg Block plugin with  Zero-Config #OCJS, Webpack, React, ES6/7/8/Next, ESLint, Babel, etc.",
+	"version": "1.7.1",
+	"description": "Create a WordPress Gutenberg Block plugin with  Zero-Config #OCJS, Webpack, React, ES6/7/8/Next, ESLint, Babel, etc.",
 	"main": "index.js",
 	"keywords": [
 		"gutenberg",
