@@ -31,9 +31,9 @@
 
 >`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 
-👉 This package includes the global command for [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
+👉  This package includes the global command for [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
 <br>
 
-👉 Kindly, read the up to date documentation at this link → [Create Guten Block](https://github.com/ahmadawais/create-guten-block)
+👉  Kindly, read the up to date documentation at this link → [Create Guten Block](https://github.com/ahmadawais/create-guten-block)
 
