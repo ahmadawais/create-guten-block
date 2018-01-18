@@ -19,6 +19,11 @@ let projectName;
 // Commander.js program.
 const program = new commander.Command( packageJson.name )
 	.version( packageJson.version, '-v, --version' )
+	.description(
+		`CGB ${ chalk.dim(
+			'(create-guten-block)'
+		) } is a Zero-Config #OCJS for builing WordPress Gutenberg Blocks.`
+	)
 	.arguments( '<block-name>' )
 	.usage( `${ chalk.green( '<block-name>' ) }` )
 	.action( name => {
@@ -279,7 +284,9 @@ clearConsole();
 
 // Update notifier.
 const updateNotifier = require( 'update-notifier' );
-updateNotifier( { packageJson } ).notify();
+updateNotifier( {
+	packageJson,
+} ).notify();
 
 // Run the CLI.
 run();

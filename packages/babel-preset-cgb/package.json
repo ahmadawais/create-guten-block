@@ -4,12 +4,29 @@
 	"description": "Babel preset used by Create Guten Block",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
+	"keywords": [
+		"gutenberg",
+		"create-gutenberg-block",
+		"create-gutenberg-blocks",
+		"wp",
+		"wordpress",
+		"cgb",
+		"wp webpack",
+		"react",
+		"ESLint",
+		"Webpack",
+		"wp-scripts",
+		"cgb-scripts",
+		"guten-scripts",
+		"babel",
+		"cgb-dev-utils",
+		"babel-preset-cgb"
+	],
+	"author": "Ahmad Awais (https://AhmadAwais.com/)",
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"
 	},
-	"files": [
-		"index.js"
-	],
+	"files": ["index.js"],
 	"dependencies": {
 		"babel-plugin-transform-class-properties": "6.24.1",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",

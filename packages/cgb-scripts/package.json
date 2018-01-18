@@ -1,8 +1,28 @@
 {
 	"name": "cgb-scripts",
 	"version": "1.2.1",
-	"description": "Configuration and scripts for Create Guten Blocks.",
+	"description":
+		"Configuration and scripts for Create Guten Blocks which help you create a WordPress Gutenberg Block plugin with  Zero-Config #OCJS, Webpack, React, ES6/7/8/Next, ESLint, Babel, etc.",
 	"repository": "ahmadawais/create-guten-block",
+	"keywords": [
+		"gutenberg",
+		"create-gutenberg-block",
+		"create-gutenberg-blocks",
+		"wp",
+		"wordpress",
+		"cgb",
+		"wp webpack",
+		"react",
+		"ESLint",
+		"Webpack",
+		"wp-scripts",
+		"cgb-scripts",
+		"guten-scripts",
+		"babel",
+		"cgb-dev-utils",
+		"babel-preset-cgb"
+	],
+	"author": "Ahmad Awais (https://AhmadAwais.com/)",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/ahmadawais/create-guten-block/issues"

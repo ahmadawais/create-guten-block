@@ -1,14 +1,28 @@
 {
 	"name": "create-guten-block",
 	"version": "1.7.0",
-	"description": "Create a gutenberg block plugin on the go.",
+	"description":
+		"Create a WordPress Gutenberg Block plugin with  Zero-Config #OCJS, Webpack, React, ES6/7/8/Next, ESLint, Babel, etc.",
 	"main": "index.js",
 	"keywords": [
 		"gutenberg",
 		"create-gutenberg-block",
-		"wordpress"
+		"create-gutenberg-blocks",
+		"wp",
+		"wordpress",
+		"cgb",
+		"wp webpack",
+		"react",
+		"ESLint",
+		"Webpack",
+		"wp-scripts",
+		"cgb-scripts",
+		"guten-scripts",
+		"babel",
+		"cgb-dev-utils",
+		"babel-preset-cgb"
 	],
-	"author": "AhmadAwais",
+	"author": "Ahmad Awais (https://AhmadAwais.com/)",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
