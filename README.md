@@ -239,7 +239,11 @@ Create Guten Block is divided into two packages:
 1. **`create-guten-block`** is a global command-line utility that you use to create new WP Gutenberg plugins.
 1. **`cgb-scripts`** is a development dependency in the generated plugin projects.
 
-<!-- You almost never need to update `create-guten-block` itself: it delegates all the setup to `cgb-scripts`. -->
+You almost never need to update `create-guten-block` itself: it delegates all the setup to `cgb-scripts`. But as this project matures, there might be a few changes over time and you can re-run the global install.
+
+```js
+npm install create-guten-block --global
+```
 
 When you run `create-guten-block`, it always creates the project with the latest version of `cgb-scripts` so you’ll get all the new features and improvements in newly created plugins automatically.
 
