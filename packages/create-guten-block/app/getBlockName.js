@@ -5,6 +5,8 @@
  * @return {string} The block name.
  */
 
+'use strict';
+
 const chalk = require( 'chalk' );
 
 module.exports = theThirdArg => {

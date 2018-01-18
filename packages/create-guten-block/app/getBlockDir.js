@@ -5,6 +5,8 @@
  * @return {string} The block directory.
  */
 
+'use strict';
+
 module.exports = blockName => {
 	return `${ process.cwd() }/${ blockName }`;
 };

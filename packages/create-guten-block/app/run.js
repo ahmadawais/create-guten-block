@@ -4,6 +4,8 @@
  * Runs all the functions with async/await.
  */
 
+'use strict';
+
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const clearConsole = require( './consoleClear' );

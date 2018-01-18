@@ -5,6 +5,8 @@
  * @param  {string} blockDir The block directory.
  */
 
+'use strict';
+
 const path = require( 'path' );
 
 module.exports = ( blockName, blockDir ) => {

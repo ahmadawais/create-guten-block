@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-// create-guten-block CLI!
-
-'use strict';
-
 /**
  * Main create-guten-block app
  *
@@ -36,7 +32,7 @@
 //   /!\ DO NOT MODIFY THIS FILE /!\
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-( 'use strict' );
+'use strict';
 
 const chalk = require( 'chalk' );
 const currentNodeVersion = process.versions.node;

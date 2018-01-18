@@ -9,6 +9,8 @@
  * @return {promise} promise resolved.
  */
 
+'use strict';
+
 const path = require( 'path' );
 const fs = require( 'fs-extra' );
 const execa = require( 'execa' );

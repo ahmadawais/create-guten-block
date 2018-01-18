@@ -5,6 +5,8 @@
  * @return {promise} promise resolved.
  */
 
+'use strict';
+
 const chalk = require( 'chalk' );
 const shell = require( 'shelljs' );
 const clearConsole = require( './consoleClear' );

@@ -4,6 +4,8 @@
  * Set the options for -v --help etc.
  */
 
+'use strict';
+
 const chalk = require( 'chalk' );
 const commander = require( 'commander' );
 const packageJson = require( '../package.json' );
