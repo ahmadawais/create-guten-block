@@ -1,0 +1,14 @@
+/**
+ * ----------------------------------------------------------------------------
+ * #.# Editor CSS
+ *
+ * BLOCK: 05-editable-esnext-controls block CSS for the editor.
+ * ----------------------------------------------------------------------------
+ */
+
+ .wp-block-gb-editable-esnext-controls-05 {
+	color: #000000;
+	background: #BADA55;
+	border: 0.2rem solid green;
+	padding: 2rem;
+}

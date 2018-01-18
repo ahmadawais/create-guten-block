@@ -1,0 +1,26 @@
+/**
+ * ----------------------------------------------------------------------------
+ * #.# Frontend CSS
+ *
+ * BLOCK: 05-editable-esnext-controls block CSS for the editor & front end.
+ * ----------------------------------------------------------------------------
+ */
+
+.wp-block-gb-editable-esnext-controls-05 {
+	color: #000000;
+	background: lightblue;
+	border: 0.2rem solid blue;
+	padding: 2rem;
+}
+
+.gb-basic-align-left {
+	text-align: left;
+}
+
+.gb-basic-align-center {
+	text-align: center;
+}
+
+.gb-basic-align-right {
+	text-align: right;
+}
