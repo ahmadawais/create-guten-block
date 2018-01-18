@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+// create-guten-block CLI!
+
+'use strict';
+
 /**
  * Main create-guten-block app
  *
@@ -32,7 +36,7 @@
 //   /!\ DO NOT MODIFY THIS FILE /!\
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-'use strict';
+( 'use strict' );
 
 const chalk = require( 'chalk' );
 const currentNodeVersion = process.versions.node;
@@ -47,11 +51,23 @@ if ( major < 8 ) {
 				currentNodeVersion +
 				'.\n' +
 				'Create Guten Block requires Node 8 or higher. \n' +
-				'Please update your version of Node.'
+				'Kindly, update your version of Node.'
 		)
 	);
 	process.exit( 1 );
 }
 
-// Otherwise, run the app.
-require( './createGutenBlock' );
+// Makes the script crash on unhandled rejections instead of silently
+// ignoring them. In the future, promise rejections that are not handled will
+// terminate the Node.js process with a non-zero exit code.
+process.on( 'unhandledRejection', err => {
+	throw err;
+} );
+
+/**
+ * Run the entire program.
+ *
+ * Runs all the functions with async/await.
+ */
+const run = require( './app/run' );
+run();
