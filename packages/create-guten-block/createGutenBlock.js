@@ -1,12 +1,35 @@
 #!/usr/bin/env node
 // create-guten-block CLI!
+
+'use strict';
+
 const ora = require( 'ora' );
 const path = require( 'path' );
 const chalk = require( 'chalk' );
 const fs = require( 'fs-extra' );
 const execa = require( 'execa' );
 const shell = require( 'shelljs' );
+const commander = require( 'commander' );
 const directoryExists = require( 'directory-exists' );
+const packageJson = require( './package.json' );
+
+// The Project name we're building.
+let projectName;
+
+// Commander.js program.
+const program = new commander.Command( packageJson.name )
+	.version( packageJson.version, '-v, --version' )
+	.arguments( '<block-name>' )
+	.usage( `${ chalk.green( '<block-name>' ) }` )
+	.action( name => {
+		projectName = name;
+	} )
+	.allowUnknownOption()
+	.on( '--help', () => {
+		console.log( `    Only ${ chalk.green( '<block-name>' ) } is required.` );
+		console.log();
+	} )
+	.parse( process.argv );
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -256,8 +279,7 @@ clearConsole();
 
 // Update notifier.
 const updateNotifier = require( 'update-notifier' );
-const pkg = require( './package.json' );
-updateNotifier( { pkg } ).notify();
+updateNotifier( { packageJson } ).notify();
 
 // Run the CLI.
 run();
