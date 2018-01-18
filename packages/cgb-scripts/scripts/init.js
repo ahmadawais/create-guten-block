@@ -1,3 +1,11 @@
+/**
+ * Block plugin intializer
+ *
+ * - Copies the templates.
+ * - Prints final instructions.
+ */
+// @remove-file-on-eject
+
 'use strict';
 
 const ora = require( 'ora' );
