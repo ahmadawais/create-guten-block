@@ -3,6 +3,13 @@
 
 'use strict';
 
+// Makes the script crash on unhandled rejections instead of silently
+// ignoring them. In the future, promise rejections that are not handled will
+// terminate the Node.js process with a non-zero exit code.
+process.on( 'unhandledRejection', err => {
+	throw err;
+} );
+
 const ora = require( 'ora' );
 const path = require( 'path' );
 const chalk = require( 'chalk' );
@@ -13,10 +20,18 @@ const commander = require( 'commander' );
 const directoryExists = require( 'directory-exists' );
 const packageJson = require( './package.json' );
 
-// The Project name we're building.
-let projectName;
+/**
+ * Cross platform clear console.
+ */
+const clearConsole = () => {
+	process.stdout.write(
+		process.platform === 'win32' ? '\x1B[2J\x1B[0f' : '\x1B[2J\x1B[3J\x1B[H'
+	);
+};
 
 // Commander.js program.
+// The Project name we're building.
+// let projectName;
 const program = new commander.Command( packageJson.name )
 	.version( packageJson.version, '-v, --version' )
 	.description(
@@ -26,79 +41,87 @@ const program = new commander.Command( packageJson.name )
 	)
 	.arguments( '<block-name>' )
 	.usage( `${ chalk.green( '<block-name>' ) }` )
-	.action( name => {
-		projectName = name;
-	} )
+	// .action(name => {
+	// 	projectName = name;
+	// })
 	.allowUnknownOption()
 	.on( '--help', () => {
-		console.log( `    Only ${ chalk.green( '<block-name>' ) } is required.` );
-		console.log();
+		console.log( `\n    Only ${ chalk.green( '<block-name>' ) } is required.\n` );
 	} )
 	.parse( process.argv );
 
-// Makes the script crash on unhandled rejections instead of silently
-// ignoring them. In the future, promise rejections that are not handled will
-// terminate the Node.js process with a non-zero exit code.
-process.on( 'unhandledRejection', err => {
-	throw err;
-} );
+/**
+ * Handle if there's no block name.
+ *
+ * @param {string} theThirdArg Third arg from node process.
+ * @return {string} The block name.
+ */
+const getBlockName = theThirdArg => {
+	// Is there a plugin-name provided as the third argument?
+	const isBlockName = theThirdArg === undefined ? false : theThirdArg;
+
+	// Stop if there's no block name to create the plugin dir.
+	if ( ! isBlockName ) {
+		console.log(
+			'\n❌ ',
+			chalk.black.bgRed( ' You forgot to specify a block name: \n' )
+		);
+		console.log(
+			`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( '<block-name>' ) }`
+		);
+		console.log( chalk.dim( '\nFor example: \n' ) );
+		console.log(
+			`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'my-block' ) }\n`
+		);
+		process.exit( 1 );
+	}
+
+	// Create block name from 2nd Argument.
+	const blockName = isBlockName
+		.toLowerCase()
+		.split( ' ' )
+		.join( '-' );
+
+	return blockName;
+};
 
 /**
- * Cross platform clear console.
+ * Get block directory.
+ *
+ * @param {string} blockName The block name.
+ * @return {string} The block directory.
  */
-function clearConsole() {
-	process.stdout.write(
-		process.platform === 'win32' ? '\x1B[2J\x1B[0f' : '\x1B[2J\x1B[3J\x1B[H'
-	);
-}
+const getBlockDir = blockName => {
+	return `${ process.cwd() }/${ blockName }`;
+};
 
-// Is there a plugin-name provided as the third argument?
-const theThirdArgument = process.argv[ 2 ];
-const getBlockName = theThirdArgument === undefined ? false : theThirdArgument;
-
-// Stop if there's no plugin dir name.
-if ( getBlockName === false ) {
-	clearConsole();
+/**
+ * Print anything in the start.
+ *
+ * @param {string} blockName The block name.
+ * @param  {string} blockDir The block directory.
+ */
+const prePrint = ( blockName, blockDir ) => {
+	console.log( '\n' );
 	console.log(
-		'\n❌ ',
-		chalk.black.bgRed( ' You forgot to specify a block name: \n' )
+		'📦 ',
+		chalk.black.bgYellow(
+			` Creating a WP Gutenberg Block plguin called: ${ chalk.bgGreen(
+				` ${ blockName } `
+			) }\n`
+		),
+		chalk.dim( `\n In the directory: ${ blockDir }\n` ),
+		chalk.dim( 'This might take a couple of minutes.\n' )
 	);
-	console.log(
-		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( '<block-name>' ) }`
-	);
-	console.log( chalk.dim( '\nFor example: \n' ) );
-	console.log(
-		`  ${ chalk.dim( 'create-guten-block' ) } ${ chalk.green( 'my-block' ) }\n`
-	);
-	process.exit( 1 );
-}
+};
 
-// Create block name from 2nd Argument.
-const blockName = getBlockName
-	.toLowerCase()
-	.split( ' ' )
-	.join( '-' );
-
-// Block plugin dir.
-const blockDir = `${ process.cwd() }/${ blockName }`;
-
-// Create block name for PHP functions.
-const blockNamePHPLower = blockName
-	.toLowerCase()
-	.split( '-' )
-	.join( '_' );
-
-// Create block name for PHP functions.
-const blockNamePHPUpper = blockNamePHPLower.toUpperCase();
-
-// Init the spinner.
-const spinner = new ora( {
-	text: '',
-	enabled: true,
-} );
-
-// Create Plugin Directory.
-const createPluginDir = () => {
+/**
+ * Create Plugin Directory.
+ *
+ * @param {string} blockName The block name.
+ * @return {promise} promise resolved.
+ */
+const createPluginDir = blockName => {
 	// Check if the plugin dir is already presnet.
 	const dirAlreadyExist = directoryExists.sync( `./${ blockName }` );
 
@@ -135,12 +158,21 @@ const createPluginDir = () => {
 	}
 };
 
-// NPM install and npm run build to build the block.
-const npmInstallScripts = () => {
+/**
+ * NPM install cgb-scripts.
+ *
+ * - Build package.json file.
+ * - NPM install the plugin block.
+ *
+ * @param {string} blockName The block name.
+ * @param  {string} blockDir The block directory.
+ * @return {promise} promise resolved.
+ */
+const npmInstallScripts = ( blockName, blockDir ) => {
 	shell.cd( blockDir );
 	shell.touch( 'package.json' );
 
-	// Write a package.json file since npm install needs it.
+	// Build a package.json file since npm install needs it.
 	const appPackage = {
 		name: `${ blockName }-cgb-guten-block`,
 		version: '1.0.0',
@@ -152,141 +184,90 @@ const npmInstallScripts = () => {
 		},
 	};
 
-	// Write the file.
+	// Write the package.json file.
 	fs.writeFileSync(
 		path.join( process.cwd(), 'package.json' ),
 		JSON.stringify( appPackage, null, 2 ) + '\n'
 	);
 
-	// Install latest cgb-scripts.
+	// Install latest exact version of cgb-scripts.
 	return new Promise( async resolve => {
-		await execa( 'npm', [ 'install', 'cgb-scripts', '--save', '--slient' ] );
+		await execa( 'npm', [
+			'install',
+			'cgb-scripts',
+			'--save',
+			'--save-exact',
+			'--slient',
+		] );
 		resolve( true );
 	} );
 };
 
-// Copy template to the plugin dir.
-const copyTemplateFiles = () => {
-	// Since we ran npm install cgb-scripts we have it in the node_modules now.
-	const template = path.resolve(
-		blockDir,
-		'./node_modules/cgb-scripts/template'
+/**
+ * Initialize the block plugin.
+ *
+ * @param {string} blockName The block name.
+ * @param  {string} blockDir The block directory.
+ */
+const initBlock = ( blockName, blockDir ) => {
+	// Root path.
+	const root = process.cwd();
+
+	// Get path to cgb-scripts.
+	const scriptsPath = path.resolve(
+		root,
+		'node_modules',
+		'cgb-scripts',
+		'scripts',
+		'init.js'
 	);
 
-	return new Promise( resolve => {
-		shell.cd( blockDir );
-		// Create a tmp folder to avoid globbing through node_modules.
-		shell.exec( 'mkdir -p ./tmp' );
-		shell.cp( '-RL', `${ template }/*`, './tmp' );
-		shell.cp( '-RL', `${ template }/.*`, './tmp' );
+	// Require cgb-scripts.
+	const init = require( scriptsPath );
 
-		// Replace dynamic content for block name in the code.
-		shell.ls( 'tmp/**/**.*' ).forEach( function( file ) {
-			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
-			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
-			shell.sed( '-i', '<% blockNamePHPLower %>', `${ blockNamePHPLower }`, file );
-			shell.sed( '-i', '<% blockNamePHPLower % >', `${ blockNamePHPLower }`, file );
-			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPUpper }`, file );
-			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPUpper }`, file );
-		} );
-
-		// Move all processed files back to the main folder.
-		shell.cp( '-RL', `${ blockDir }/tmp/*`, './' );
-		shell.cp( '-RL', `${ blockDir }/tmp/.*`, './' );
-
-		// Thank you, tmp — you've been a useful friend.
-		shell.rm( '-rf', './tmp' );
-		resolve( true );
-	} );
+	// Run the initializer function.
+	init( root, blockName, blockDir );
 };
 
-// Print anything in the start.
-const prePrint = () => {
-	console.log( '\n' );
-	console.log(
-		'📦 ',
-		chalk.black.bgYellow(
-			` Creating a WP Gutenberg Block plguin called: ${ chalk.bgGreen(
-				` ${ blockName } `
-			) }\n`
-		),
-		chalk.dim( `\n In the directory: ${ blockDir }\n` ),
-		chalk.dim( 'This might take a couple of minutes.\n' )
-	);
-};
-
-// Prints next steps.
-const printNextSteps = () => {
-	console.log(
-		'\n\n✅ ',
-		chalk.black.bgGreen( ' All done! Go build some Gutenberg blocks. \n' )
-	);
-	console.log(
-		`CGB ${ chalk.dim(
-			'(create-guten-block)'
-		) } has created a WordPress plugin called `,
-		chalk.dim( blockName ),
-		' that you can use with zero configurations to build Gutenberg blocks with ESNext (i.e. ES6/7/8), React.js, JSX, Webpack, ESLint, etc.'
-	);
-	console.log(
-		`\nCreated ${ chalk.dim( blockName ) } plugin at: ${ chalk.dim( blockDir ) }`,
-		'\nInside that directory, you can run several commands:\n'
-	);
-
-	console.log(
-		'\n👉 ',
-		' Type',
-		chalk.black.bgWhite( ' npm start ' ),
-		'to compile and develop your block.'
-	);
-	console.log(
-		'\n👉 ',
-		' Type',
-		chalk.black.bgWhite( ' npm run build ' ),
-		'to build production code for your block.\n'
-	);
-
-	console.log( '\n\n', chalk.black.bgGreen( ' Get Started → \n' ) );
-	console.log( ' We suggest that you begin by typing: \n' );
-	console.log(
-		`  ${ chalk.green( 'cd' ) } ${ blockName }`,
-		'\n',
-		` ${ chalk.green( 'npm' ) } start`,
-		'\n\n'
-	);
-};
-
-// Runs all the functions with async/await.
+/**
+ * Run the entire program.
+ *
+ * Runs all the functions with async/await.
+ */
 const run = async() => {
-	await prePrint();
+	// 0. Clear the console.
+	clearConsole();
 
+	// 0. Update notifier.
+	const updateNotifier = require( 'update-notifier' );
+	updateNotifier( { pkg: packageJson } ).notify();
+
+	// 1. Get the block name and direcotry by sending in the third argument.
+	const blockName = await getBlockName( process.argv[ 2 ] );
+	const blockDir = await getBlockDir( blockName );
+
+	// 2. Pre print.
+	await prePrint( blockName, blockDir );
+
+	// 3. Create the plugin directory.
+	// Init the spinner.
+	const spinner = new ora( { text: '', enabled: true } );
 	spinner.start(
 		`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
 			` ${ blockName } `
 		) }`
 	);
-	await createPluginDir();
+	await createPluginDir( blockName );
 	spinner.succeed();
 
+	// 4. NPM install cgb-scripts.
 	spinner.start( '2. Installing npm packages...' );
-	await npmInstallScripts();
+	await npmInstallScripts( blockName, blockDir );
 	spinner.succeed();
 
-	spinner.start( '3. Creating plugin files...' );
-	await copyTemplateFiles();
-	spinner.succeed();
-
-	await printNextSteps();
+	// 5. Initialize the block.
+	await initBlock( blockName, blockDir );
 };
-
-// console.clear();
-clearConsole();
-
-// Update notifier.
-const updateNotifier = require( 'update-notifier' );
-updateNotifier( {
-	packageJson,
-} ).notify();
 
 // Run the CLI.
 run();

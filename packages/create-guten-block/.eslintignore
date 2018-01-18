@@ -1,0 +1,4 @@
+**/node_modules/**
+**/vendor/**
+**/block.build.js
+**/*.min.js
