@@ -1,6 +1,6 @@
 {
 	"name": "babel-preset-cgb",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "Babel preset used by Create Guten Block",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
