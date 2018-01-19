@@ -19,39 +19,49 @@ process.env.NODE_ENV = 'development';
 process.on( 'unhandledRejection', err => {
 	throw err;
 } );
+
+const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const isWindows = require( 'is-windows' );
-const ora = isWindows() ? false : require( 'ora' );
 const config = require( '../config/webpack.config.dev' );
 const resolvePkg = require( 'resolve-pkg' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 const formatWebpackMessages = require( cgbDevUtilsPath +
 	'/formatWebpackMessages' );
-// const clearConsole = require( '../../cgb-dev-utils/clearConsole' );
-// const formatWebpackMessages = require( '../../cgb-dev-utils/formatWebpackMessages' );
+
+// Don't run below node 8.
+const currentNodeVersion = process.versions.node;
+const semver = currentNodeVersion.split( '.' );
+const major = semver[ 0 ];
+
+// If below Node 8.
+if ( major < 8 ) {
+	console.error(
+		chalk.red(
+			'You are running Node ' +
+				currentNodeVersion +
+				'.\n' +
+				'Create Guten Block requires Node 8 or higher. \n' +
+				'Kindly, update your version of Node.'
+		)
+	);
+	process.exit( 1 );
+}
 
 clearConsole();
 
 // Init the spinner.
-const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
+const spinner = new ora( { text: '' } );
 
 // Create the production build and print the deployment instructions.
 async function build( webpackConfig ) {
 	// Start the build.
-	if ( spinner ) {
-		spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
-	} else {
-		console.log( chalk.green( 'Building and compiling blocks...' ) );
-	}
+	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
 
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
-
-	if ( spinner ) {
-		spinner.succeed();
-	}
+	spinner.succeed();
 
 	// Run the compiler.
 	compiler.watch( {}, ( err, stats ) => {

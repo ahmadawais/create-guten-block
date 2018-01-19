@@ -22,14 +22,13 @@ process.on( 'unhandledRejection', err => {
 
 // Modules.
 const fs = require( 'fs' );
+const ora = require( 'ora' );
 const path = require( 'path' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
 const fileSize = require( 'filesize' );
 const gzipSize = require( 'gzip-size' );
 const resolvePkg = require( 'resolve-pkg' );
-const isWindows = require( 'is-windows' );
-const ora = isWindows() ? false : require( 'ora' );
 const config = require( '../config/webpack.config.prod' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
@@ -57,7 +56,7 @@ const getFileSize = filePath => {
 clearConsole();
 
 // Init the spinner.
-const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
+const spinner = new ora( { text: '' } );
 
 /**
  * Build function
@@ -68,18 +67,11 @@ const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
  */
 async function build( webpackConfig ) {
 	// Start the build.
-	if ( spinner ) {
-		spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
-	} else {
-		console.log( chalk.green( 'Building and compiling blocks...' ) );
-	}
+	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
 
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
-
-	if ( spinner ) {
-		spinner.succeed();
-	}
+	spinner.succeed();
 
 	// Run the compiler.
 	compiler.run( ( err, stats ) => {

@@ -6,18 +6,17 @@
 
 'use strict';
 
+const ora = require( 'ora' );
 const chalk = require( 'chalk' );
-const isWindows = require( 'is-windows' );
-const ora = isWindows() ? false : require( 'ora' );
-const clearConsole = require( './consoleClear' );
 const cli = require( './cli' );
-const getBlockName = require( './getBlockName' );
-const getBlockDir = require( './getBlockDir' );
 const prePrint = require( './prePrint' );
+const initBlock = require( './initBlock' );
+const getBlockDir = require( './getBlockDir' );
+const clearConsole = require( './consoleClear' );
+const getBlockName = require( './getBlockName' );
+const updateNotifier = require( './updateNotifier' );
 const createPluginDir = require( './createPluginDir' );
 const npmInstallScripts = require( './npmInstallScripts' );
-const initBlock = require( './initBlock' );
-const updateNotifier = require( './updateNotifier' );
 
 module.exports = async() => {
 	// 0. Set the CLI.
@@ -38,39 +37,21 @@ module.exports = async() => {
 
 	// 3. Create the plugin directory.
 	// Init the spinner.
-	const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
+	const spinner = ora( { text: '' } );
 
-	if ( spinner ) {
-		spinner.start(
-			`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
-				` ${ blockName } `
-			) }`
-		);
-	} else {
-		console.log(
-			chalk.green( ' 1. Creating the plugin directory called → ' ) +
-				chalk.black.bgWhite( ` ${ blockName } ` )
-		);
-	}
-
+	spinner.start(
+		`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
+			` ${ blockName } `
+		) }`
+	);
 	await createPluginDir( blockName );
-
-	if ( spinner ) {
-		spinner.succeed();
-	}
+	spinner.succeed();
 
 	// 4. NPM install cgb-scripts.
-	if ( spinner ) {
-		spinner.start( '2. Installing npm packages...' );
-	} else {
-		console.log( chalk.green( '2. Installing npm packages...' ) );
-	}
 
+	spinner.start( '2. Installing npm packages...' );
 	await npmInstallScripts( blockName, blockDir );
-
-	if ( spinner ) {
-		spinner.succeed();
-	}
+	spinner.succeed();
 
 	// 5. Initialize the block.
 	await initBlock( blockName, blockDir );

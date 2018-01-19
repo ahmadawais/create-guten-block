@@ -8,12 +8,11 @@
 
 'use strict';
 
-const fs = require( 'fs-extra' );
+const ora = require( 'ora' );
 const path = require( 'path' );
+const fs = require( 'fs-extra' );
 const chalk = require( 'chalk' );
 const shell = require( 'shelljs' );
-const isWindows = require( 'is-windows' );
-const ora = isWindows() ? false : require( 'ora' );
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -171,22 +170,16 @@ module.exports = async( root, blockName, blockDir ) => {
 
 	// 1.Copy template to the plugin dir.
 	// Init the spinner.
-	const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
-	if ( spinner ) {
-		spinner.start( '3. Creating plugin files...' );
-	} else {
-		console.log( chalk.green( '3. Creating plugin files...' ) );
-	}
+	const spinner = new ora( { text: '' } );
+	spinner.start( '3. Creating plugin files...' );
 	await copyTemplateFiles(
 		blockName,
 		blockDir,
 		blockNamePHPLower,
 		blockNamePHPUpper
 	);
+	spinner.succeed();
 
-	if ( spinner ) {
-		spinner.succeed();
-	}
 	// 2. Prints next steps.
 	await printNextSteps( blockName, blockDir );
 };
