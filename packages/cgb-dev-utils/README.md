@@ -1,6 +1,8 @@
 # CGB Dev Utils
 
-> Create Guten Block Developer Utilities.
+> Create Guten Block Developer Utilities for your next-gen WordPress Gutenberg plugins..
+
+[![npm](https://img.shields.io/npm/v/cgb-dev-utils.svg?style=flat-square)](https://www.npmjs.com/package/create-guten-block) [![npm](https://img.shields.io/npm/dt/cgb-dev-utils.svg?style=flat-square&label=downloads)](https://www.npmjs.com/package/create-guten-block)  [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ahmadawais/create-guten-block) [![Tweet for help](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Tweet%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/) [![GitHub stars](https://img.shields.io/github/stars/ahmadawais/create-guten-block.svg?style=social&label=Stars)](https://github.com/ahmadawais/create-guten-block/stargazers) [![GitHub followers](https://img.shields.io/github/followers/ahmadawais.svg?style=social&label=Follow)](https://github.com/ahmadawais?tab=followers)
 
 🙌 This package includes scripts and developer utilities used by [Create Guten Block](https://github.com/ahmadawais/create-guten-block).<br> Kindly, refer to its documentation.
 
