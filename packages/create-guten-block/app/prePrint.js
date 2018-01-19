@@ -14,7 +14,7 @@ module.exports = ( blockName, blockDir ) => {
 	console.log(
 		'📦 ',
 		chalk.black.bgYellow(
-			` Creating a WP Gutenberg Block plguin called: ${ chalk.bgGreen(
+			` Creating a WP Gutenberg Block plugin called: ${ chalk.bgGreen(
 				` ${ blockName } `
 			) }\n`
 		),
