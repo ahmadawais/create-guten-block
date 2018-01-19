@@ -7,6 +7,8 @@
 
 'use strict';
 
+const path = require( 'path' );
+
 module.exports = blockName => {
-	return `${ process.cwd() }/${ blockName }`;
+	return path.join( process.cwd(), blockName );
 };

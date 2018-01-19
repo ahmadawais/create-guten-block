@@ -7,55 +7,51 @@
 'use strict';
 
 const chalk = require( 'chalk' );
-const envinfo = require( 'envinfo' );
 const commander = require( 'commander' );
-const clearConsole = require( './consoleClear' );
+const maybeEnvInfo = require( './envInfo' );
+const noBlockName = require( './noBlockName' );
 const packageJson = require( '../package.json' );
 
 // Commander.js program.
 module.exports = () => {
+	// Block's name
+	let blockName;
+
 	const program = new commander.Command( packageJson.name )
-		.version( packageJson.version, '-v, --version' )
-		.description(
-			`CGB ${ chalk.dim(
-				'(create-guten-block)'
-			) } is a Zero-Config #OCJS for builing WordPress Gutenberg Blocks.`
-		);
-	program
-		.option( '-d, --debug', 'Prints envinfo for debugging. ' )
 		.arguments( '<block-name>' )
 		.usage( `${ chalk.green( '<block-name>' ) }` )
+		.action( name => {
+			blockName = name;
+		} )
 		.allowUnknownOption()
 		.on( '--help', () => {
 			console.log( `\n    Only ${ chalk.green( '<block-name>' ) } is required.\n` );
 		} )
+		.option( '-d, --debug', 'Prints envinfo for debugging' )
+		.description(
+			`CGB ${ chalk.dim(
+				'(create-guten-block)'
+			) } is a Zero-Config #OCJS for builing WordPress Gutenberg Blocks.`
+		)
+		.version( packageJson.version, '-v, --version' )
 		.parse( process.argv );
 
-	// Envinfo.
-	if ( program.debug ) {
-		clearConsole();
+	// If no blockName.
+	if ( typeof blockName === 'undefined' ) {
+		// Maybe user asked for debug info.
+		maybeEnvInfo( program );
 
-		console.log(
-			'\n🔰  ' +
-				chalk.black.bgYellow( ' Printing the debug env info below: \n\n' ) +
-				chalk.dim( '   This may take a couple of seconds...' )
-		);
+		// If still running then tell user to provide blockName.
+		noBlockName();
+	} // End.
 
-		// Print the envinfo.
-		envinfo.print( {
-			packages: [ 'cgb-scripts' ],
-			cpu: true,
-			duplicates: true,
-			browsers: true,
-			noNativeIDE: true,
-		} );
+	// We must have a blockName by now.
 
-		console.log(
-			'\n✅  ' +
-				chalk.black.bgGreen( ' Done ' ) +
-				chalk.dim( ' You can copy paste this info to share it...\n' )
-		);
-		// Let's end the process so the app doesn't continue.
-		process.exit();
-	}
+	// Format the blockName.
+	const formatBlockName = blockName
+		.toLowerCase()
+		.split( ' ' )
+		.join( '-' );
+
+	return formatBlockName;
 };

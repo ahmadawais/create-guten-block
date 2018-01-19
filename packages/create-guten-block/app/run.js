@@ -13,23 +13,20 @@ const prePrint = require( './prePrint' );
 const initBlock = require( './initBlock' );
 const getBlockDir = require( './getBlockDir' );
 const clearConsole = require( './consoleClear' );
-const getBlockName = require( './getBlockName' );
 const updateNotifier = require( './updateNotifier' );
 const createPluginDir = require( './createPluginDir' );
 const npmInstallScripts = require( './npmInstallScripts' );
 
 module.exports = async() => {
-	// 0. Set the CLI.
-	cli();
-
-	// 0. Clear the console.
 	clearConsole();
 
 	// 0. Update notifier.
 	updateNotifier();
 
-	// 1. Get the block name and direcotry by sending in the third argument.
-	const blockName = await getBlockName( process.argv[ 2 ] );
+	// 1. Set the CLI and get the blockName.
+	const blockName = cli();
+
+	// 2. Build the block direcotry path.
 	const blockDir = await getBlockDir( blockName );
 
 	// 2. Pre print.
