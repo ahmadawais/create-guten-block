@@ -162,10 +162,6 @@ There are just three scripts that you can use in your `create-guten-block` workf
 - It's a one-way street, `eject` and you have to maintain everything yourself.
 - You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
 
-<!-- GIF or didn't happen? Sure!
-
-<img src="https://i.imgur.com/sNpw4AB.gif"/> -->
-
 _That's about it._
 
 <br>

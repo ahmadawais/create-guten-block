@@ -8,7 +8,6 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 👉  Read how to [**update to the latest version**](https://github.com/ahmadawais/create-guten-block#updating-to-new-releases)!
 
 ### 🦁 VERSION `1.9.0`
->Work in Progress!
 
 The first public release of `create-guten-block`.
 
@@ -17,6 +16,8 @@ The first public release of `create-guten-block`.
 - NPM package `create-guten-block` command line tool.
 - Create WordPress plugin folder.
 - Building WordPress plugin files.
+- **Run**: `create-guten-block --help` (-h) — to show help.
+- **Run**: `create-guten-block --debug` (-d) — to show debug environment info.
 - Build custom Gutenberg Block.
 - Basic Webpack configurations for dev/prod.
 - Dynamic WP plugin and Gutenberg Block Names.
@@ -28,10 +29,12 @@ The first public release of `create-guten-block`.
 ##### 👌 IMPROVE:
 
 - RELEASE: [Full Featured create-guten-block utility!](https://github.com/ahmadawais/create-guten-block/pull/3) — by @ahmadawais
+- Support for Win32.
 
 ##### 🐛 FIX:
 
 - `create-guten-block` dependency on `cgb-scripts`.
+- [Typo of plugin](https://github.com/ahmadawais/create-guten-block/pull/8) — by @asharirfan
 
 ##### 📖 DOC:
 
