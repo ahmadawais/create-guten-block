@@ -8,11 +8,12 @@
 
 'use strict';
 
-const ora = require( 'ora' );
+const fs = require( 'fs-extra' );
 const path = require( 'path' );
 const chalk = require( 'chalk' );
-const execa = require( 'execa' );
 const shell = require( 'shelljs' );
+const isWindows = require( 'is-windows' );
+const ora = isWindows() ? false : require( 'ora' );
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -28,7 +29,6 @@ process.on( 'unhandledRejection', err => {
  * @param  {string} blockDir The block directory.
  * @param  {string} blockNamePHPLower The block name for PHP files in lowercase.
  * @param  {string} blockNamePHPUpper The block name for PHP files in uppercase.
- * @return {promise} promise resolved.
  */
 const copyTemplateFiles = (
 	blockName,
@@ -44,15 +44,29 @@ const copyTemplateFiles = (
 		'template'
 	);
 
-	return new Promise( resolve => {
+	const templatePromise = new Promise( resolve => {
 		shell.cd( blockDir );
-		// Create a tmp folder to avoid globbing through node_modules.
-		shell.exec( 'mkdir -p ./tmp' );
-		shell.cp( '-RL', `${ template }/*`, './tmp' );
-		shell.cp( '-RL', `${ template }/.*`, './tmp' );
+
+		// Copy the files into the plugin blockDir.
+		if ( fs.existsSync( template ) ) {
+			fs.copySync( template, blockDir );
+		} else {
+			console.error(
+				`Could not locate supplied template: ${ chalk.green( template ) }`
+			);
+			return;
+		}
+
+		// Build a list of files we added.
+		const files = [
+			...shell.ls( '**.*' ),
+			...shell.ls( blockDir + '/src/**.*' ),
+			...shell.ls( blockDir + '/src/block/**.*' ),
+		];
+		console.log( '\n\nLIST OF FILES', files, '\n\n' );
 
 		// Replace dynamic content for block name in the code.
-		shell.ls( 'tmp/**/**.*' ).forEach( function( file ) {
+		files.forEach( function( file ) {
 			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
 			shell.sed( '-i', '<% blockName % >', `${ blockName }`, file );
 			shell.sed( '-i', '<% blockNamePHPLower %>', `${ blockNamePHPLower }`, file );
@@ -61,13 +75,12 @@ const copyTemplateFiles = (
 			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPUpper }`, file );
 		} );
 
-		// Move all processed files back to the main folder.
-		shell.cp( '-RL', `${ blockDir }/tmp/*`, './' );
-		shell.cp( '-RL', `${ blockDir }/tmp/.*`, './' );
-
-		// Thank you, tmp — you've been a useful friend.
-		shell.rm( '-rf', './tmp' );
 		resolve( true );
+	} );
+
+	templatePromise.catch( err => {
+		console.log( 'ERROR on templatePromise →', err );
+		process.exit( 1 );
 	} );
 };
 
@@ -157,16 +170,22 @@ module.exports = async( root, blockName, blockDir ) => {
 
 	// 1.Copy template to the plugin dir.
 	// Init the spinner.
-	const spinner = new ora( { text: '', enabled: true } );
-	spinner.start( '3. Creating plugin files...' );
+	const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
+	if ( spinner ) {
+		spinner.start( '3. Creating plugin files...' );
+	} else {
+		console.log( chalk.green( '3. Creating plugin files...' ) );
+	}
 	await copyTemplateFiles(
 		blockName,
 		blockDir,
 		blockNamePHPLower,
 		blockNamePHPUpper
 	);
-	spinner.succeed();
 
+	if ( spinner ) {
+		spinner.succeed();
+	}
 	// 2. Prints next steps.
 	await printNextSteps( blockName, blockDir );
 };

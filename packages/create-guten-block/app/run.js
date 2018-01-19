@@ -6,8 +6,9 @@
 
 'use strict';
 
-const ora = require( 'ora' );
 const chalk = require( 'chalk' );
+const isWindows = require( 'is-windows' );
+const ora = isWindows() ? false : require( 'ora' );
 const clearConsole = require( './consoleClear' );
 const cli = require( './cli' );
 const getBlockName = require( './getBlockName' );
@@ -37,19 +38,39 @@ module.exports = async() => {
 
 	// 3. Create the plugin directory.
 	// Init the spinner.
-	const spinner = new ora( { text: '', enabled: true } );
-	spinner.start(
-		`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
-			` ${ blockName } `
-		) }`
-	);
+	const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
+
+	if ( spinner ) {
+		spinner.start(
+			`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
+				` ${ blockName } `
+			) }`
+		);
+	} else {
+		console.log(
+			chalk.green( ' 1. Creating the plugin directory called → ' ) +
+				chalk.black.bgWhite( ` ${ blockName } ` )
+		);
+	}
+
 	await createPluginDir( blockName );
-	spinner.succeed();
+
+	if ( spinner ) {
+		spinner.succeed();
+	}
 
 	// 4. NPM install cgb-scripts.
-	spinner.start( '2. Installing npm packages...' );
+	if ( spinner ) {
+		spinner.start( '2. Installing npm packages...' );
+	} else {
+		console.log( chalk.green( '2. Installing npm packages...' ) );
+	}
+
 	await npmInstallScripts( blockName, blockDir );
-	spinner.succeed();
+
+	if ( spinner ) {
+		spinner.succeed();
+	}
 
 	// 5. Initialize the block.
 	await initBlock( blockName, blockDir );

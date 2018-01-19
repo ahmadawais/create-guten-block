@@ -19,10 +19,10 @@ process.env.NODE_ENV = 'development';
 process.on( 'unhandledRejection', err => {
 	throw err;
 } );
-
-const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
+const isWindows = require( 'is-windows' );
+const ora = isWindows() ? false : require( 'ora' );
 const config = require( '../config/webpack.config.dev' );
 const resolvePkg = require( 'resolve-pkg' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
@@ -35,18 +35,25 @@ const formatWebpackMessages = require( cgbDevUtilsPath +
 clearConsole();
 
 // Init the spinner.
-const spinner = new ora( {
-	text: '',
-	enabled: true,
-} );
+const spinner = ora ? new ora( { text: '', enabled: true } ) : false;
+
 // Create the production build and print the deployment instructions.
 async function build( webpackConfig ) {
-	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
+	// Start the build.
+	if ( spinner ) {
+		spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
+	} else {
+		console.log( chalk.green( 'Building and compiling blocks...' ) );
+	}
 
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
-	spinner.succeed();
 
+	if ( spinner ) {
+		spinner.succeed();
+	}
+
+	// Run the compiler.
 	compiler.watch( {}, ( err, stats ) => {
 		if ( err ) {
 			return console.log( err );
