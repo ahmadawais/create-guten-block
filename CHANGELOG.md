@@ -7,7 +7,7 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 👉  Read how to [**update to the latest version**](https://github.com/ahmadawais/create-guten-block#updating-to-new-releases)!
 
-### 🦁 VERSION `1.9.0`
+### 🦁 VERSION `1.9.1`
 
 The first public release of `create-guten-block`.
 
@@ -44,5 +44,5 @@ The first public release of `create-guten-block`.
 ---
 
 
-### 🐨 VERSION `1.0.0` - `1.8.0`
+### 🐨 VERSION `1.0.0` - `1.9.0`
 Version 1.0.0 was where it all began. From there the project was in beta till v1.9.0 came out. Which is why we've ignore the Changelog for these versions.
