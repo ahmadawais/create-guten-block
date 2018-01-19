@@ -57,7 +57,8 @@ const spinner = new ora( { text: '' } );
 // Create the production build and print the deployment instructions.
 async function build( webpackConfig ) {
 	// Start the build.
-	spinner.start( `${ chalk.dim( '\nBuilding and compiling blocks...' ) }` );
+	console.log( '\n' );
+	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
 
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
