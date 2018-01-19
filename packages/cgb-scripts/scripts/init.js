@@ -63,7 +63,8 @@ const copyTemplateFiles = (
 			...shell.ls( blockDir + '/src/**.*' ),
 			...shell.ls( blockDir + '/src/block/**.*' ),
 		];
-		console.log( '\n\nLIST OF FILES', files, '\n\n' );
+
+		// console.log( '\n\nLIST OF FILES', files, '\n\n' );
 
 		// Replace dynamic content for block name in the code.
 		files.forEach( function( file ) {
