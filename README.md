@@ -214,12 +214,12 @@ Well, it's really hard to configure things like Webpack, React, ES 6/7/8/Next, E
 
 Open the terminal app and run the following commands.
 
-- **Install/Update**: `npm install create-guten-block --global`
-- **Create**: `create-guten-block my-block` — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
-- **Browse**: `cd my-block` — Open the newly created plugin directory.
-- **Run**: `npm start` — For development.
-- **Run**: `npm run build` — For production build.
-- **Run**: `npm run eject` — To customize, update, and maintain all by yourself.
+- ✅ **Install/Update**: `npm install create-guten-block --global`
+- 🔰 **Create**: `create-guten-block my-block` — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
+- 📂 **Browse**: `cd my-block` — Open the newly created plugin directory.
+- ♻️ **Run**: `npm start` — For development.
+- 📦 **Run**: `npm run build` — For production build.
+- ⏏ **Run**: `npm run eject` — To customize, update, and maintain all by yourself.
 
 Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux.
 If something doesn’t work, kindly file [an issue →](https://github.com/ahmadawais/create-guten-block/issues/new)
