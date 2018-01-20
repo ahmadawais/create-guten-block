@@ -70,27 +70,14 @@ npm -v
 
 ### → STEP #1
 
-Install `create-guten-block` globally on your system.
-
 You’ll need to have Node >= 8 on your local development machine (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
 
-
-```sh
-npm install create-guten-block --global
-```
-
-![install cgb](http://on.ahmda.ws/orvI/c)
-
-_It'll take a couple of minutes to install._
-
-### → STEP #2
-
-Now all you have to do is create a gutenberg block and start building. It's done by running the `create-guten-block` command and providing it with a unique name for a WordPress plugin that will get created.
+Now all you have to do is create a gutenberg block and start building. It's done by running the `npx create-guten-block my-block` command and providing it with a unique name, in this case `my-block`, for a WordPress plugin named 'my-block` that will get created.
 
 > ⚠️ Make sure run this command in your local WordPress install's plugins folder i.e. `/local_dev_site.tld/wp-content/plugins/` folder — since this command will produce a WordPress plugin that you can go to `WP Admin` ▶︎ `Plugins` to activate.
 
 ```sh
-create-guten-block my-block
+npx create-guten-block my-block
 ```
 ![cgb block](http://on.ahmda.ws/osOD/c)
 
@@ -121,7 +108,7 @@ INSIDE: /local_dev_site.tld/wp-content/plugins/my-block
 ```
 No configuration or complicated folder structures, just the files you need to build your app.
 
-### → STEP #3
+### → STEP #2
 
 Once the installation is done, you can open your project folder and run the start script.
 
