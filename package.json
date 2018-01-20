@@ -1,8 +1,4 @@
 {
-	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ahmadawais/create-guten-block.git"
