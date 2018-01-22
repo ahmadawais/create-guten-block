@@ -1,7 +1,6 @@
 # 🔰 EXAMPLE: Basic Single Block
 
 >This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
->🌟 Star for updates [create-guten-block →](https://github.com/ahmadawais/create-guten-block) or to appreciate.
 
 <br>
 
@@ -17,6 +16,9 @@ This example includes a WordPress Gutenberg plugin called `basic` which creates 
 - Run `create-guten-block basic` command.
 
 _That's about it._
+
+>🌟 Star for updates [create-guten-block →](https://github.com/ahmadawais/create-guten-block) or to appreciate.
+
 
 <br>
 
