@@ -1,6 +1,8 @@
 /**
  * New Block plugin intializer
  *
+ * - Work in progress
+ *
  * - Copies the templates.
  * - Prints final instructions.
  */
