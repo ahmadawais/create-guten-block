@@ -7,8 +7,8 @@
 
 Find different examples of WordPress Gutenberg block plugins (#Gutenblocks) created with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
-- Browse any folder above
-- Read the `README.md` for instructions
+- Every folder you see here is a separate WordPress plugin.
+- Browse any plugin folder above and read the `README.md` for instructions
 
 
 _Happy Hacking!_
