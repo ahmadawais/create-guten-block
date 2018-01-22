@@ -8,12 +8,12 @@
 
 ### What/How?
 
-This example includes a WordPress Gutenberg plugin called `basic` which creates a Gutenberg block also called `basic`.
+This example includes a WordPress Gutenberg plugin called `single-block` which creates a Gutenberg block also called `single-block`.
 
 👉 This example is created by running the following steps, that you can follow to build it on your own.
 
 - [Install `create-guten-block` →](https://github.com/ahmadawais/create-guten-block#getting-started)
-- Run `create-guten-block basic` command.
+- Run `create-guten-block single-block` command.
 
 _That's about it._
 

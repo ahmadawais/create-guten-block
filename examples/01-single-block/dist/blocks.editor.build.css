@@ -5,12 +5,13 @@
  * that are used across the project.
 */
 /**
- * #.# Styles
+ * #.# Editor Styles
  *
- * CSS for both Frontend+Backend.
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
  */
-.wp-block-cgb-block-basic {
-  background: orangered;
+.wp-block-cgb-block-single-block {
+  background: #bada55;
   border: 0.2rem solid #292929;
   color: #292929;
   margin: 0 auto;
