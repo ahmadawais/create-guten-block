@@ -2,11 +2,8 @@
  * Build
  *
  * The create-guten-block CLI builds here.
- *
- * TODO:
- *  - checkRequiredFiles
- *  - printBuildError
  */
+
 'use strict';
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -66,16 +63,13 @@ const spinner = new ora( { text: '' } );
  * @param {json} webpackConfig config
  */
 async function build( webpackConfig ) {
-	// Start the build.
-	console.log( '\n' );
-	spinner.start( `${ chalk.dim( 'Building and compiling blocks...' ) }` );
-
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
-	spinner.succeed();
 
 	// Run the compiler.
 	compiler.run( ( err, stats ) => {
+		clearConsole();
+
 		if ( err ) {
 			return console.log( err );
 		}
@@ -93,8 +87,10 @@ async function build( webpackConfig ) {
 			// Formatted errors.
 			clearConsole();
 			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile build. \n' ) );
-			const logErrors = console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
-			return logErrors;
+			console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
+
+			// Don't go beyond this point at this time.
+			return;
 		}
 
 		// CI.
@@ -110,10 +106,11 @@ async function build( webpackConfig ) {
 						'Most CI servers set it automatically.\n'
 				)
 			);
-			return console.log( messages.warnings.join( '\n\n' ) );
+			console.log( messages.warnings.join( '\n\n' ) );
 		}
 
-		clearConsole();
+		// Start the build.
+		console.log( `\n ${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
 		console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
 
 		console.log(
