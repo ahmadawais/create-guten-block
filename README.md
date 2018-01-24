@@ -31,7 +31,7 @@
 
 # 📦 `create-guten-block`
 
->`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
+>`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 
 Create Guten Block is not like other [starter-kits](https://github.com/ahmadawais/wpgulp) or [boilerplates](https://github.com/ahmadawais/Gutenberg-boilerplate). It's a developer's toolbox which is continuously updated. Since it has zero-configuration, you can always update it without any changes in your code.
 
@@ -173,7 +173,7 @@ _That's about it._
 Your environment will have everything you need to build a modern next-gen WordPress Gutenberg plugin:
 
 * React, JSX, and ES6 syntax support.
-* Webpack dev/production build process behind the scene.
+* webpack dev/production build process behind the scene.
 * Language extras beyond ES6 like the object spread operator.
 * Auto-prefixed CSS, so you don’t need `-webkit` or other prefixes.
 * A build script to bundle JS, CSS, and images for production with source-maps.
@@ -188,7 +188,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 ## Philosophy
 
-* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+* **One Dependency:** There is just one build dependency. It uses webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
 
 * **No Configuration Required:** You don't need to configure anything. A reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
 
@@ -200,7 +200,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 ## Why `create-guten-block`?
 
-Well, it's really hard to configure things like Webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
+Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
 
 `create-guten-block` hides all this configuration away in an optimized package that we call `cgb-scripts`. This package is the only dependency in your projects. We keep `cgb-scripts` up to date while you go ahead and create the next best WordPress themes and plugins.
 
@@ -335,4 +335,4 @@ This FOSS (free and open source software) project is updated and maintained with
 
 MIT © [Ahmad Awais](https://AhmadAwais.com/).
 
-This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), [Christopher Chedeau](https://twitter.com/vjeux), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Joen](https://github.com/jasmussen), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
+This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), and [Christopher Chedeau](https://twitter.com/vjeux), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Ella](https://twitter.com/ellaiseulde), [Joen](https://github.com/jasmussen), [Tammie](https://twitter.com/karmatosed), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
