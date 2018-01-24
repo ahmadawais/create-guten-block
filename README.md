@@ -31,7 +31,7 @@
 
 # 📦 `create-guten-block`
 
->`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
+>`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 
 Create Guten Block is not like other [starter-kits](https://github.com/ahmadawais/wpgulp) or [boilerplates](https://github.com/ahmadawais/Gutenberg-boilerplate). It's a developer's toolbox which is continuously updated. Since it has zero-configuration, you can always update it without any changes in your code.
 
@@ -173,7 +173,7 @@ _That's about it._
 Your environment will have everything you need to build a modern next-gen WordPress Gutenberg plugin:
 
 * React, JSX, and ES6 syntax support.
-* Webpack dev/production build process behind the scene.
+* webpack dev/production build process behind the scene.
 * Language extras beyond ES6 like the object spread operator.
 * Auto-prefixed CSS, so you don’t need `-webkit` or other prefixes.
 * A build script to bundle JS, CSS, and images for production with source-maps.
@@ -188,7 +188,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 ## Philosophy
 
-* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+* **One Dependency:** There is just one build dependency. It uses webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
 
 * **No Configuration Required:** You don't need to configure anything. A reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
 
@@ -200,7 +200,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 ## Why `create-guten-block`?
 
-Well, it's really hard to configure things like Webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
+Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
 
 `create-guten-block` hides all this configuration away in an optimized package that we call `cgb-scripts`. This package is the only dependency in your projects. We keep `cgb-scripts` up to date while you go ahead and create the next best WordPress themes and plugins.
 
