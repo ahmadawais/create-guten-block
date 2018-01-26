@@ -14,6 +14,7 @@ This example includes a WordPress Gutenberg plugin called `single-block` which c
 
 - [Install `create-guten-block` →](https://github.com/ahmadawais/create-guten-block#getting-started)
 - Run `create-guten-block single-block` command.
+- Finally, we ran `npm run eject` to eject the config in this plugin.
 
 _That's about it._
 

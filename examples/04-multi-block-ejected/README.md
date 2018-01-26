@@ -19,6 +19,7 @@ This example includes a WordPress Gutenberg plugin called `multi-block` which cr
 - Go to `./block2/` directory and rename our block from `multi-block` to `multi-block-2` in both `.js` and `.scss` files.
 - Now you have two blocks run by a single plugin.
 - As you might have noticed all blocks should be imported in the `./src/blocks.js` files as that's the file which gets imported into our webpack config.
+- Finally, we ran `npm run eject` to eject the config in this plugin.
 
 _That's about it._
 
