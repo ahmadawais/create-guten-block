@@ -92,35 +92,35 @@
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^blocks$/]",
-				"message": "Use @wordpress/blocks as the import path instead."
+				"message": "Use @wordpress/blocks as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^components$/]",
-				"message": "Use @wordpress/components as the import path instead."
+				"message": "Use @wordpress/components as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^date$/]",
-				"message": "Use @wordpress/date as the import path instead."
+				"message": "Use @wordpress/date as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^editor$/]",
-				"message": "Use @wordpress/editor as the import path instead."
+				"message": "Use @wordpress/editor as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^element$/]",
-				"message": "Use @wordpress/element as the import path instead."
+				"message": "Use @wordpress/element as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^i18n$/]",
-				"message": "Use @wordpress/i18n as the import path instead."
+				"message": "Use @wordpress/i18n as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^data$/]",
-				"message": "Use @wordpress/data as the import path instead."
+				"message": "Use @wordpress/data as import path instead."
 			},
 			{
 				"selector": "ImportDeclaration[source.value=/^utils$/]",
-				"message": "Use @wordpress/utils as the import path instead."
+				"message": "Use @wordpress/utils as import path instead."
 			},
 			{
 				"selector":
