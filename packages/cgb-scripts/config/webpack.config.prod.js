@@ -26,7 +26,7 @@ const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
+const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === 'true';
 
 // Extract style.css for both editor and frontend styles.
 const blocksCSSPlugin = new ExtractTextPlugin( {
@@ -85,7 +85,7 @@ module.exports = {
 		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
 	},
 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
-	devtool: 'cheap-eval-source-map',
+	devtool: shouldUseSourceMap ? 'source-map' : false,
 	module: {
 		rules: [
 			{
