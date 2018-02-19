@@ -3,9 +3,9 @@
  *
  * The create-guten-block CLI ejects here.
  */
-'use strict';
-
 // @remove-file-on-eject
+
+'use strict';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will

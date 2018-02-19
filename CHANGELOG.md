@@ -7,6 +7,12 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 👉  Read how to [**update to the latest version**](https://github.com/ahmadawais/create-guten-block#updating-to-new-releases)!
 
+### 🔰 VERSION `1.9.2`
+
+##### 👌 IMPROVE:
+
+- Start and Build Scripts Communication fixes issue [#19](https://github.com/ahmadawais/create-guten-block/issues/19) — Props @ahmadawais @igorbenic
+
 ### 🦁 VERSION `1.9.1`
 
 The first public release of `create-guten-block`.
