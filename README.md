@@ -49,6 +49,19 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 
 Let's create a WordPress block plugin...
 
+#### ⚡️ Quick Overview
+
+Run step `#1` and `#2` quickly in one go — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
+```sh
+npx create-guten-block my-block
+cd my-block
+npm start
+```
+([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
+
+
+> 🎛   _If you want to study the detailed installation of step `#1` and `#2` — then take a look at the steps below_.
+
 
 <details>
  <summary><strong> STEP #0</strong> — Don't have <code>Node.js</code> + <code>npm</code> installed? Read this. (CLICK TO EXPAND!)</summary>
@@ -66,19 +79,6 @@ npm -v
 ```
 
 </details>
-
-#### ⚡️ Quick Overview
-
-Run step `#1` and `#2` quickly in one go — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
-```sh
-npx create-guten-block my-block
-cd my-block
-npm start
-```
-([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
-
-
-> 🎛   _If you want to study the detailed installation of step `#1` and `#2` — then take a look at the steps below_.
 
 ### → STEP #1
 
