@@ -47,12 +47,24 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 
 ## GETTING STARTED!
 
-It's really easy to get started with `create-guten-block`. Just install it as a global module and run it to create your next-gen Gutenberg block plugin for WordPress.
+Let's create a WordPress block plugin...
 
-_Let's get you started!_
+#### ⚡️ Quick Overview
+
+Run step `#1` and `#2` quickly in one go — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
+```sh
+npx create-guten-block my-block
+cd my-block
+npm start
+```
+([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
+
+
+> 🎛   _If you want to study the detailed installation of step `#1` and `#2` — then take a look at the steps below_.
+
 
 <details>
- <summary><strong> STEP #0</strong> — If you don't have <code>Node.js</code> + <code>npm</code> installed then read this. (CLICK TO EXPAND!)</summary>
+ <summary><strong> STEP #0</strong> — Don't have <code>Node.js</code> + <code>npm</code> installed? Read this. (CLICK TO EXPAND!)</summary>
 
 In case you are an absolute beginner to the world of `Node.js`, JavaScript, and `npm` packages — all you need to do is go to the Node's site [download + install](https://nodejs.org/en/download/) Node on your system. This will install both `Node.js` and `npm`, i.e., node package manager — the command line interface of Node.js.
 
@@ -70,29 +82,21 @@ npm -v
 
 ### → STEP #1
 
-Install `create-guten-block` globally on your system.
+All you have to do is run the following command and it will create a WordPress block plugin. It's done by installing and running the `create-guten-block` command and providing it with a unique name for a WordPress plugin that will get created.
 
-You’ll need to have Node >= 8 on your local development machine (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
-
-
-```sh
-npm install create-guten-block --global
-```
-
-![install cgb](http://on.ahmda.ws/orvI/c)
-
-_It'll take a couple of minutes to install._
-
-### → STEP #2
-
-Now all you have to do is create a gutenberg block and start building. It's done by running the `create-guten-block` command and providing it with a unique name for a WordPress plugin that will get created.
 
 > ⚠️ Make sure run this command in your local WordPress install's plugins folder i.e. `/local_dev_site.tld/wp-content/plugins/` folder — since this command will produce a WordPress plugin that you can go to `WP Admin` ▶︎ `Plugins` to activate.
 
 ```sh
-create-guten-block my-block
+npx create-guten-block my-block
 ```
-![cgb block](http://on.ahmda.ws/osOD/c)
+([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
+
+![npx block](http://on.ahmda.ws/p89T/c)
+
+_It'll take a couple of minutes to install._
+
+>You’ll need to have Node >= 8 and npm >= 5.3 on your local development machine (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
 
 It will create a directory called `my-block` inside the current folder.
 Inside that directory, it will generate the initial project structure and install the transitive dependencies:
@@ -121,7 +125,7 @@ INSIDE: /local_dev_site.tld/wp-content/plugins/my-block
 ```
 No configuration or complicated folder structures, just the files you need to build your app.
 
-### → STEP #3
+### → STEP #2
 
 Once the installation is done, you can open your project folder and run the start script.
 
@@ -131,7 +135,7 @@ _Let's do that._
 cd my-block
 npm start
 ```
-_You can also use `yarn start` if that's your jam_
+_You can also use `yarn start` if that's your jam_.
 
 ![cgb-npm-start](http://on.ahmda.ws/orrh/c)
 
@@ -214,8 +218,7 @@ Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, E
 
 Open the terminal app and run the following commands.
 
-- ✅ **Install/Update**: `npm install create-guten-block --global`
-- 🔰 **Create**: `create-guten-block my-block` — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
+- 🔰 **Install/Create**: `npx create-guten-block my-block` — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
 - 📂 **Browse**: `cd my-block` — Open the newly created plugin directory.
 - ♻️ **Run**: `npm start` — For development.
 - 📦 **Run**: `npm run build` — For production build.
@@ -234,14 +237,10 @@ If something doesn’t work, kindly file [an issue →](https://github.com/ahmad
 
 Create Guten Block is divided into two packages:
 
-1. **`create-guten-block`** is a global command-line utility that you use to create new WP Gutenberg plugins.
+1. **`create-guten-block`** is a command-line utility that you use to create new WP Gutenberg plugins.
 1. **`cgb-scripts`** is a development dependency in the generated plugin projects.
 
-You almost never need to update `create-guten-block` itself: it delegates all the setup to `cgb-scripts`. But as this project matures, there might be a few changes over time and you can re-run the global install.
-
-```js
-npm install create-guten-block --global
-```
+You never need to update `create-guten-block` itself as it's run via [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and it delegates all the setup to `cgb-scripts`.
 
 When you run `create-guten-block`, it always creates the project with the latest version of `cgb-scripts` so you’ll get all the new features and improvements in newly created plugins automatically.
 
