@@ -31,7 +31,7 @@
 
 # 📦 `create-guten-block`
 
->`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `Webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
+>`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 
 Create Guten Block is not like other [starter-kits](https://github.com/ahmadawais/wpgulp) or [boilerplates](https://github.com/ahmadawais/Gutenberg-boilerplate). It's a developer's toolbox which is continuously updated. Since it has zero-configuration, you can always update it without any changes in your code.
 
@@ -49,7 +49,6 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 
 It's really easy to get started with `create-guten-block`. Just install it as a global module and run it to create your next-gen Gutenberg block plugin for WordPress.
 
-_Let's get you started!_
 
 <details>
  <summary><strong> STEP #0</strong> — If you don't have <code>Node.js</code> + <code>npm</code> installed then read this. (CLICK TO EXPAND!)</summary>
@@ -68,18 +67,36 @@ npm -v
 
 </details>
 
+#### ⚡️ Quick Overview
+
+Run step `#1` and `#2` quickly in one go — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
+```sh
+npx create-guten-block my-block
+cd my-block
+npm start
+```
+([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
+
+
+> 🎛   _If you want to study the detailed installation of step `#1` and `#2` — then take a look at the steps below_.
+
 ### → STEP #1
 
-You’ll need to have Node >= 8 on your local development machine (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+All you have to do is run the following command and it will create a WordPress block plugin. It's done by installing and running the `create-guten-block` command and providing it with a unique name for a WordPress plugin that will get created.
 
-Now all you have to do is create a gutenberg block and start building. It's done by running the `npx create-guten-block my-block` command and providing it with a unique name, in this case `my-block`, for a WordPress plugin named 'my-block` that will get created.
 
 > ⚠️ Make sure run this command in your local WordPress install's plugins folder i.e. `/local_dev_site.tld/wp-content/plugins/` folder — since this command will produce a WordPress plugin that you can go to `WP Admin` ▶︎ `Plugins` to activate.
 
 ```sh
 npx create-guten-block my-block
 ```
-![cgb block](http://on.ahmda.ws/osOD/c)
+([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
+
+![npx block](http://on.ahmda.ws/p89T/c)
+
+_It'll take a couple of minutes to install._
+
+>You’ll need to have Node >= 8 and npm >= 5.3 on your local development machine (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
 
 It will create a directory called `my-block` inside the current folder.
 Inside that directory, it will generate the initial project structure and install the transitive dependencies:
@@ -118,7 +135,7 @@ _Let's do that._
 cd my-block
 npm start
 ```
-_You can also use `yarn start` if that's your jam_
+_You can also use `yarn start` if that's your jam_.
 
 ![cgb-npm-start](http://on.ahmda.ws/orrh/c)
 
@@ -160,7 +177,7 @@ _That's about it._
 Your environment will have everything you need to build a modern next-gen WordPress Gutenberg plugin:
 
 * React, JSX, and ES6 syntax support.
-* Webpack dev/production build process behind the scene.
+* webpack dev/production build process behind the scene.
 * Language extras beyond ES6 like the object spread operator.
 * Auto-prefixed CSS, so you don’t need `-webkit` or other prefixes.
 * A build script to bundle JS, CSS, and images for production with source-maps.
@@ -175,7 +192,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 ## Philosophy
 
-* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+* **One Dependency:** There is just one build dependency. It uses webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
 
 * **No Configuration Required:** You don't need to configure anything. A reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
 
@@ -187,7 +204,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 ## Why `create-guten-block`?
 
-Well, it's really hard to configure things like Webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
+Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, ESLint, Babel, etc. before you even start writing a Hello World gutenberg block. Then there's the fact that you have to maintain and constantly update your configuration with all the new tools and growth in the JavaScript community.
 
 `create-guten-block` hides all this configuration away in an optimized package that we call `cgb-scripts`. This package is the only dependency in your projects. We keep `cgb-scripts` up to date while you go ahead and create the next best WordPress themes and plugins.
 
@@ -201,8 +218,7 @@ Well, it's really hard to configure things like Webpack, React, ES 6/7/8/Next, E
 
 Open the terminal app and run the following commands.
 
-- ✅ **Install/Update**: `npm install create-guten-block --global`
-- 🔰 **Create**: `create-guten-block my-block` — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
+- 🔰 **Install/Create**: `npx create-guten-block my-block` — Run inside local WP install   E.g. `/wp.local/wp-content/plugins/` directory.
 - 📂 **Browse**: `cd my-block` — Open the newly created plugin directory.
 - ♻️ **Run**: `npm start` — For development.
 - 📦 **Run**: `npm run build` — For production build.
@@ -221,14 +237,10 @@ If something doesn’t work, kindly file [an issue →](https://github.com/ahmad
 
 Create Guten Block is divided into two packages:
 
-1. **`create-guten-block`** is a global command-line utility that you use to create new WP Gutenberg plugins.
+1. **`create-guten-block`** is a command-line utility that you use to create new WP Gutenberg plugins.
 1. **`cgb-scripts`** is a development dependency in the generated plugin projects.
 
-You almost never need to update `create-guten-block` itself: it delegates all the setup to `cgb-scripts`. But as this project matures, there might be a few changes over time and you can re-run the global install.
-
-```js
-npm install create-guten-block --global
-```
+You never need to update `create-guten-block` itself as it's run via [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and it delegates all the setup to `cgb-scripts`.
 
 When you run `create-guten-block`, it always creates the project with the latest version of `cgb-scripts` so you’ll get all the new features and improvements in newly created plugins automatically.
 
@@ -322,4 +334,4 @@ This FOSS (free and open source software) project is updated and maintained with
 
 MIT © [Ahmad Awais](https://AhmadAwais.com/).
 
-This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Joen](https://github.com/jasmussen), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
+This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), and [Christopher Chedeau](https://twitter.com/vjeux), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Wes Bos](https://twitter.com/wesbos) for awesome courses for [React](https://ReactForBeginners.com/friend/AHMADAWAIS), [ES6](https://ES6.io/friend/AHMADAWAIS), and [Node](https://LearnNode.com/friend/AHMADAWAIS) beginners. [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Ella](https://twitter.com/ellaiseulde), [Joen](https://github.com/jasmussen), [Tammie](https://twitter.com/karmatosed), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
