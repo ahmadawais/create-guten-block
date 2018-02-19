@@ -13,7 +13,7 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 #####  📦 NEW:
 
-- First pass on translation file generation 6c92f4a
+- First pass on translation file generation 6c92f4af8f3fe156c4ad4770255edfa63f1facc2
 
 ##### 👌 IMPROVE:
 
