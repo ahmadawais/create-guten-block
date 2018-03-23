@@ -10,6 +10,7 @@ const chalk = require( 'chalk' );
 const commander = require( 'commander' );
 const maybeEnvInfo = require( './envInfo' );
 const noBlockName = require( './noBlockName' );
+const invalidBlockName = require( './invalidBlockName' );
 const packageJson = require( '../package.json' );
 
 // Commander.js program.
@@ -52,6 +53,12 @@ module.exports = () => {
 		.toLowerCase()
 		.split( ' ' )
 		.join( '-' );
+
+	// Check if block name is valid
+	const blockNameRegex = /^[a-z][a-z0-9-]/;
+	if ( ! blockNameRegex.test( formatBlockName ) ) {
+		invalidBlockName();
+	}
 
 	return formatBlockName;
 };
