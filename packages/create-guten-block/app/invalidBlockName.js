@@ -13,10 +13,11 @@ module.exports = () => {
 		chalk.black.bgRed( ' Please provide a valid block name: \n' )
 	);
 	console.log(
-		`  ${ chalk.dim( 'Block name must include only alphanumeric characters, numbers, dashes.' ) }`
+		`${ chalk.dim(
+			'⚠️  A block name can only contain lowercase alphanumeric characters and dashes.'
+		) }`
 	);
-	console.log(
-		`  ${ chalk.dim( 'Block name must start with a letter.' ) }`
-	);
+	console.log( `${ chalk.dim( '⚠️  A block name must begin with a letter.' ) }` );
+	console.log();
 	process.exit( 1 );
 };
