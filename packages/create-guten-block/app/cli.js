@@ -54,7 +54,7 @@ module.exports = () => {
 		.split( ' ' )
 		.join( '-' );
 
-	// Check if block name is valid
+	// Check if block name is valid.
 	const blockNameRegex = /^[a-z][a-z0-9-]/;
 	if ( ! blockNameRegex.test( formatBlockName ) ) {
 		invalidBlockName();
