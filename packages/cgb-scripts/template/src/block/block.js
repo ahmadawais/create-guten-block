@@ -74,7 +74,7 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	 */
 	save: function( props ) {
 		return (
-			<div className={ props.className }>
+			<div>
 				<p>— Hello from the frontend.</p>
 				<p>
 					CGB BLOCK: <code><% blockName %></code> is a new Gutenberg block.
