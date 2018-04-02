@@ -9,6 +9,30 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 ---
 
+### 🐼 VERSION `1.9.6`
+
+#####  📦 NEW:
+
+- Provide warning on invalid block name — FIX #28 (PR #40) Props @wpjsio 5322279c1e9b5f9a7f5769ed4df825796c43513e
+
+##### 👌 IMPROVE:
+
+- 'save' function props — FIX #29 (PR #41) Props @abdullah1908 d03d6f117f437c05e3dc69c378db46689df4b242
+- Install via `npx` (#13) Props @ntwb 27a50ebe97b19b88078bf2163327a9f90466c13a
+
+
+##### 🐛 FIX:
+
+- SSL for Readme links 546ebf0737008badf97967aa04d244b3228c7ee4
+- Typo f84bc64706dc380dfc44f6521f4e4646566d7233
+- Links for supporting create-guten-block 4517dee930b03e69b3ff893a0a36052934903b9b
+
+##### 📖 DOC:
+
+- Support `create-guten-block` 8b69419fd2f7cad836e5370a6045de67c1f6352a
+
+---
+
 ### 🐼 VERSION `1.9.5`
 
 #####  📦 NEW:
