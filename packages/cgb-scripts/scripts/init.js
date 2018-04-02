@@ -29,19 +29,9 @@ process.on( 'unhandledRejection', err => {
  * @param  {string} blockNamePHPLower The block name for PHP files in lowercase.
  * @param  {string} blockNamePHPUpper The block name for PHP files in uppercase.
  */
-const copyTemplateFiles = (
-	blockName,
-	blockDir,
-	blockNamePHPLower,
-	blockNamePHPUpper
-) => {
+const copyTemplateFiles = ( blockName, blockDir, blockNamePHPLower, blockNamePHPUpper ) => {
 	// Since we ran npm install cgb-scripts we have it in the node_modules now.
-	const template = path.join(
-		blockDir,
-		'node_modules',
-		'cgb-scripts',
-		'template'
-	);
+	const template = path.join( blockDir, 'node_modules', 'cgb-scripts', 'template' );
 
 	const templatePromise = new Promise( resolve => {
 		shell.cd( blockDir );
@@ -50,9 +40,7 @@ const copyTemplateFiles = (
 		if ( fs.existsSync( template ) ) {
 			fs.copySync( template, blockDir );
 		} else {
-			console.error(
-				`Could not locate supplied template: ${ chalk.green( template ) }`
-			);
+			console.error( `Could not locate supplied template: ${ chalk.green( template ) }` );
 			return;
 		}
 
@@ -91,14 +79,9 @@ const copyTemplateFiles = (
  * @param  {string} blockDir The block directory.
  */
 const printNextSteps = ( blockName, blockDir ) => {
+	console.log( '\n\n✅ ', chalk.black.bgGreen( ' All done! Go build some Gutenberg blocks. \n' ) );
 	console.log(
-		'\n\n✅ ',
-		chalk.black.bgGreen( ' All done! Go build some Gutenberg blocks. \n' )
-	);
-	console.log(
-		`CGB ${ chalk.dim(
-			'(create-guten-block)'
-		) } has created a WordPress plugin called `,
+		`CGB ${ chalk.dim( '(create-guten-block)' ) } has created a WordPress plugin called `,
 		chalk.dim( blockName ),
 		' that you can use with zero configurations #0CJS to build Gutenberg blocks with ESNext (i.e. ES6/7/8), React.js, JSX, Webpack, ESLint, etc.'
 	);
@@ -107,6 +90,7 @@ const printNextSteps = ( blockName, blockDir ) => {
 		'\nInside that directory, you can run several commands:\n'
 	);
 
+	// Scripts.
 	console.log(
 		'\n👉 ',
 		' Type',
@@ -138,14 +122,21 @@ const printNextSteps = ( blockName, blockDir ) => {
 		'     If you do this, you can’t go back!'
 	);
 
+	// Support.
+	console.log( '\n\n ✊ ', chalk.black.bgYellow( ' Support create-guten-block → \n' ) );
+	console.log(
+		'Love create-guten-block? You can now support this free and open source project. Supporting CGB means more updates and better maintenance: \n'
+	);
+	console.log(
+		`  ${ chalk.yellow( 'Support for one hour or more →' ) } https://AhmdA.ws/CGB99`,
+		'\n',
+		` ${ chalk.yellow( 'More ways to support →' ) } https://AhmdA.ws/CGBSupport`
+	);
+
+	// Get started.
 	console.log( '\n\n', chalk.black.bgGreen( ' Get Started → \n' ) );
 	console.log( ' We suggest that you begin by typing: \n' );
-	console.log(
-		`  ${ chalk.green( 'cd' ) } ${ blockName }`,
-		'\n',
-		` ${ chalk.green( 'npm' ) } start`,
-		'\n\n'
-	);
+	console.log( `  ${ chalk.green( 'cd' ) } ${ blockName }`, '\n', ` ${ chalk.green( 'npm' ) } start`, '\n\n' );
 };
 
 /**
@@ -172,12 +163,7 @@ module.exports = async( root, blockName, blockDir ) => {
 	// Init the spinner.
 	const spinner = new ora( { text: '' } );
 	spinner.start( '3. Creating plugin files...' );
-	await copyTemplateFiles(
-		blockName,
-		blockDir,
-		blockNamePHPLower,
-		blockNamePHPUpper
-	);
+	await copyTemplateFiles( blockName, blockDir, blockNamePHPLower, blockNamePHPUpper );
 	spinner.succeed();
 
 	// 2. Prints next steps.
