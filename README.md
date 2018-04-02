@@ -1,8 +1,8 @@
-<img width="300" src="http://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
+<img width="300" src="https://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
 
 <br>
 
-<img src="http://on.ahmda.ws/orxb/c" alt="Create Guten Block">
+<img src="https://on.ahmda.ws/orxb/c" alt="Create Guten Block">
 
 <br>
 
@@ -43,7 +43,7 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 
 <br>
 
-![Start](http://on.ahmda.ws/osd3/c)
+![Start](https://on.ahmda.ws/osd3/c)
 
 ## GETTING STARTED!
 
@@ -92,7 +92,7 @@ npx create-guten-block my-block
 ```
 ([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
 
-![npx block](http://on.ahmda.ws/p89T/c)
+![npx block](https://on.ahmda.ws/p89T/c)
 
 _It'll take a couple of minutes to install._
 
@@ -137,7 +137,7 @@ npm start
 ```
 _You can also use `yarn start` if that's your jam_.
 
-![cgb-npm-start](http://on.ahmda.ws/orrh/c)
+![cgb-npm-start](https://on.ahmda.ws/orrh/c)
 
 This runs the plugin in development mode. To produce production code run `npm run build`.
 You will see the build messages, errors, and lint warnings in the console.
@@ -146,7 +146,7 @@ You will see the build messages, errors, and lint warnings in the console.
 
 <br>
 
-![More](http://on.ahmda.ws/orsm/c)
+![More](https://on.ahmda.ws/orsm/c)
 
 ### Workflow!
 
@@ -170,7 +170,7 @@ _That's about it._
 
 <br>
 
-![included](http://on.ahmda.ws/orOe/c)
+![included](https://on.ahmda.ws/orOe/c)
 
 ## What’s Included?
 
@@ -188,7 +188,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 <br>
 
-![Philosophy](http://on.ahmda.ws/orq5/c)
+![Philosophy](https://on.ahmda.ws/orq5/c)
 
 ## Philosophy
 
@@ -200,7 +200,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 <br>
 
-![Why](http://on.ahmda.ws/orvy/c)
+![Why](https://on.ahmda.ws/orvy/c)
 
 ## Why `create-guten-block`?
 
@@ -210,7 +210,7 @@ Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, E
 
 <br>
 
-![tldr](http://on.ahmda.ws/osPO/c)
+![tldr](https://on.ahmda.ws/osPO/c)
 
 ## TL;DR
 
@@ -227,11 +227,11 @@ Open the terminal app and run the following commands.
 Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux.
 If something doesn’t work, kindly file [an issue →](https://github.com/ahmadawais/create-guten-block/issues/new)
 
-<!-- ![Create-guten-block](http://on.ahmda.ws/okiU/c) -->
+<!-- ![Create-guten-block](https://on.ahmda.ws/okiU/c) -->
 
 <br>
 
-![update](http://on.ahmda.ws/osO7/c)
+![update](https://on.ahmda.ws/osO7/c)
 
 ## Updating to New Releases
 
@@ -252,7 +252,7 @@ We commit to keeping the breaking changes minimal so you can upgrade `cgb-script
 
 <br>
 
-![Log](http://on.ahmda.ws/osUz/c)
+![Log](https://on.ahmda.ws/osUz/c)
 
 ## Changelog
 
@@ -262,7 +262,7 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated.
 
 Nothing's ever complete, so bear with us while we keep iterating towards a better future.
 
-> ```
+> ```html
 > 'Coz every night I lie in bed
 > The brightest colors fill my head
 > A million dreams are keeping me awake
@@ -276,7 +276,7 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 
 <br>
 
-![Hello](http://on.ahmda.ws/os6O/c)
+![Hello](https://on.ahmda.ws/os6O/c)
 
 #### **Hello, we're the [WordPress Couple](https://WPCouple.com)**!
 
@@ -293,7 +293,7 @@ If you'd like us to keep producing professional free and open source software (F
 
 <br>
 
-![Partners](http://on.ahmda.ws/osEJ/c)
+![Partners](https://on.ahmda.ws/osEJ/c)
 
 ### Project Backers & [WPCouple Partners](https://WPCouple.com/partners) ⚡️
 
@@ -303,38 +303,38 @@ This FOSS (free and open source software) project is updated and maintained with
 
 <table width='100%'>
 	<tr>
-		<td width='333.33'><a target='_blank' href='https://www.gravityforms.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtrE/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://kinsta.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu5O/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://wpengine.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mto3/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.gravityforms.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtrE/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://kinsta.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mu5O/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wpengine.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mto3/c' /></a></td>
 	</tr>
 	<tr>
-		<td width='333.33'><a target='_blank' href='https://www.sitelock.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtyZ/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://wp-rocket.me/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtrv/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://blogvault.net/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtph/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.sitelock.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtyZ/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wp-rocket.me/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtrv/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://blogvault.net/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtph/c' /></a></td>
 	</tr>
 	<tr>
-		<td width='333.33'><a target='_blank' href='http://cridio.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtmy/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='http://wecobble.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtrW/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://www.cloudways.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu0C/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://cridio.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtmy/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wecobble.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtrW/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.cloudways.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mu0C/c' /></a></td>
 	</tr>
 	<tr>
-		<td width='333.33'><a target='_blank' href='https://www.cozmoslabs.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu9W/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://wpgeodirectory.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtwv/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://www.wpsecurityauditlog.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtkh/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.cozmoslabs.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mu9W/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://wpgeodirectory.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtwv/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.wpsecurityauditlog.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtkh/c' /></a></td>
 	</tr>
 	<tr>
-		<td width='333.33'><a target='_blank' href='https://mythemeshop.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/n3ug/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://www.liquidweb.com/?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mtnt/c' /></a></td>
-		<td width='333.33'><a target='_blank' href='https://WPCouple.com/contact?utm_source=WPCouple&utm_medium=Partner'><img src='http://on.ahmda.ws/mu3F/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://mythemeshop.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/n3ug/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://www.liquidweb.com/?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mtnt/c' /></a></td>
+		<td width='333.33'><a target='_blank' href='https://WPCouple.com/contact?utm_source=WPCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/mu3F/c' /></a></td>
 	</tr>
 </table>
 
 <br>
 
-![Thanks](http://on.ahmda.ws/orkW/c)
+![Thanks](https://on.ahmda.ws/orkW/c)
 
 ## License & Attribution
 
 MIT © [Ahmad Awais](https://AhmadAwais.com/).
 
-This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), and [Christopher Chedeau](https://twitter.com/vjeux), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](http://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Ella](https://twitter.com/ellaiseulde), [Joen](https://github.com/jasmussen), [Tammie](https://twitter.com/karmatosed), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
+This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), and [Christopher Chedeau](https://twitter.com/vjeux), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](https://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Ella](https://twitter.com/ellaiseulde), [Joen](https://github.com/jasmussen), [Tammie](https://twitter.com/karmatosed), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
