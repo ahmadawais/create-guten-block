@@ -288,7 +288,7 @@ If you'd like to get insights into our love for open source software, profession
 
 If you'd like us to keep producing professional free and open source software (FOSS). Consider [paying for an hour of my dev-time](https://pay.paddle.com/checkout/515568). We'll spend two hours on open source for each contribution. Yeah, that's right, you pay for one hour and get both of us to spend an hour as a thank you.
 - 🚀  $99.99 — [Support for one hour or more →](https://pay.paddle.com/checkout/515568)
-- 🔰  $49.99 — [Support half an hour maintainence →](https://pay.paddle.com/checkout/527253)
+- 🔰  $49.99 — [Support half an hour maintenance →](https://pay.paddle.com/checkout/527253)
 - ☕️  $9.99 — [Buy us lunch or coffee to keep us trucking #OpenSource →](https://pay.paddle.com/checkout/527254)
 
 <br>
