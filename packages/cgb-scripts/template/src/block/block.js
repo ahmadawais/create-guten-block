@@ -43,6 +43,8 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	 * The "edit" property must be a valid function.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 * @param  {object} props Properties of the block.
+	 * @return {mix}          Block editor content.
 	 */
 	edit: function( props ) {
 		// Creates a <p class='wp-block-cgb-block-<% blockName %>'></p>.
@@ -71,6 +73,8 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	 * The "save" property must be specified and must be a valid function.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 * @param  {object} props Properties of the block.
+	 * @return {mix}          Final markup of the block to be saved.
 	 */
 	save: function( props ) {
 		return (
