@@ -48,15 +48,15 @@ function <% blockNamePHPLower %>_cgb_block_assets() {
 	);
 
 	/**
-	 * Register the block scripts and styles on server-side
-	 * to ensure they are enqueued when the editor loads.
+	 * Register the block scripts and styles for both frontend and
+	 * backend to ensure they are enqueued when the editor loads.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type/
 	 */
 	register_block_type( 'cgb/block-<% blockName %>', array(
-		'style' => '<% blockNamePHPLower %>-cgb-style-css',
-		'editor_script' => '<% blockNamePHPLower %>-cgb-block-js',
-		'editor_style' => '<% blockNamePHPLower %>-cgb-block-editor-css',
+		'style' => '<% blockNamePHPLower %>-cgb-style-css', // Enqueue blocks.style.build.css on both frontend & backend.
+		'editor_script' => '<% blockNamePHPLower %>-cgb-block-js', // Enqueue blocks.build.js in the editor only.
+		'editor_style' => '<% blockNamePHPLower %>-cgb-block-editor-css', // Enqueue blocks.editor.build.css in the editor only.
 	) );
 } // End function <% blockNamePHPLower %>_cgb_block_assets().
 
