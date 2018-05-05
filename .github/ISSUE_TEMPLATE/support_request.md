@@ -4,6 +4,8 @@ about: If you have a support question! 💬
 
 ---
 
+-----------^ Click "Preview" for a nicer view!
+
 This is a FOSS (Free & Open Source Software) project. Providing support is a full-time job and so it's not provided for free. No promises there. 😇
 
 If you'd like to support this project or hire [Ahmad Awais](https://twitter.com/mrahmadawais/) (maker of `create-guten-block`) then feel free to contact here → https://AhmadAwais.com/contact/.
