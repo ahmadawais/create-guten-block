@@ -1,6 +1,6 @@
 ---
-name: 🤝 Support Question
-about: If you have a support question 💬!
+name: 🤝 SUPPORT QUESTION
+about: If you have a support question! 💬
 
 ---
 
