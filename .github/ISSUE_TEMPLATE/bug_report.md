@@ -5,8 +5,6 @@ about: If something isn't working as expected. 🤔
 ---
 
 <!--
-  If you answered "Yes":
-
     Please note that your issue will be fixed much faster if you spend about
     half an hour preparing it, including the exact reproduction steps and a demo.
 
