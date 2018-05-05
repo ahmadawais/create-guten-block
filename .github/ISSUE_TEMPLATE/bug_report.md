@@ -1,8 +1,8 @@
-<!--
-  PLEASE READ THE FIRST SECTION :-)
--->
+---
+name: 🐛 BUG Report
+about: If something isn't working as expected 🤔.
 
-### Is this a bug report?
+---
 
 <!--
   If you answered "Yes":
@@ -14,48 +14,9 @@
     less details, but this makes it less likely they'll get fixed soon.
 
     In either case, please fill as many fields below as you can.
-
-  If you answered "No":
-
-    If this is a question or a discussion, you may delete this template and write in a free form.
-    Note that we don't provide help for webpack questions after ejecting.
-    You can find webpack docs at https://webpack.js.org/.
 -->
 
-
-(Write your answer here.)
-
-
-### Environment
-
-<!--
-  Please fill in all the relevant fields by running these commands in terminal.
--->
-
-1. `node -v`:
-2. `npm -v`:
-3. `yarn --version` (if you use Yarn):
-4. `npm ls cgb-scripts` (if you haven’t ejected):
-
-Then, specify:
-
-1. Operating system:
-2. Browser and version (if relevant):
-
-
-### Steps to Reproduce
-
-<!--
-  How would you describe your issue to someone who doesn’t know you or your project?
-  Try to write a sequence of steps that anybody can repeat to see the issue.
--->
-
-(Write your steps here:)
-
-1.
-2.
-3.
-
+## Bug Report
 
 ### Expected Behavior
 
@@ -78,6 +39,36 @@ Then, specify:
 
 (Write what happened. Please add screenshots!)
 
+
+### Steps to Reproduce
+
+<!--
+  How would you describe your issue to someone who does not know you or your project?
+  Try to write a sequence of steps that anybody can repeat to see the issue.
+-->
+
+(Write your steps here:)
+
+1.
+2.
+3.
+
+<!--
+  Please fill in all the relevant fields by running these commands in terminal.
+-->
+
+1. `node -v`:
+2. `npm -v`:
+3. `yarn --version` (if you use Yarn):
+4. `npm ls cgb-scripts` (if you haven’t ejected):
+
+Then, specify:
+
+1. Operating system:
+2. Browser and version (if relevant):
+
+**Possible Solution**
+<!--- Only if you have suggestions on a fix for the bug -->
 
 ### Reproducible Demo
 
