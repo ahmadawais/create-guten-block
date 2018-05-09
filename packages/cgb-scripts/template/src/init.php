@@ -25,7 +25,7 @@ function <% blockNamePHPLower %>_cgb_block_assets() {
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-blocks' ) // Dependency to include the CSS after it.
+		array() // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: filemtime — Gets file modification time.
 	);
 } // End function <% blockNamePHPLower %>_cgb_block_assets().
@@ -47,7 +47,7 @@ function <% blockNamePHPLower %>_cgb_editor_assets() {
 	wp_enqueue_script(
 		'<% blockNamePHPLower %>-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ), // Dependencies, defined above.
+		array(), // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
@@ -56,7 +56,7 @@ function <% blockNamePHPLower %>_cgb_editor_assets() {
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
+		array() // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: filemtime — Gets file modification time.
 	);
 } // End function <% blockNamePHPLower %>_cgb_editor_assets().
