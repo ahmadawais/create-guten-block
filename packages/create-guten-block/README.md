@@ -1,8 +1,8 @@
-<img width="300" src="http://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
+<img width="300" src="https://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
 
 <br>
 
-<img src="http://on.ahmda.ws/orxb/c" alt="Create Guten Block">
+<img src="https://on.ahmda.ws/orxb/c" alt="Create Guten Block">
 
 <br>
 
