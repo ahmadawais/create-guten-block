@@ -72,6 +72,27 @@ const extractConfig = {
 	],
 };
 
+// Build the externals list from React and WordPress components
+const externals = {
+	"react": "React",
+	"react-dom": "ReactDOM"
+};
+const wpDependencies = [
+	"components",
+	"element",
+	"blocks",
+	"editor",
+	"utils",
+	"date",
+	"data",
+	"i18n"
+];
+wpDependencies.forEach(wpDependency => {
+	externals["@wordpress/" + wpDependency] = {
+		this: ["wp", wpDependency]
+	};
+});
+
 // Export configuration.
 module.exports = {
 	entry: {
@@ -146,8 +167,5 @@ module.exports = {
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
-	externals: {
-		'react': 'React',
-		'react-dom': 'ReactDOM',
-	},
+	externals,
 };
