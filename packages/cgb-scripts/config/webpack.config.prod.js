@@ -88,9 +88,7 @@ const wpDependencies = [
 	"i18n"
 ];
 wpDependencies.forEach(wpDependency => {
-	externals["@wordpress/" + wpDependency] = {
-		this: ["wp", wpDependency]
-	};
+	externals["@wordpress/" + wpDependency] = 'wp.' + name
 });
 
 // Export configuration.
