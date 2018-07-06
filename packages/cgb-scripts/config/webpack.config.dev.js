@@ -119,7 +119,10 @@ module.exports = {
 	// stats: 'errors-only',
 	// Add externals.
 	externals: {
-		'react': 'React',
+		react: 'React',
 		'react-dom': 'ReactDOM',
+		ga: 'ga', // Old Google Analytics.
+		gtag: 'gtag', // New Google Analytics.
+		jquery: 'jQuery', // import $ from 'jquery' // Use the WordPress version.
 	},
 };
