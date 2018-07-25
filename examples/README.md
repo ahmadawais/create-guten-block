@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="http://on.ahmda.ws/oy1r/c" />
+  <img src="https://onahmda.ws/oy1r/c" />
 
   Example Plugins via `create-guten-block`
 </h1>

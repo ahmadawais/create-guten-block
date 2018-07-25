@@ -4,7 +4,7 @@
 
 <br>
 
-![WHAT ICON](http://on.ahmda.ws/oy8W/c)
+![WHAT ICON](https://on.ahmda.ws/oy8W/c)
 
 ### What/How?
 

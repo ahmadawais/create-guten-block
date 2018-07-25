@@ -1,4 +1,4 @@
-![Log](http://on.ahmda.ws/osUz/c)
+![Log](https://on.ahmda.ws/osUz/c)
 
 ## Changelog
 
