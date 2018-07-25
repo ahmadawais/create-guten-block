@@ -6,11 +6,11 @@
 
 🙌 This package includes scripts and developer utilities used by [Create Guten Block](https://github.com/ahmadawais/create-guten-block).<br> Kindly, refer to its documentation.
 
-<img width="300" src="https://onahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
+<img width="300" src="https://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
 
 <br>
 
-<img src="https://onahmda.ws/orxb/c" alt="Create Guten Block">
+<img src="https://on.ahmda.ws/orxb/c" alt="Create Guten Block">
 
 <br>
 
