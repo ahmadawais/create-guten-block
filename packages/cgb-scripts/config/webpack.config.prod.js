@@ -72,11 +72,6 @@ const extractConfig = {
 	],
 };
 
-// Build the externals list from React and WordPress components
-const externals = {
-	"react": "React",
-	"react-dom": "ReactDOM"
-};
 const wpDependencies = [
 	"components",
 	"element",
@@ -165,5 +160,11 @@ module.exports = {
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
-	externals,
+	externals: {
+		react: 'React',
+		'react-dom': 'ReactDOM',
+		ga: 'ga', // Old Google Analytics.
+		gtag: 'gtag', // New Google Analytics.
+		jquery: 'jQuery', // import $ from 'jquery' // Use the WordPress version.
+	},
 };

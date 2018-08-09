@@ -1,6 +1,6 @@
 {
 	"name": "babel-preset-cgb",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "Babel preset used by Create Guten Block",
 	"repository": "ahmadawais/create-guten-block",
 	"license": "MIT",
@@ -30,6 +30,7 @@
 		"index.js"
 	],
 	"dependencies": {
+		"babel-plugin-syntax-async-functions": "^6.13.0",
 		"babel-plugin-transform-class-properties": "6.24.1",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
 		"babel-plugin-transform-react-jsx": "^6.24.1",
