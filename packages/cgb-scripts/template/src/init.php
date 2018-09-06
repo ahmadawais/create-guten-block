@@ -25,7 +25,7 @@ function <% blockNamePHPLower %>_cgb_block_assets() {
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-blocks' ) // Dependency to include the CSS after it.
+		array( 'wp-blocks' ), // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: filemtime — Gets file modification time.
 	);
 } // End function <% blockNamePHPLower %>_cgb_block_assets().
@@ -56,7 +56,7 @@ function <% blockNamePHPLower %>_cgb_editor_assets() {
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
+		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: filemtime — Gets file modification time.
 	);
 } // End function <% blockNamePHPLower %>_cgb_editor_assets().
