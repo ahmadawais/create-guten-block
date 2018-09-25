@@ -16,7 +16,6 @@ const clearConsole = require( './consoleClear' );
 const updateNotifier = require( './updateNotifier' );
 const createPluginDir = require( './createPluginDir' );
 const npmInstallScripts = require( './npmInstallScripts' );
-const createGitignore = require( './createGitignore' );
 
 module.exports = async() => {
 	clearConsole();
@@ -42,12 +41,10 @@ module.exports = async() => {
 			` ${ blockName } `
 		) }`
 	);
-	await createPluginDir( blockName );
-	await createGitignore( blockDir );
+	await createPluginDir( blockName, blockDir );
 	spinner.succeed();
 
 	// 4. NPM install cgb-scripts.
-
 	spinner.start( '2. Installing npm packages...' );
 	await npmInstallScripts( blockName, blockDir );
 	spinner.succeed();
