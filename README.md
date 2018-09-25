@@ -105,6 +105,7 @@ Inside that directory, it will generate the initial project structure and instal
 ```sh
 INSIDE: /local_dev_site.tld/wp-content/plugins/my-block
 
+├── .gitignore
 ├── plugin.php
 ├── package.json
 ├── README.md
