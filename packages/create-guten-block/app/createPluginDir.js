@@ -43,7 +43,7 @@ module.exports = ( blockName, blockDir ) => {
 	} else {
 		return new Promise( async resolve => {
 			// Where user is at the moment.
-			shell.exec( `mkdir -p ${ blockName }` );
+			shell.mkdir( '-p', blockName );
 			await createGitignore( blockDir );
 			resolve(true);
 		} );
