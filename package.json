@@ -13,19 +13,19 @@
 	},
 	"homepage": "https://github.com/ahmadawais/create-guten-block#readme",
 	"devDependencies": {
-		"babel-eslint": "^8.2.1",
-		"chalk": "^2.3.0",
-		"eslint": "^4.17.0",
+		"babel-eslint": "^9.0.0",
+		"chalk": "^2.4.1",
+		"eslint": "^5.6.0",
 		"eslint-config-wordpress": "^2.0.0",
-		"eslint-plugin-jest": "^21.7.0",
-		"eslint-plugin-jsx-a11y": "^6.0.3",
-		"eslint-plugin-react": "^7.6.1",
+		"eslint-plugin-jest": "^21.22.1",
+		"eslint-plugin-jsx-a11y": "^6.1.1",
+		"eslint-plugin-react": "^7.11.1",
 		"eslint-plugin-wordpress": "^0.1.0",
-		"execa": "^0.9.0",
-		"lerna": "^2.8.0",
-		"ora": "^1.3.0",
-		"shelljs": "^0.8.1",
-		"update-notifier": "^2.3.0"
+		"execa": "^1.0.0",
+		"lerna": "^3.4.0",
+		"ora": "^3.0.0",
+		"shelljs": "^0.8.2",
+		"update-notifier": "^2.5.0"
 	},
 	"scripts": {
 		"create-guten-block": "node tasks/cgb.js",
@@ -39,6 +39,7 @@
 		"publishNPM": "bash tasks/publish.sh --npm-client=npm",
 		"publishAlpha": "yarn && lerna bootstrap && lerna publish --independent --npm-client=npm --canary",
 		"lerna": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
+		"publish-canary": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm --canary",
 		"release": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm"
 	}
 }
