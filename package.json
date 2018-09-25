@@ -37,7 +37,7 @@
 		"beforepublish": "lerna bootstrap",
 		"publishScript": "bash tasks/publish.sh && echo 'Now update dependency packages.'",
 		"publishNPM": "bash tasks/publish.sh --npm-client=npm",
-		"publishAlpha": "yarn && lerna bootstrap && lerna publish --independent --npm-client=npm --canary",
+		"publish-canary": "yarn && lerna bootstrap && lerna publish --independent --npm-client=npm --canary",
 		"lerna": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
 		"release": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm"
 	}
