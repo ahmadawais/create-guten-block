@@ -13,7 +13,12 @@ module.exports = (blockDir) => {
 	shell.touch( '.gitignore' );
 
 	// Build a default .gitignore
-	const ignore = `node_modules\ndist/`;
+	const ignore = [
+		'node_modules\n',
+		'## Uncomment line below if you prefer to',
+		'## keep compiled files out of version control',
+		'# dist/'
+	].join('\n');
 
 	return new Promise( async resolve => {
 		await fs.writeFileSync(
