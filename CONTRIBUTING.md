@@ -1,6 +1,6 @@
 # CONTRIBUTING to `create-guten-block`
 
-First of all, I'd like to welcome you for thinking about contributing to this project. I'd rather explain the flow of this project and explain all that in a later release (as right now I am focused at an early release).
+First of all, I'd like to welcome you for thinking about contributing to this project. I'd rather explain the flow of this project and explain all that in a later release.
 
 ## 🔥 TL;DR
 
@@ -8,7 +8,6 @@ First of all, I'd like to welcome you for thinking about contributing to this pr
 - `yarn`
 - `yarn create-guten-block demo-block`
 - `yarn updated`
--
 
 ## 📖 Details
 
