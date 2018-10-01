@@ -38,6 +38,6 @@ First of all, I'd like to welcome you for thinking about contributing to this pr
 - Use `// @remove-on-eject-begin` to do just that.
 - Use `// @remove-on-eject-end` to do just that.
 
-### 🌟 Always use AA Git Commit Log Messages
+### 🌟 Always use Emoji Log Messages
 
-What is that? I like emoji and I have invented a way to keep the git log clean and simple. Read this [AA Git Commit Log](https://gist.github.com/ahmadawais/815ea20134cf4616a6b2a965eb08f716) to learn more.
+What is that? I like emoji and I have invented a way to keep the git log clean and simple. Read this [Emoji-log](https://github.com/ahmadawais/Emoji-Log) to learn more.
