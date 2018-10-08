@@ -3,31 +3,34 @@
 	<br>
 	<img src="https://on.ahmda.ws/orxb/c" alt="Create Guten Block">
 	<br>
+	<br>
+
 
 [![npm](https://img.shields.io/npm/v/create-guten-block.svg?style=flat-square)](https://www.npmjs.com/package/create-guten-block) [![npm](https://img.shields.io/npm/dt/create-guten-block.svg?style=flat-square&label=downloads)](https://www.npmjs.com/package/create-guten-block) [![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/flat.svg)](https://github.com/ahmadawais/Emoji-Log/) [![Tweet for help](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Tweet%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/) [![GitHub stars](https://img.shields.io/github/stars/ahmadawais/create-guten-block.svg?style=social&label=Stars)](https://github.com/ahmadawais/create-guten-block/stargazers) [![GitHub followers](https://img.shields.io/github/followers/ahmadawais.svg?style=social&label=Follow)](https://github.com/ahmadawais?tab=followers)
+
 </div>
 
-<div align="center">
-	<table width='100%' align="center">
-		<tr>
-			<td align='left' width='100%' colspan='2'>
-				<strong><code>create-guten-block</code></strong><br />
-				A zero-configuration developer toolkit for building WordPress Gutenberg block plugins.
-			</td>
-		</tr>
-		<tr>
-			<td>
-				A FOSS (Free & Open Source Software) project developed by <a href='https://github.com/ahmadawais'>Ahmad Awais</a>.
-			</td>
-			<td align='center'>
-				<a href='https://AhmadAwais.com/'>
-					<img src='https://i.imgur.com/Asg4d3k.png' width='100' />
-				</a>
-			</td>
-		</tr>
-		<tr><td><sup> Follow Ahmad's #FOSS work on GitHub <a href='https://github.com/ahmadawais'>@AhmadAwais</a> —   Say Hi on Twitter <a href="https://twitter.com/mrahmadawais/">@MrAhmadAwais</a></sup></td><td  align='center'>👋</td></tr>
-	</table>
-</div>
+<table width='100%' align="center">
+    <tr>
+        <td align='left' width='100%' colspan='2'>
+           <strong><code>create-guten-block</code></strong><br />
+            📦 A zero-configuration developer toolkit for building WordPress Gutenberg block plugins..
+        </td>
+    </tr>
+    <tr>
+        <td>
+            A FOSS (Free & Open Source Software) project. Maintained by <a href='https://github.com/ahmadawais'>@AhmadAwais</a>.
+        </td>
+        <td align='center'>
+            <a href='https://twitter.com/MrAhmadAwais/'>
+                <img src='https://img.shields.io/badge/→-AHMAD%20AWAIS-gray.svg?colorB=1F6BFF&style=flat' width='100' />
+            </a>
+        </td>
+    </tr>
+<tr><td><sup> Follow Ahmad's #FOSS work on GitHub <a href='https://github.com/ahmadawais'>@AhmadAwais</a> —   Say Hi on Twitter <a href="https://twitter.com/mrahmadawais/">@MrAhmadAwais</a></sup></td><td  align='center'>👋</td></tr>
+</table>
+
+
 <br>
 
 # 📦 `create-guten-block`
