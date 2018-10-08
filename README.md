@@ -10,14 +10,14 @@
 
 
 <table width='100%' align="center">
-    <tr>
-        <td align='left' width='100%' colspan='2'>
+    <tr align='center'>
+        <td align='center' width='100%' colspan='2'>
            <strong><code>create-guten-block</code></strong><br />
             📦 A zero-configuration developer toolkit for building WordPress Gutenberg block plugins..
         </td>
     </tr>
-    <tr>
-        <td>
+    <tr align='center' >
+        <td align='center'>
             A FOSS (Free & Open Source Software) project. Maintained by <a href='https://github.com/ahmadawais'>@AhmadAwais</a>.
         </td>
         <td align='center'>
@@ -26,7 +26,7 @@
             </a>
         </td>
     </tr>
-<tr><td><sup> Follow Ahmad's #FOSS work on GitHub <a href='https://github.com/ahmadawais'>@AhmadAwais</a> —   Say Hi on Twitter <a href="https://twitter.com/mrahmadawais/">@MrAhmadAwais</a></sup></td><td  align='center'>👋</td></tr>
+<tr align='center'  width='100%'><td align='center'><sup> Follow Ahmad's #FOSS work on GitHub <a href='https://github.com/ahmadawais'>@AhmadAwais</a> —   Say Hi on Twitter <a href="https://twitter.com/mrahmadawais/">@MrAhmadAwais</a></sup></td><td align='center'>🙌</td></tr>
 </table>
 
 </div>
