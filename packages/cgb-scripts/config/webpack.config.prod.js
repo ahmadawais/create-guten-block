@@ -60,7 +60,7 @@ const extractConfig = {
 				],
 			},
 		},
-		// "sass" loader converst SCSS to CSS.
+		// "sass" loader converts SCSS to CSS.
 		{
 			loader: 'sass-loader',
 			options: {
