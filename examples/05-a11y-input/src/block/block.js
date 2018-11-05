@@ -6,6 +6,7 @@
  */
 
 //  Import CSS.
+import styled from 'styled-components';
 import './editor.scss';
 import './style.scss';
 
@@ -13,7 +14,14 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 
 const labelText = 'NAME (Accessible Text Input)';
-const inputValue = 'Ahmad Awais (Accessible Input Value)';
+
+const Input = styled.input`
+	display: table;
+	width: 50%;
+	border: 1px solid !important;
+	box-shadow: 0.1rem 0.1rem 0 !important;
+	padding: 1rem !important;
+`;
 
 /**
  * Register: aa Gutenberg Block.
@@ -46,7 +54,9 @@ registerBlockType( 'cgb/block-a11y-input', {
 	 */
 	edit: function() {
 		// Creates a <p class='wp-block-cgb-block-a11y-input'></p>.
-		return <input type="text" aria-label={ labelText } aria-required="true" value={ inputValue } name="name" />;
+		return (
+			<Input type="text" placeholder="Enter something…" aria-label={ labelText } aria-required="true" name="name" />
+		);
 	},
 
 	/**
@@ -60,6 +70,8 @@ registerBlockType( 'cgb/block-a11y-input', {
 	 */
 	save: function() {
 		// Creates a <p class='wp-block-cgb-block-a11y-input'></p>.
-		return <input type="text" aria-label={ labelText } aria-required="true" value={ inputValue } name="name" />;
+		return (
+			<Input type="text" placeholder="Enter something…" aria-label={ labelText } aria-required="true" name="name" />
+		);
 	},
 } );

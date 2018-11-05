@@ -16,6 +16,8 @@ This example includes a WordPress Gutenberg plugin called `a11y-input` which cre
 
 - [Run `npx create-guten-block a11y-input` →](https://github.com/ahmadawais/create-guten-block#getting-started)
 - Write code in `a11y-input/src/block/block.js`.
+- OPTIONAL: Installed styled-components `npm i -D styled-components`
+
 
 _That's about it._
 >🌟 Star for updates or to appreciate [create-guten-block →](https://github.com/ahmadawais/create-guten-block)
@@ -100,9 +102,9 @@ There are a number of tools we can use to assist in the creation of accessible w
 By far the easiest and also one of the most important checks is to test if your entire website can be reached and used with the keyboard alone. Do this by:
 
 1. Plugging out your mouse.
-1. Using `Tab` and `Shift+Tab` to browse.
-1. Using `Enter` to activate elements.
-1. Where required, using your keyboard arrow keys to interact with some elements, such as menus and dropdowns.
+2. Using `Tab` and `Shift+Tab` to browse.
+3. Using `Enter` to activate elements.
+4. Where required, using your keyboard arrow keys to interact with some elements, such as menus and dropdowns.
 
 ### Development assistance
 
