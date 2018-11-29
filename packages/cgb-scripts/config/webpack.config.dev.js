@@ -21,6 +21,7 @@
  */
 
 const paths = require( './paths' );
+const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
@@ -118,11 +119,5 @@ module.exports = {
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
-	externals: {
-		react: 'React',
-		'react-dom': 'ReactDOM',
-		ga: 'ga', // Old Google Analytics.
-		gtag: 'gtag', // New Google Analytics.
-		jquery: 'jQuery', // import $ from 'jquery' // Use the WordPress version.
-	},
+	externals: externals,
 };
