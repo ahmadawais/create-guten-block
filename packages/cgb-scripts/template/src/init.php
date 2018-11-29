@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
  *
- * `wp-blocks`: includes block type registration and related functions.
+ * `wp-editor`: WP editor styles.
  *
  * @since 1.0.0
  */
@@ -25,7 +25,7 @@ function <% blockNamePHPLower %>_cgb_block_assets() {
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-blocks' ) // Dependency to include the CSS after it.
+		array( 'wp-editor' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: filemtime — Gets file modification time.
 	);
 } // End function <% blockNamePHPLower %>_cgb_block_assets().
@@ -36,9 +36,10 @@ add_action( 'enqueue_block_assets', '<% blockNamePHPLower %>_cgb_block_assets' )
 /**
  * Enqueue Gutenberg block assets for backend editor.
  *
- * `wp-blocks`: includes block type registration and related functions.
+ * `wp-blocks`:  includes block type registration and related functions.
  * `wp-element`: includes the WordPress Element abstraction for describing the structure of your blocks.
- * `wp-i18n`: To internationalize the block's text.
+ * `wp-i18n`:    internationalize the block's text.
+ * `wp-editor`:  WP editor styles.
  *
  * @since 1.0.0
  */
