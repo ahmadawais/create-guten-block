@@ -6,7 +6,6 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 👉  Read how to [**update to the latest version**](https://github.com/ahmadawais/create-guten-block#updating-to-new-releases)!
 
-
 ---
 
 ### 🐼 VERSION `1.9.6`
