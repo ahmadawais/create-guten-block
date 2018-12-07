@@ -31,7 +31,6 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		array( 'wp-editor' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
-}
 
 	// Frontend Scripts. Loaded in frontend AND editor.
 	if ( $enable_front_JS ) {
@@ -54,6 +53,7 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 			true // Enqueue the script in the footer.
 		);		
 	}
+};
 
 // Hook: Frontend assets.
 add_action( 'enqueue_block_assets', '<% blockNamePHPLower %>_cgb_block_assets' );
