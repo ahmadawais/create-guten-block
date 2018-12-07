@@ -16,6 +16,8 @@ module.exports = {
 	dotenv: resolvePlugin( '.env' ),
 	pluginSrc: resolvePlugin( 'src' ), // Plugin src folder path.
 	pluginBlocksJs: resolvePlugin( 'src/blocks.js' ),
+	pluginBlocksFrontJs: resolvePlugin( 'src/blocks.front.js' ),
+	pluginBlocksFrontOnlyJs: resolvePlugin( 'src/blocks.front-only.js' ),
 	yarnLockFile: resolvePlugin( 'yarn.lock' ),
 	pluginDist: resolvePlugin( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
 };
@@ -29,6 +31,8 @@ module.exports = {
 	pluginSrc: resolvePlugin( 'src' ),
 	pluginBlocksJs: resolvePlugin( 'src/blocks.js' ),
 	pluginDist: resolvePlugin( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
+	pluginBlocksFrontJs: resolvePlugin( 'src/blocks.front.js' ),
+	pluginBlocksFrontOnlyJs: resolvePlugin( 'src/blocks.front-only.js' ),
 	yarnLockFile: resolvePlugin( 'yarn.lock' ),
 	appPath: resolvePlugin( '.' ),
 	// These properties only exist before ejecting:

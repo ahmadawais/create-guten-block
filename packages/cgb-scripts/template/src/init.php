@@ -20,6 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
+	
+	$enable_front_JS = FALSE;
+	$enable_front_only_JS = FALSE;
+
 	// Styles.
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-style-css', // Handle.
@@ -28,6 +32,28 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 }
+
+	// Frontend Scripts. Loaded in frontend AND editor.
+	if ( $enable_front_JS ) {
+		wp_enqueue_script(
+			'<% blockNamePHPLower %>-cgb-block-front-js', // Handle.
+			plugins_url( '/dist/blocks.front.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
+			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
+			// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
+			true // Enqueue the script in the footer.
+		);
+	}
+
+	// Frontend ONLY Scripts.	NOT loaded in Editor.
+	if ( ! is_admin() && $enable_front_only_JS ) {
+		wp_enqueue_script(
+			'<% blockNamePHPLower %>-cgb-block-front-only.js', // Handle.
+			plugins_url( '/dist/blocks.front-only.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
+			array( 'wp-editor' ), // Dependencies, defined above.
+			// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
+			true // Enqueue the script in the footer.
+		);		
+	}
 
 // Hook: Frontend assets.
 add_action( 'enqueue_block_assets', '<% blockNamePHPLower %>_cgb_block_assets' );
