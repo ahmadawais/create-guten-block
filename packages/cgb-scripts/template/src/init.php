@@ -55,7 +55,7 @@ function <% blockNamePHPLower %>_cgb_editor_assets() { // phpcs:ignore
 	// Param 1: JS handle
 	// Param 2: textdomain
 	if ( function_exists('wp_set_script_translations') ) {
-  	wp_set_script_translations( '<% blockNamePHPLower %>-cgb-block-js', '<% blockNamePHPLower %>' );
+  	wp_set_script_translations( '<% blockName % >-cgb-block-js', '<% blockName % >' );
   }	
 
 	// Styles.
@@ -75,6 +75,6 @@ add_action( 'enqueue_block_editor_assets', '<% blockNamePHPLower %>_cgb_editor_a
  * Set a Textdomain for i18n
  */
 function <% blockNamePHPLower %>_load_textdomain() {
-  load_plugin_textdomain( '<% blockNamePHPLower %>' );
+  load_plugin_textdomain( '<% blockName % >' );
 }
 add_action( 'plugins_loaded', '<% blockNamePHPLower %>_load_textdomain' );
