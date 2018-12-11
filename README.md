@@ -285,9 +285,9 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 
 ![Hello](https://on.ahmda.ws/os6O/c)
 
-#### **Hello, we're the [WordPress Couple](https://WPCouple.com)**!
+#### **Hello, we're the [WordPress Couple](https://TheDevCouple.com)**!
 
-I ([Ahmad Awais](https://twitter.com/mrahmadawais/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My significant other ([Maedah Batool](https://twitter.com/MaedahBatool/)) is a Technical Project Manager, and she's also a WordPress Core Contributor. Together with our [team](https://WPCouple.com/team), we run the [WPCouple.com](https://WPCouple.com/).
+I ([Ahmad Awais](https://twitter.com/mrahmadawais/)) am a Full Stack Web Developer and a regular core contributor at WordPress. My significant other ([Maedah Batool](https://twitter.com/MaedahBatool/)) is a Technical Project Manager, and she's also a WordPress Core Contributor. Together with our [team](https://TheDevCouple.com/team), we run the [TheDevCouple.com](https://TheDevCouple.com/).
 
 If you'd like to get insights into our love for open source software, professional full stack development, WordPress community, the growth of JavaScript or growing a family, building, and bootstrapping a business, then subscribe to our premium newsletter called ↣ [The WordPress Takeaway](https://WPTakeaway.club)!
 
@@ -304,11 +304,11 @@ If you'd like us to keep producing professional free and open source software (F
 
 ![Partners](https://on.ahmda.ws/osEJ/c)
 
-### Project Backers & [WPCouple Partners](https://WPCouple.com/partners) ⚡️
+### Project Backers & [TheDevCouple Partners](https://TheDevCouple.com/partners) ⚡️
 
 This FOSS (free and open source software) project is updated and maintained with the help of awesome businesses listed below. Without the support from these amazing companies/individuals, this project would not have been possible.
 
-— _What/How? [Read more about it →](https://WPCouple.com/partners)_
+— _What/How? [Read more about it →](https://TheDevCouple.com/partners)_
 
 <table width='100%'>
 	<tr>
