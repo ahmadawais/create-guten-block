@@ -24,6 +24,7 @@ const externals = [
 	'plugins',
 	'editor',
 	'blocks',
+	'hooks',
 	'utils',
 	'date',
 	'data',
