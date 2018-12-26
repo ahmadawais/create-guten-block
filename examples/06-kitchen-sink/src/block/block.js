@@ -11,7 +11,6 @@ import "./editor.scss";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { Fragment } = wp.element; // Import Fragment from wp.elements
 
 // Register editor components
 const {
@@ -40,70 +39,8 @@ const {
 	SelectControl
 } = wp.components;
 
-// Declare attributes to save various data in block: https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-attributes/
-const kitchenAttributes = {
-	exampleToggle: {
-		type: "boolean",
-		default: false
-	},
-	exampleRange: {
-		type: "number",
-		default: 18
-	},
-	exampleSelect: {
-		type: "string",
-		default: "option_1"
-	},
-	exampleText: {
-		type: "string"
-	},
-	exampleTextarea: {
-		type: "string"
-	},
-	exampleColor: {
-		type: "string",
-		default: "#FFFFFF"
-	},
-	exampleAlignment: {
-		type: "string"
-	},
-	exampleRichH2: {
-		type: "string",
-		source: "children",
-		selector: "h2"
-	},
-	exampleRichParagraph: {
-		type: "string",
-		source: "html",
-		selector: "p"
-	},
-	exampleRichList: {
-		type: "string",
-		selector: "ul"
-	},
-	examplePlainText: {
-		type: "string"
-	},
-	exampleLink: {
-		type: "string"
-	},
-	exampleImageAlt: {
-		type: "string"
-	},
-	exampleImageURL: {
-		type: "string",
-		source: "attribute",
-		attribute: "src",
-		selector: "img"
-	},
-	exampleWidth: {
-		type: "string",
-		default: ""
-	}
-};
-
 /**
- * Register: aa Gutenberg Block.
+ * Register: Kitchen Sink Gutenberg Block.
  *
  * Registers a new block provided a unique name and an object defining its
  * behavior. Once registered, the block is made editor as an option to any
@@ -125,8 +62,14 @@ registerBlockType("cgb/block-kitchen-sink", {
 		__("CGB Example"),
 		__("create-guten-block")
 	],
+	/**
+	 * Block Support
+	 *
+	 * Properties that add various functionality to the block.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/#supports-optional
+	 */
 	supports: {
-		// Adds block supports: https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/#supports-optional
 		align: true,
 		alignWide: true,
 		anchor: false,
@@ -137,7 +80,74 @@ registerBlockType("cgb/block-kitchen-sink", {
 		multiple: true,
 		reusable: true
 	},
-	attributes: kitchenAttributes, // Use attributes from line 42
+	/**
+	 * Attributes
+	 *
+	 * Sources of values that represent the block data that is going to be managed.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-attributes/
+	 */
+	attributes: {
+		// Declare attributes to save various data in block:
+		exampleToggle: {
+			type: "boolean",
+			default: false
+		},
+		exampleRange: {
+			type: "number",
+			default: 18
+		},
+		exampleSelect: {
+			type: "string",
+			default: "option_1"
+		},
+		exampleText: {
+			type: "string"
+		},
+		exampleTextarea: {
+			type: "string"
+		},
+		exampleColor: {
+			type: "string",
+			default: "#FFFFFF"
+		},
+		exampleAlignment: {
+			type: "string"
+		},
+		exampleRichH2: {
+			type: "string",
+			source: "children",
+			selector: "h2"
+		},
+		exampleRichParagraph: {
+			type: "string",
+			source: "html",
+			selector: "p"
+		},
+		exampleRichList: {
+			type: "string",
+			selector: "ul"
+		},
+		examplePlainText: {
+			type: "string"
+		},
+		exampleLink: {
+			type: "string"
+		},
+		exampleImageAlt: {
+			type: "string"
+		},
+		exampleImageURL: {
+			type: "string",
+			source: "attribute",
+			attribute: "src",
+			selector: "img"
+		},
+		exampleWidth: {
+			type: "string",
+			default: ""
+		}
+	},
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -148,7 +158,7 @@ registerBlockType("cgb/block-kitchen-sink", {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	edit: function(props) {
-		// Setup the attributes for the editor
+		// Setup the attributes.
 		const {
 			attributes: {
 				exampleToggle,
@@ -167,7 +177,6 @@ registerBlockType("cgb/block-kitchen-sink", {
 				exampleImageURL,
 				exampleImageAlt
 			},
-			attributes,
 			isSelected,
 			editable,
 			className,
@@ -196,7 +205,7 @@ registerBlockType("cgb/block-kitchen-sink", {
 						{/* Toggle Switch */}
 						<ToggleControl
 							label={__("Example Toggle")}
-							checked={!!exampleToggle}
+							checked={!!exampleToggle} // make sure exampleToggle is a boolean set to false and not undefined or null
 							onChange={() => setAttributes({ exampleToggle: !exampleToggle })}
 						/>
 					</PanelRow>
@@ -393,7 +402,6 @@ registerBlockType("cgb/block-kitchen-sink", {
 				exampleImageURL,
 				exampleImageAlt
 			},
-			attributes,
 			className
 		} = props;
 
