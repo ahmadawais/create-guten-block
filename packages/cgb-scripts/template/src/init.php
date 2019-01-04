@@ -27,6 +27,14 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		array( 'wp-editor' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
+	// Scripts.
+	wp_enqueue_script(
+		'<% blockNamePHPLower %>-cgb-blocks-frontend-js', // Handle.
+		plugins_url( '/dist/frontend.blocks.build.js', dirname( __FILE__ ) ), // frontend.blocks.build.js: We register the frontend scripts for block here. Built with Webpack.
+		array(), // Dependencies, defined above.
+		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/frontend.blocks.build.js' ), // Version: File modification time.
+		true // Enqueue the script in the footer.
+	);
 }
 
 // Hook: Frontend assets.
