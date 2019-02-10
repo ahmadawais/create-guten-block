@@ -45,7 +45,7 @@ module.exports = ( blockName, blockDir ) => {
 			'cgb-scripts',
 			'--save',
 			'--save-exact',
-			'--slient',
+			'--silent',
 		] );
 		resolve( true );
 	} );
