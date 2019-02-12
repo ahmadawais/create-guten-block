@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
+function cgb_block_assets_<% blockRandomInt %>() { // phpcs:ignore
 	// Styles.
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-style-css', // Handle.
@@ -30,7 +30,7 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 }
 
 // Hook: Frontend assets.
-add_action( 'enqueue_block_assets', '<% blockNamePHPLower %>_cgb_block_assets' );
+add_action( 'enqueue_block_assets', 'cgb_block_assets_<% blockRandomInt %>' );
 
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -41,7 +41,7 @@ add_action( 'enqueue_block_assets', '<% blockNamePHPLower %>_cgb_block_assets' )
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function <% blockNamePHPLower %>_cgb_editor_assets() { // phpcs:ignore
+function cgb_editor_assets_<% blockRandomInt %>() { // phpcs:ignore
 	// Scripts.
 	wp_enqueue_script(
 		'<% blockNamePHPLower %>-cgb-block-js', // Handle.
@@ -61,4 +61,4 @@ function <% blockNamePHPLower %>_cgb_editor_assets() { // phpcs:ignore
 }
 
 // Hook: Editor assets.
-add_action( 'enqueue_block_editor_assets', '<% blockNamePHPLower %>_cgb_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'cgb_editor_assets_<% blockRandomInt %>' );

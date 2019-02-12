@@ -22,6 +22,17 @@ process.on( 'unhandledRejection', err => {
 } );
 
 /**
+ * Generate a positive random integer value.
+ *
+ * @return {number}
+ */
+const generateRandomInt = () => {
+	const max = Math.pow(2, 53) - 1; // Number.MAX_SAFE_INTEGER
+	return Math.floor(Math.random() * max);
+};
+
+
+/**
  * Copy template to the plugin dir.
  *
  * @param {string} blockName The block name.
@@ -53,6 +64,8 @@ const copyTemplateFiles = ( blockName, blockDir, blockNamePHPLower, blockNamePHP
 
 		// console.log( '\n\nLIST OF FILES', files, '\n\n' );
 
+		const blockRandomInt = generateRandomInt();
+
 		// Replace dynamic content for block name in the code.
 		files.forEach( function( file ) {
 			shell.sed( '-i', '<% blockName %>', `${ blockName }`, file );
@@ -61,6 +74,8 @@ const copyTemplateFiles = ( blockName, blockDir, blockNamePHPLower, blockNamePHP
 			shell.sed( '-i', '<% blockNamePHPLower % >', `${ blockNamePHPLower }`, file );
 			shell.sed( '-i', '<% blockNamePHPUpper %>', `${ blockNamePHPUpper }`, file );
 			shell.sed( '-i', '<% blockNamePHPUpper % >', `${ blockNamePHPUpper }`, file );
+			shell.sed( '-i', '<% blockRandomInt %>', `${ blockRandomInt }`, file );
+			shell.sed( '-i', '<% blockRandomInt % >', `${ blockRandomInt }`, file );
 		} );
 
 		resolve( true );
