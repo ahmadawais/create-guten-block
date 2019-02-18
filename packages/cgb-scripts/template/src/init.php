@@ -55,7 +55,7 @@ function <% blockNamePHPLower %>_cgb_editor_assets() { // phpcs:ignore
 	wp_enqueue_style(
 		'<% blockNamePHPLower %>-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
+		array( 'wp-edit-blocks', '<% blockNamePHPLower %>-cgb-style-css' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 }

@@ -55,7 +55,7 @@ function a11y_input_cgb_editor_assets() {
 	wp_enqueue_style(
 		'a11y_input-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
+		array( 'wp-edit-blocks', 'a11y_input-cgb-style-css' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 } // End function a11y_input_cgb_editor_assets().
