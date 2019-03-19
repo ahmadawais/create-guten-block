@@ -11,8 +11,9 @@ const chalk = require( 'chalk' );
 const shell = require( 'shelljs' );
 const clearConsole = require( './consoleClear' );
 const directoryExists = require( 'directory-exists' );
+const createGitignore = require( './createGitignore' );
 
-module.exports = blockName => {
+module.exports = ( blockName, blockDir ) => {
 	// Check if the plugin dir is already presnet.
 	const dirAlreadyExist = directoryExists.sync( `./${ blockName }` );
 
@@ -40,11 +41,11 @@ module.exports = blockName => {
 		);
 		process.exit( 1 );
 	} else {
-		return new Promise( resolve => {
+		return new Promise( async resolve => {
 			// Where user is at the moment.
-			shell.exec( `mkdir -p ${ blockName }`, () => {
-				resolve( true );
-			} );
+			shell.mkdir( '-p', blockName );
+			await createGitignore( blockDir );
+			resolve(true);
 		} );
 	}
 };

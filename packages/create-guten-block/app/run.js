@@ -26,7 +26,7 @@ module.exports = async() => {
 	// 1. Set the CLI and get the blockName.
 	const blockName = cli();
 
-	// 2. Build the block direcotry path.
+	// 2. Build the block directory path.
 	const blockDir = await getBlockDir( blockName );
 
 	// 2. Pre print.
@@ -41,11 +41,10 @@ module.exports = async() => {
 			` ${ blockName } `
 		) }`
 	);
-	await createPluginDir( blockName );
+	await createPluginDir( blockName, blockDir );
 	spinner.succeed();
 
 	// 4. NPM install cgb-scripts.
-
 	spinner.start( '2. Installing npm packages...' );
 	await npmInstallScripts( blockName, blockDir );
 	spinner.succeed();

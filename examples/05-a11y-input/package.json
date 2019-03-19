@@ -1,0 +1,16 @@
+{
+	"name": "a11y-input-cgb-guten-block",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "cgb-scripts start",
+		"build": "cgb-scripts build",
+		"eject": "cgb-scripts eject"
+	},
+	"dependencies": {
+		"cgb-scripts": "1.11.0"
+	},
+	"devDependencies": {
+		"styled-components": "^4.0.3"
+	}
+}

@@ -21,6 +21,7 @@
  */
 
 const paths = require( './paths' );
+const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
@@ -56,7 +57,7 @@ const extractConfig = {
 				],
 			},
 		},
-		// "sass" loader converst SCSS to CSS.
+		// "sass" loader converts SCSS to CSS.
 		{
 			loader: 'sass-loader',
 			options: {
@@ -117,4 +118,6 @@ module.exports = {
 	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
 	stats: 'minimal',
 	// stats: 'errors-only',
+	// Add externals.
+	externals: externals,
 };

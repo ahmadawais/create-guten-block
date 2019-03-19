@@ -4,7 +4,7 @@
 
 <br>
 
-![WHAT ICON](http://on.ahmda.ws/oy8W/c)
+![WHAT ICON](https://on.ahmda.ws/oy8W/c)
 
 ### What/How?
 
@@ -23,7 +23,7 @@ _That's about it._
 
 <br>
 
-![ELSE ICON](http://on.ahmda.ws/oykk/c)
+![ELSE ICON](https://on.ahmda.ws/oykk/c)
 
 ### Everything Else
 

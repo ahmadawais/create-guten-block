@@ -1,12 +1,7 @@
 {
 	"root": true,
 	"parser": "babel-eslint",
-	"extends": [
-		"wordpress",
-		"plugin:react/recommended",
-		"plugin:jsx-a11y/recommended",
-		"plugin:jest/recommended"
-	],
+	"extends": ["wordpress", "plugin:react/recommended", "plugin:jsx-a11y/recommended", "plugin:jest/recommended"],
 	"env": {
 		"browser": false,
 		"es6": true,
@@ -16,8 +11,10 @@
 	},
 	"parserOptions": {
 		"sourceType": "module",
+		"ecmaVersion": 8,
 		"ecmaFeatures": {
-			"jsx": true
+			"jsx": true,
+			"experimentalObjectRestSpread": true
 		}
 	},
 	"globals": {
@@ -86,8 +83,7 @@
 		"no-restricted-syntax": [
 			"error",
 			{
-				"selector":
-					"ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
+				"selector": "ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
 				"message": "Path access on WordPress dependencies is not allowed."
 			},
 			{
@@ -133,8 +129,7 @@
 				"message": "Translate function arguments must be string literals."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			}
 		],

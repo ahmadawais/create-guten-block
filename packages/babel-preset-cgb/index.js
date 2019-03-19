@@ -49,6 +49,8 @@ module.exports = {
 				pragma: 'wp.element.createElement',
 			},
 		],
+		// Async/Await awesomeness https://babeljs.io/docs/en/babel-plugin-syntax-async-functions/.
+		[ require.resolve( 'babel-plugin-syntax-async-functions' ) ],
 		// Polyfills the runtime needed for async/await and generators.
 		[
 			require.resolve( 'babel-plugin-transform-runtime' ),

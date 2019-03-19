@@ -7,7 +7,7 @@
  * Author URI: https://AhmadAwais.com/
  * Version: 1.0.0
  * License: GPL2+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package CGB
  */
@@ -20,4 +20,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Block Initializer.
  */
-require_once( plugin_dir_path( __FILE__ ) . 'src/init.php' );
+require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
