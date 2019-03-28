@@ -16,6 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
  *
+ * Assets enqueued:
+ * 1. blocks.style.build.css - Frontend + Backend.
+ * 2. blocks.build.js - Backend.
+ * 3. blocks.editor.build.css - Backend.
+ *
  * @uses {wp-blocks} for block type registration & related functions.
  * @uses {wp-element} for WP Element abstraction — structure of blocks.
  * @uses {wp-i18n} to internationalize the block's text.
@@ -23,7 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
-	// Styles.
+	/**
+	 * Register block styles for both frontend + backend.
+	 */
 	wp_register_style(
 		'<% blockNamePHPLower %>-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
@@ -31,7 +38,9 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 
-	// Block scripts.
+	/**
+	 * Register block editor script for backend.
+	 */
 	wp_register_script(
 		'<% blockNamePHPLower %>-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
@@ -40,7 +49,9 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		true // Enqueue the script in the footer.
 	);
 
-	// Block editor styles.
+	/**
+	 * Register block editor styles for backend.
+	 */
 	wp_register_style(
 		'<% blockNamePHPLower %>-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
@@ -49,10 +60,13 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 	);
 
 	/**
-	 * Register the block scripts and styles for both frontend and
-	 * backend to ensure they are enqueued when the editor loads.
+	 * Register Gutenberg block on server-side.
 	 *
-	 * @link https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type/
+	 * Register the block on server-side to ensure that the block
+	 * scripts and styles for both frontend and backend are
+	 * enqueued when the editor loads.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type#enqueuing-block-scripts
 	 */
 	register_block_type( 'cgb/block-<% blockName %>', array(
 		'style'         => '<% blockNamePHPLower %>-cgb-style-css', // Enqueue blocks.style.build.css on both frontend & backend.
