@@ -26,6 +26,8 @@ module.exports = async() => {
 	// 1. Set the CLI and get the blockName.
 	const { blockName, isCanary } = cli();
 
+	isCanary && chalk.dim(`\n ⚠️ THIS IS THE CANARY MODE FOR DEV TESTING\n`),
+
 	// 2. Build the block directory path.
 	const blockDir = await getBlockDir( blockName );
 
