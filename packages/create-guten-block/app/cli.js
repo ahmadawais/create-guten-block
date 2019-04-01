@@ -29,13 +29,14 @@ module.exports = () => {
 			console.log( `\n    Only ${ chalk.green( '<block-name>' ) } is required.\n` );
 		} )
 		.option( '-d, --debug', 'Prints envinfo for debugging' )
+		.option( '-c, --canary', 'To use latest canary version for dev-testing' )
 		.description(
-			`CGB ${ chalk.dim(
-				'(create-guten-block)'
-			) } is a Zero-Config #OCJS for builing WordPress Gutenberg Blocks.`
+			`CGB ${ chalk.dim( '(create-guten-block)' ) } is a Zero-Config #OCJS for builing WordPress Gutenberg Blocks.`
 		)
 		.version( packageJson.version, '-v, --version' )
 		.parse( process.argv );
+
+	const isCanary = program.canary ? true : false;
 
 	// If no blockName.
 	if ( typeof blockName === 'undefined' ) {
@@ -60,5 +61,5 @@ module.exports = () => {
 		invalidBlockName();
 	}
 
-	return formatBlockName;
+	return { blockName: formatBlockName, isCanary: isCanary };
 };

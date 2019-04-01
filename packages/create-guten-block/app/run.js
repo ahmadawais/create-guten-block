@@ -24,7 +24,7 @@ module.exports = async() => {
 	updateNotifier();
 
 	// 1. Set the CLI and get the blockName.
-	const blockName = cli();
+	const { blockName, isCanary } = cli();
 
 	// 2. Build the block directory path.
 	const blockDir = await getBlockDir( blockName );
@@ -36,17 +36,13 @@ module.exports = async() => {
 	// Init the spinner.
 	const spinner = ora( { text: '' } );
 
-	spinner.start(
-		`1. Creating the plugin directory called → ${ chalk.black.bgWhite(
-			` ${ blockName } `
-		) }`
-	);
+	spinner.start( `1. Creating the plugin directory called → ${ chalk.black.bgWhite( ` ${ blockName } ` ) }` );
 	await createPluginDir( blockName, blockDir );
 	spinner.succeed();
 
 	// 4. NPM install cgb-scripts.
 	spinner.start( '2. Installing npm packages...' );
-	await npmInstallScripts( blockName, blockDir );
+	await npmInstallScripts( blockName, blockDir, isCanary );
 	spinner.succeed();
 
 	// 5. Initialize the block.
