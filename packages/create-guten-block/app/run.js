@@ -28,7 +28,7 @@ module.exports = async() => {
 
 	// 1.1 If we are testing in dev mode then notify.
 	if ( isCanary ) {
-		console.log( chalk.dim( '\n ⚠️ THIS IS THE CANARY MODE FOR DEV TESTING\n' ) );
+		console.log( '\n', '⚠️ ', chalk.white.bgRed( 'CANARY MODE' ), '\n' );
 	}
 
 	// 2. Build the block directory path.
