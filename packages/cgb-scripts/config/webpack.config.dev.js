@@ -23,25 +23,34 @@
 const paths = require( './paths' );
 const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
+// const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+
+// Extract block stylesheets.
+const blocksCSSPlugin = new MiniCssExtractPlugin( {
+	filename: './dist/[name].css',
+} );
 
 // Extract style.css for both editor and frontend styles.
-const blocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.style.build.css',
-} );
+// const blocksCSSPlugin = new MiniCssExtractPlugin( {
+// 	filename: './dist/blocks.style.build.css',
+// } );
 
 // Extract editor.css for editor styles.
-const editBlocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.editor.build.css',
-} );
+// const editBlocksCSSPlugin = new ExtractTextPlugin( {
+// 	filename: './dist/blocks.editor.build.css',
+// } );
 
 // Configuration for the ExtractTextPlugin — DRY rule.
 const extractConfig = {
 	use: [
 		// "postcss" loader applies autoprefixer to our CSS.
-		{ loader: 'raw-loader' },
+		// { loader: require.resolve( 'raw-loader' ) },
+		MiniCssExtractPlugin.loader,
+		require.resolve( 'css-loader' ),
 		{
-			loader: 'postcss-loader',
+			loader: require.resolve( 'postcss-loader' ),
 			options: {
 				ident: 'postcss',
 				plugins: [
@@ -59,7 +68,7 @@ const extractConfig = {
 		},
 		// "sass" loader converts SCSS to CSS.
 		{
-			loader: 'sass-loader',
+			loader: require.resolve( 'sass-loader' ),
 			options: {
 				// Add common CSS file for variables and mixins.
 				data: '@import "./src/common.scss";\n',
@@ -69,10 +78,21 @@ const extractConfig = {
 	],
 };
 
+const recursiveIssuer = ( m ) => {
+	if ( m.issuer ) {
+		return recursiveIssuer( m.issuer );
+	} else if ( m.name ) {
+		return m.name;
+	}
+	return false;
+};
+
 // Export configuration.
 module.exports = {
 	entry: {
 		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+		'blocks.editor.build': paths.pluginEditorCss, // 'name' : 'path/file.ext'.
+		'blocks.style.build': paths.pluginStyleCss, // 'name' : 'path/file.ext'.
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
@@ -89,7 +109,7 @@ module.exports = {
 				test: /\.(js|jsx|mjs)$/,
 				exclude: /(node_modules|bower_components)/,
 				use: {
-					loader: 'babel-loader',
+					loader: require.resolve( 'babel-loader' ),
 					options: {
 						// @remove-on-eject-begin
 						babelrc: false,
@@ -103,19 +123,32 @@ module.exports = {
 				},
 			},
 			{
-				test: /style\.s?css$/,
+				test: /\.s?css$/,
 				exclude: /(node_modules|bower_components)/,
-				use: blocksCSSPlugin.extract( extractConfig ),
-			},
-			{
-				test: /editor\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: editBlocksCSSPlugin.extract( extractConfig ),
+				use: extractConfig.use,
 			},
 		],
 	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				editorStyles: {
+					name: 'blocks.editor.build',
+					test: ( m, c, entry = 'blocks.editor.build' ) => 'CssModule' === m.constructor.name && recursiveIssuer( m ) === entry,
+					chunks: 'all',
+					enforce: true,
+				},
+				blockStyles: {
+					name: 'blocks.style.build',
+					test: ( m, c, entry = 'blocks.style.build' ) => 'CssModule' === m.constructor.name && recursiveIssuer( m ) === entry,
+					chunks: 'all',
+					enforce: true,
+				},
+			},
+		},
+	},
 	// Add plugins.
-	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
+	plugins: [ blocksCSSPlugin, new FixStyleOnlyEntriesPlugin() ],
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
