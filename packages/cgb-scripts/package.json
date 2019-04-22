@@ -60,6 +60,7 @@
 		"sass-loader": "^7.1.0",
 		"shelljs": "^0.8.0",
 		"style-loader": "^0.23.1",
+		"uglifyjs-webpack-plugin": "^2.1.2",
 		"update-notifier": "^2.3.0",
 		"webpack": "^4.30.0",
 		"webpack-fix-style-only-entries": "^0.2.1"
