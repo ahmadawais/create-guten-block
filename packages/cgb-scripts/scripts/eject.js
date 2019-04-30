@@ -254,8 +254,9 @@ inquirer
 		console.log( `  ➕  Adding ${ green( 'Babel' ) } preset.` );
 		appPackage.babel = {
 			presets: [
+				'@babel/react',
 				[
-					'env',
+					'@babel/env',
 					{
 						modules: false,
 						targets: {
@@ -273,27 +274,25 @@ inquirer
 				],
 			],
 			plugins: [
-				[ 'transform-object-rest-spread' ],
+				'@babel/plugin-syntax-dynamic-import',
+				'@babel/plugin-syntax-import-meta',
 				[
-					'transform-object-rest-spread',
+					'@babel/plugin-proposal-class-properties',
 					{
-						useBuiltIns: true,
+						loose: true,
 					},
 				],
+				'@babel/plugin-proposal-json-strings',
 				[
-					'transform-react-jsx',
+					'@babel/plugin-proposal-decorators',
 					{
-						pragma: 'wp.element.createElement',
+						legacy: true,
 					},
 				],
-				[
-					'transform-runtime',
-					{
-						helpers: false,
-						polyfill: false,
-						regenerator: true,
-					},
-				],
+				'@babel/plugin-proposal-function-sent',
+				'@babel/plugin-proposal-export-namespace-from',
+				'@babel/plugin-proposal-numeric-separator',
+				'@babel/plugin-proposal-throw-expressions',
 			],
 		};
 

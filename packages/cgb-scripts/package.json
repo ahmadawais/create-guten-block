@@ -30,10 +30,21 @@
 		"cgb-scripts": "./bin/cgb-scripts.js"
 	},
 	"dependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/plugin-proposal-class-properties": "^7.0.0",
+		"@babel/plugin-proposal-decorators": "^7.0.0",
+		"@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+		"@babel/plugin-proposal-function-sent": "^7.0.0",
+		"@babel/plugin-proposal-json-strings": "^7.0.0",
+		"@babel/plugin-proposal-numeric-separator": "^7.0.0",
+		"@babel/plugin-proposal-throw-expressions": "^7.0.0",
+		"@babel/plugin-syntax-dynamic-import": "^7.0.0",
+		"@babel/plugin-syntax-import-meta": "^7.0.0",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/preset-react": "^7.0.0",
 		"autoprefixer": "^7.2.4",
-		"babel-core": "^6.25.0",
-		"babel-eslint": "^8.2.1",
-		"babel-loader": "^7.1.1",
+		"babel-eslint": "^9.0.0",
+		"babel-loader": "^8.0.0",
 		"babel-preset-cgb": "^1.6.0",
 		"cgb-dev-utils": "^1.5.0",
 		"chalk": "^2.3.0",
@@ -45,7 +56,7 @@
 		"eslint-plugin-jsx-a11y": "^6.0.3",
 		"eslint-plugin-react": "^7.5.1",
 		"eslint-plugin-wordpress": "^0.1.0",
-		"extract-text-webpack-plugin": "^3.0.2",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"filesize": "^3.5.11",
 		"fs-extra": "^5.0.0",
 		"gzip-size": "^4.1.0",
@@ -55,10 +66,10 @@
 		"postcss-loader": "^2.0.10",
 		"raw-loader": "^0.5.1",
 		"resolve-pkg": "^1.0.0",
-		"sass-loader": "^6.0.6",
-		"shelljs": "^0.8.0",
+		"sass-loader": "^7.1.0",
+		"shelljs": "^0.8.3",
 		"style-loader": "^0.19.1",
 		"update-notifier": "^2.3.0",
-		"webpack": "^3.1.0"
+		"webpack": "^4.30.0"
 	}
 }
