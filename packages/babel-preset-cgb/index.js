@@ -9,11 +9,10 @@ updateNotifier( { pkg } ).notify();
 
 module.exports = {
 	presets: [
+		'@babel/react',
 		[
-			// 'env',
-			require.resolve( 'babel-preset-env' ),
+			'@babel/env',
 			{
-				// Do not transform modules to CJS.
 				modules: false,
 				targets: {
 					browsers: [
@@ -30,35 +29,38 @@ module.exports = {
 		],
 	],
 	plugins: [
-		// class { handleClick = () => { } }.
-		[ require.resolve( 'babel-plugin-transform-class-properties' ) ],
-		// The following two plugins use Object.assign directly, instead of Babel's
-		// extends helper. Note that this assumes `Object.assign` is available.
-		// { ...todo, completed: true }
+		'@babel/plugin-syntax-dynamic-import',
+		'@babel/plugin-syntax-import-meta',
 		[
-			require.resolve( 'babel-plugin-transform-object-rest-spread' ),
+			'@babel/plugin-proposal-object-rest-spread',
 			{
 				useBuiltIns: true,
 			},
 		],
 		[
-			// Transforms JSX Syntax.
-			// 'transform-react-jsx',
-			require.resolve( 'babel-plugin-transform-react-jsx' ),
+			'@babel/plugin-proposal-class-properties',
 			{
-				pragma: 'wp.element.createElement',
+				loose: true,
 			},
 		],
-		// Async/Await awesomeness https://babeljs.io/docs/en/babel-plugin-syntax-async-functions/.
-		[ require.resolve( 'babel-plugin-syntax-async-functions' ) ],
-		// Polyfills the runtime needed for async/await and generators.
+		'@babel/plugin-proposal-json-strings',
 		[
-			require.resolve( 'babel-plugin-transform-runtime' ),
+			'@babel/plugin-proposal-decorators',
+			{
+				legacy: true,
+			},
+		],
+		[
+			'babel-plugin-transform-runtime',
 			{
 				helpers: false,
 				polyfill: false,
 				regenerator: true,
 			},
 		],
+		'@babel/plugin-proposal-function-sent',
+		'@babel/plugin-proposal-export-namespace-from',
+		'@babel/plugin-proposal-numeric-separator',
+		'@babel/plugin-proposal-throw-expressions',
 	],
 };
