@@ -23,21 +23,22 @@
 const paths = require( './paths' );
 const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 // Extract style.css for both editor and frontend styles.
-const blocksCSSPlugin = new ExtractTextPlugin( {
+const blocksCSSPlugin = new MiniCssExtractPlugin( {
 	filename: './dist/blocks.style.build.css',
 } );
 
 // Extract editor.css for editor styles.
-const editBlocksCSSPlugin = new ExtractTextPlugin( {
+const editBlocksCSSPlugin = new MiniCssExtractPlugin( {
 	filename: './dist/blocks.editor.build.css',
 } );
 
 // Configuration for the ExtractTextPlugin — DRY rule.
 const extractConfig = {
 	use: [
+		MiniCssExtractPlugin.loader,
 		// "postcss" loader applies autoprefixer to our CSS.
 		{ loader: 'raw-loader' },
 		{
