@@ -16,8 +16,8 @@ module.exports = {
 	dotenv: resolvePlugin( '.env' ),
 	pluginSrc: resolvePlugin( 'src' ), // Plugin src folder path.
 	pluginBlocksJs: resolvePlugin( 'src/blocks.js' ),
-	pluginEditorCss: resolvePlugin( 'src/block/editor.scss' ),
-	pluginStyleCss: resolvePlugin( 'src/block/style.scss' ),
+	// pluginEditorCss: resolvePlugin( 'src/block/editor.scss' ),
+	// pluginStyleCss: resolvePlugin( 'src/block/style.scss' ),
 	yarnLockFile: resolvePlugin( 'yarn.lock' ),
 	pluginDist: resolvePlugin( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
 };
@@ -30,8 +30,8 @@ module.exports = {
 	dotenv: resolvePlugin( '.env' ),
 	pluginSrc: resolvePlugin( 'src' ),
 	pluginBlocksJs: resolvePlugin( 'src/blocks.js' ),
-	pluginEditorCss: resolvePlugin( 'src/block/editor.scss' ),
-	pluginStyleCss: resolvePlugin( 'src/block/style.scss' ),
+	// pluginEditorCss: resolvePlugin( 'src/block/editor.scss' ),
+	// pluginStyleCss: resolvePlugin( 'src/block/style.scss' ),
 	pluginDist: resolvePlugin( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
 	yarnLockFile: resolvePlugin( 'yarn.lock' ),
 	appPath: resolvePlugin( '.' ),

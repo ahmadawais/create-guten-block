@@ -23,32 +23,20 @@
 const paths = require( './paths' );
 const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
-// const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
-// Extract block stylesheets.
-const blocksCSSPlugin = new MiniCssExtractPlugin( {
-	filename: './dist/[name].css',
-} );
-
-// Extract style.css for both editor and frontend styles.
-// const blocksCSSPlugin = new MiniCssExtractPlugin( {
-// 	filename: './dist/blocks.style.build.css',
-// } );
-
-// Extract editor.css for editor styles.
-// const editBlocksCSSPlugin = new ExtractTextPlugin( {
-// 	filename: './dist/blocks.editor.build.css',
-// } );
-
-// Configuration for the ExtractTextPlugin — DRY rule.
+// Configuration for the styles — DRY rule.
 const extractConfig = {
 	use: [
-		// "postcss" loader applies autoprefixer to our CSS.
-		// { loader: require.resolve( 'raw-loader' ) },
-		MiniCssExtractPlugin.loader,
+		{
+			loader: require.resolve( 'file-loader' ),
+			options: {
+				name: 'blocks.[name].build.css',
+				outputPath: './dist',
+			},
+		},
+		require.resolve( 'extract-loader' ),
 		require.resolve( 'css-loader' ),
+		// "postcss" loader applies autoprefixer to our CSS.
 		{
 			loader: require.resolve( 'postcss-loader' ),
 			options: {
@@ -78,21 +66,10 @@ const extractConfig = {
 	],
 };
 
-const recursiveIssuer = ( m ) => {
-	if ( m.issuer ) {
-		return recursiveIssuer( m.issuer );
-	} else if ( m.name ) {
-		return m.name;
-	}
-	return false;
-};
-
 // Export configuration.
 module.exports = {
 	entry: {
 		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
-		'blocks.editor.build': paths.pluginEditorCss, // 'name' : 'path/file.ext'.
-		'blocks.style.build': paths.pluginStyleCss, // 'name' : 'path/file.ext'.
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
@@ -129,26 +106,6 @@ module.exports = {
 			},
 		],
 	},
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				editorStyles: {
-					name: 'blocks.editor.build',
-					test: ( m, c, entry = 'blocks.editor.build' ) => 'CssModule' === m.constructor.name && recursiveIssuer( m ) === entry,
-					chunks: 'all',
-					enforce: true,
-				},
-				blockStyles: {
-					name: 'blocks.style.build',
-					test: ( m, c, entry = 'blocks.style.build' ) => 'CssModule' === m.constructor.name && recursiveIssuer( m ) === entry,
-					chunks: 'all',
-					enforce: true,
-				},
-			},
-		},
-	},
-	// Add plugins.
-	plugins: [ blocksCSSPlugin, new FixStyleOnlyEntriesPlugin() ],
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
