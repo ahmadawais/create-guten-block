@@ -7,11 +7,11 @@ const updateNotifier = require( 'update-notifier' );
 const pkg = require( './package.json' );
 updateNotifier( { pkg } ).notify();
 
-module.exports = {
+module.exports = () => ({
 	presets: [
 		[
 			// 'env',
-			require.resolve( 'babel-preset-env' ),
+			require.resolve( '@babel/preset-env' ),
 			{
 				// Do not transform modules to CJS.
 				modules: false,
@@ -44,7 +44,7 @@ module.exports = {
 		[
 			// Transforms JSX Syntax.
 			// 'transform-react-jsx',
-			require.resolve( 'babel-plugin-transform-react-jsx' ),
+			require.resolve( '@babel/plugin-transform-react-jsx' ),
 			{
 				pragma: 'wp.element.createElement',
 			},
@@ -53,12 +53,12 @@ module.exports = {
 		[ require.resolve( 'babel-plugin-syntax-async-functions' ) ],
 		// Polyfills the runtime needed for async/await and generators.
 		[
-			require.resolve( 'babel-plugin-transform-runtime' ),
+			require.resolve( '@babel/plugin-transform-runtime' ),
 			{
 				helpers: false,
-				polyfill: false,
+				//polyfill: false,
 				regenerator: true,
 			},
 		],
 	],
-};
+});
