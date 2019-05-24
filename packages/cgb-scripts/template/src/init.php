@@ -64,7 +64,8 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 	 * @since 1.16.0
 	 */
 	register_block_type(
-		'cgb/block-<% blockName %>', array(
+		'cgb/block-<% blockName %>',
+		array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
 			'style'         => '<% blockNamePHPLower %>-cgb-style-css',
 			// Enqueue blocks.build.js in the editor only.
@@ -72,6 +73,24 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 			// Enqueue blocks.editor.build.css in the editor only.
 			'editor_style'  => '<% blockNamePHPLower %>-cgb-block-editor-css',
 		)
+	);
+
+	// Enqueue editor styles webpack chunk.
+	wp_enqueue_script(
+		'cgb-editor-styles-js-chunk', // Handle.
+		plugins_url( '/dist/blocks.editor.js', dirname( __FILE__ ) ), // Blocks.editor.js: Chunk built with webpack. For more information, see this: https://github.com/webpack/webpack/issues/1967.
+		array(), // Dependencies.
+		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.js' ), // Version: filemtime — Gets file modification time.
+		true // Enqueue the script in the footer.
+	);
+
+	// Enqueue block styles webpack chunk.
+	wp_enqueue_script(
+		'cgb-style-styles-js-chunk', // Handle.
+		plugins_url( '/dist/blocks.style.js', dirname( __FILE__ ) ), // Blocks.style.js: Chunk built with webpack. For more information, see this: https://github.com/webpack/webpack/issues/1967.
+		array(), // Dependencies.
+		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.js' ), // Version: filemtime — Gets file modification time.
+		true // Enqueue the script in the footer.
 	);
 }
 

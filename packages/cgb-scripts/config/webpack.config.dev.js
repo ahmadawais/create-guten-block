@@ -23,48 +23,45 @@
 const paths = require( './paths' );
 const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+
+// Extract editor.css and style.css for both editor and frontend styles.
+const blocksCSSPlugin = new MiniCssExtractPlugin( {
+	filename: './[name].build.css',
+} );
 
 // Configuration for the styles — DRY rule.
-const extractConfig = {
-	use: [
-		{
-			loader: require.resolve( 'file-loader' ),
-			options: {
-				name: 'blocks.[name].build.css',
-				outputPath: './dist',
-			},
+const extractConfig = [
+	require.resolve( MiniCssExtractPlugin.loader ),
+	require.resolve( 'css-loader' ),
+	// "postcss" loader applies autoprefixer to our CSS.
+	{
+		loader: require.resolve( 'postcss-loader' ),
+		options: {
+			ident: 'postcss',
+			plugins: [
+				autoprefixer( {
+					browsers: [
+						'>1%',
+						'last 4 versions',
+						'Firefox ESR',
+						'not ie < 9', // React doesn't support IE8 anyway
+					],
+					flexbox: 'no-2009',
+				} ),
+			],
 		},
-		require.resolve( 'extract-loader' ),
-		require.resolve( 'css-loader' ),
-		// "postcss" loader applies autoprefixer to our CSS.
-		{
-			loader: require.resolve( 'postcss-loader' ),
-			options: {
-				ident: 'postcss',
-				plugins: [
-					autoprefixer( {
-						browsers: [
-							'>1%',
-							'last 4 versions',
-							'Firefox ESR',
-							'not ie < 9', // React doesn't support IE8 anyway
-						],
-						flexbox: 'no-2009',
-					} ),
-				],
-			},
+	},
+	// "sass" loader converts SCSS to CSS.
+	{
+		loader: require.resolve( 'sass-loader' ),
+		options: {
+			// Add common CSS file for variables and mixins.
+			data: '@import "./src/common.scss";\n',
+			outputStyle: 'nested',
 		},
-		// "sass" loader converts SCSS to CSS.
-		{
-			loader: require.resolve( 'sass-loader' ),
-			options: {
-				// Add common CSS file for variables and mixins.
-				data: '@import "./src/common.scss";\n',
-				outputStyle: 'nested',
-			},
-		},
-	],
-};
+	},
+];
 
 // Export configuration.
 module.exports = {
@@ -102,10 +99,31 @@ module.exports = {
 			{
 				test: /\.s?css$/,
 				exclude: /(node_modules|bower_components)/,
-				use: extractConfig.use,
+				use: extractConfig,
 			},
 		],
 	},
+	optimization: {
+		minimize: false,
+		splitChunks: {
+			cacheGroups: {
+				style: {
+					name: './dist/blocks.style',
+					test: /style\.s?css$/,
+					chunks: 'initial',
+					enforce: true,
+				},
+				editor: {
+					name: './dist/blocks.editor',
+					test: /editor\.s?css$/,
+					chunks: 'initial',
+					enforce: true,
+				},
+			},
+		},
+	},
+	// Add plugins.
+	plugins: [ blocksCSSPlugin ],
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
