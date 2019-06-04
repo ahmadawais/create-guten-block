@@ -42,6 +42,5 @@
 		"release": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
 		"release-npm": "lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
 		"releaseCanary": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm --canary"
-	},
-	"version": "0.0.0"
+	}
 }
