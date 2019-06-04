@@ -1,7 +1,7 @@
 {
 	"name": "cgb-dev-utils",
 	"version": "1.5.0",
-	"description": "Developer utilities used by Create Guten Blocks",
+	"description": "Developer utilities used by Create Guten Block.",
 	"repository": "ahmadawais/create-guten-block",
 	"keywords": [
 		"gutenberg",
