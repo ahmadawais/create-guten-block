@@ -84,3 +84,4 @@ yarn-debug.log*
 yarn-error.log*
 /.changelog
 /examples/**/package-lock.json
+settings.dat
