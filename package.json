@@ -40,7 +40,7 @@
 		"lerna": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
 		"publishCanary": "yarn && lerna bootstrap && lerna publish --independent --npm-client=npm --canary",
 		"release": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
-		"release-npm": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
+		"release-npm": "lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm",
 		"releaseCanary": "yarn && lerna updated && lerna bootstrap && lerna publish --independent --npm-client=npm --canary"
 	}
 }
