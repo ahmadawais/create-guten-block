@@ -333,6 +333,7 @@ This project is inspired by the work of more people than I could mention here. B
 
 _Follow me 👋 on Twitter_ →  [![Tweet to say Hi](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Tweet%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/)
 
+
 <br />
 <br />
 <p align="center">
@@ -340,7 +341,8 @@ _Follow me 👋 on Twitter_ →  [![Tweet to say Hi](https://img.shields.io/twit
 </p>
 
 <div align="center">
-	I have released a video course to help you become a better developer — <a href="https://VSCode.pro/?utm_source=GitHubFOSS" target="_blank">Become a VSCode Power User →</a>
+	<p>I have released a video course to help you become a better developer — <a href="https://VSCode.pro/?utm_source=GitHubFOSS" target="_blank">Become a VSCode Power User →</a></p>
+    <br />
   <a href="https://VSCode.pro/?utm_source=GitHubFOSS" target="_blank">
   <img src="https://raw.githubusercontent.com/ahmadawais/shades-of-purple-vscode/master/images/vscodeproPlay.jpg" /><br>VSCode</a>
 
