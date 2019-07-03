@@ -310,8 +310,6 @@ This FOSS (free and open source software) project is updated and maintained with
 
 — _What/How? [Read more about it →](https://TheDevCouple.com/partners)_
 
-(https://TheDevCouple.com/partners)
-
 <table width='100%'>
 	<tr>
 		<td width='500'><a target='_blank' href='https://kinsta.com/?kaid=WMDAKYHJLNJX&utm_source=TheDevCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/73cedc/c' /></a></td>
