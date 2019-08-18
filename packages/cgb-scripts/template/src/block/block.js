@@ -6,8 +6,8 @@
  */
 
 //  Import CSS.
-import './style.scss';
 import './editor.scss';
+import './style.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -43,8 +43,11 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	 * The "edit" property must be a valid function.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 *
+	 * @param {Object} props Props.
+	 * @returns {Mixed} JSX Component.
 	 */
-	edit: function( props ) {
+	edit: ( props ) => {
 		// Creates a <p class='wp-block-cgb-block-<% blockName %>'></p>.
 		return (
 			<div className={ props.className }>
@@ -71,10 +74,13 @@ registerBlockType( 'cgb/block-<% blockName %>', {
 	 * The "save" property must be specified and must be a valid function.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 *
+	 * @param {Object} props Props.
+	 * @returns {Mixed} JSX Frontend HTML.
 	 */
-	save: function( props ) {
+	save: ( props ) => {
 		return (
-			<div>
+			<div className={ props.className }>
 				<p>— Hello from the frontend.</p>
 				<p>
 					CGB BLOCK: <code><% blockName %></code> is a new Gutenberg block.
