@@ -296,7 +296,10 @@ Me ([Ahmad Awais](https://twitter.com/mrahmadawais/)) and my incredible wife ([M
 
 <br>
 
-Or you can back me by checking out my super fun video course. As developers, we spend over 200 Hrs/month with our code editors — it's only fair to learn your next editor deeply. This course will save you 15-20 hours every month.  <a href="https://vscode.pro/?utm_source=GitHubFOSS" target="_blank">Become a VSCode Power User</a> →</p>
+**Or** you can back me by checking out my super fun video course. As developers, we spend over 200 Hrs/month with our code editors — it's only fair to learn your next editor deeply.
+
+> **This course will save you 15-20 hours every month.
+> <br><a href="https://vscode.pro/?utm_source=GitHubFOSS" target="_blank">Become a VSCode Power User</a> →</p>**
 
 <br>
 
