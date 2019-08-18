@@ -29,7 +29,7 @@ I have released a video course to help you become a better developer — <a href
 
 <br>
 
-### 🏇 cgb-scripts: `1.19.1`
+### 🏇 cgb-scripts: `1.19.2`
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
@@ -41,11 +41,11 @@ I have released a video course to help you become a better developer — <a href
 
 ![hr](https://raw.githubusercontent.com/ahmadawais/shades-of-purple-vscode/master/images/hr.png)
 
-### 🦁 cgb-scripts: `1.18.0` to `1.13.0`
+### 🦁 cgb-scripts: `1.13.0` and above
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
-- View the [commit history for changelog →](https://github.com/ahmadawais/create-guten-block/commits/master)
+- Automation issue, so view the [commit history for changelog →](https://github.com/ahmadawais/create-guten-block/commits/master)
 
 ### 🦁 cgb-scripts: `1.13.0`
 
