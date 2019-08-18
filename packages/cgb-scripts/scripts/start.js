@@ -110,13 +110,10 @@ async function build( webpackConfig ) {
 			chalk.dim( '   Note that the development build is not optimized. \n' ),
 			chalk.dim( '  To create a production build, use' ),
 			chalk.green( 'npm' ),
-			chalk.white( 'run build\n' )
+			chalk.white( 'run build\n\n' ),
+			chalk.dim( '👌  Support Awais via VSCode Power User at https://VSCode.pro →\n\n' )
 		);
-		return spinner.start(
-			`${ chalk.dim(
-				'Watching for changes... (Press CTRL + C to stop). \n\n 👌 Support Awais via VSCode Power User at https://VSCode.pro →'
-			) }`
-		);
+		return spinner.start( `${ chalk.dim( 'Watching for changes... (Press CTRL + C to stop).' ) }` );
 	} );
 }
 
