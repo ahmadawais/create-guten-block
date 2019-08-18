@@ -130,7 +130,9 @@ const printNextSteps = ( blockName, blockDir ) => {
 	console.log(
 		`  ${ chalk.yellow( 'Support for one hour or more →' ) } https://AhmdA.ws/CGB99`,
 		'\n',
-		` ${ chalk.yellow( 'More ways to support →' ) } https://AhmdA.ws/CGBSupport`
+		` ${ chalk.yellow( 'More ways to support →' ) } https://AhmdA.ws/CGBSupport`,
+		'\n',
+		` ${ chalk.yellow( 'Check out my best work. VSCode Power User →' ) } https://VSCode.pro`
 	);
 
 	// Get started.
