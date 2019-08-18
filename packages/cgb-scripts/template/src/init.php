@@ -53,7 +53,7 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
-	// Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
+	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	wp_localize_script(
 		'<% blockNamePHPLower %>-cgb-block-js',
 		'cgbGlobal', // Array containing dynamic data for a JS Global.
