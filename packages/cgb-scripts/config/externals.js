@@ -1,7 +1,7 @@
 /**
  * Utility methods for use when generating build configuration objects.
  */
-const { join } = require( 'path' );
+const { join } = require('path');
 
 /**
  * Given a string, returns a new string with dash separators converted to
@@ -12,7 +12,7 @@ const { join } = require( 'path' );
  *
  * @return {string} Camel-cased string.
  */
-const camelCaseDash = string => string.replace( /-([a-z])/g, ( match, letter ) => letter.toUpperCase() );
+const camelCaseDash = string => string.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
 
 /**
  * Define externals to load components through the wp global.
@@ -28,12 +28,12 @@ const externals = [
 	'utils',
 	'date',
 	'data',
-	'i18n',
+	'i18n'
 ].reduce(
-	( externals, name ) => ( {
+	(externals, name) => ({
 		...externals,
-		[ `@wordpress/${ name }` ]: `wp.${ camelCaseDash( name ) }`,
-	} ),
+		[`@wordpress/${name}`]: `wp.${camelCaseDash(name)}`
+	}),
 	{
 		wp: 'wp',
 		ga: 'ga', // Old Google Analytics.
@@ -42,6 +42,7 @@ const externals = [
 		jquery: 'jQuery', // import $ from 'jquery' // Use the WordPress version after enqueuing it.
 		'react-dom': 'ReactDOM',
 		lodash: 'lodash', // Lodash is there in Gutenberg.
+		cgbdata: 'CGB_DATA' // Plugin path and url.
 	}
 );
 
