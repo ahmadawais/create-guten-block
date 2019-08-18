@@ -29,7 +29,7 @@ I have released a video course to help you become a better developer — <a href
 
 <br>
 
-### 🏇 cgb-scripts: `1.19.2`
+### 🏇 cgb-scripts: `1.20.0`
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
