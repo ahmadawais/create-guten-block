@@ -285,7 +285,7 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 
 [![Hello](https://on.ahmda.ws/os6O/c)](/)
 
-#### **Hello, we're the [Dev Couple](https://TheDevCouple.com)**!
+#### **Hello, we're [The Dev Couple](https://TheDevCouple.com)**!
 
 Me ([Ahmad Awais](https://twitter.com/mrahmadawais/)) and my incredible wife ([Maedah Batool](https://twitter.com/MaedahBatool/)) are two engineers who fell in love with open source and then with each other. You can read more [about me here](https://ahmadawais.com/about). If you or your company use any of my projects or like what I’m doing then consider backing me. I'm in this for the long run. An open-source developer advocate. We also have a newsletter called ↣ [The Dev Takeaway](https://WPTakeaway.club)!
 
