@@ -56,11 +56,11 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 	// Localise globals - plugin path and url for use in blocks.
 	wp_localize_script(
 		'<% blockNamePHPLower %>-cgb-block-js',
-		'CGB_DATA', // Array containing the globals.
-		array(
+		'CGB_GLOBAL', // Array containing dynamic data for a JS Global.
+		[
 			'path' => plugin_dir_path( __FILE__ ),
 			'url'  => plugin_dir_url( __FILE__ ),
-		)
+		]
 	);
 
 	/**
