@@ -111,8 +111,6 @@ async function build( webpackConfig ) {
 		console.log( `\n ${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
 		console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
 
-		console.log( `${ chalk.dim( '\n Support Awais via VSCode Power User at https://VSCode.pro →' ) }` );
-
 		console.log(
 			'\n\n',
 			'File sizes after gzip:',
@@ -129,9 +127,10 @@ async function build( webpackConfig ) {
 			getFileSize( fileStyleCSS ),
 			`${ chalk.dim( '— ./dist/' ) }`,
 			`${ chalk.green( 'blocks.style.build.css' ) }`,
-
 			'\n\n'
 		);
+
+		console.log( '\n👌 ', chalk.black.bgGreen( ' Support Awais via VSCode Power User at https://VSCode.pro → \n' ) );
 
 		return true;
 	} );

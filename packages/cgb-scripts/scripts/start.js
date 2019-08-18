@@ -113,8 +113,9 @@ async function build( webpackConfig ) {
 			chalk.white( 'run build\n' )
 		);
 		return spinner.start(
-			`${ chalk.dim( 'Watching for changes... (Press CTRL + C to stop).' ) }`,
-			`${ chalk.dim( '\n Support Awais via VSCode Power User at https://VSCode.pro →' ) }`
+			`${ chalk.dim(
+				'Watching for changes... (Press CTRL + C to stop). \n\n 👌 Support Awais via VSCode Power User at https://VSCode.pro →'
+			) }`
 		);
 	} );
 }

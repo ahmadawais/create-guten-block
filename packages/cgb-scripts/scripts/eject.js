@@ -54,10 +54,7 @@ inquirer
 	} )
 	.then( answer => {
 		if ( ! answer.shouldEject ) {
-			console.log(
-				'\n\n— ' + chalk.black.bgWhite( ' Close one! Eject aborted. ' ),
-				'\n\n'
-			);
+			console.log( '\n\n— ' + chalk.black.bgWhite( ' Close one! Eject aborted. ' ), '\n\n' );
 			return;
 		}
 
@@ -65,18 +62,14 @@ inquirer
 		if ( gitStatus ) {
 			console.error(
 				'\n\n' +
-					chalk.black.bgRed(
-						' This git repository has untracked files or uncommitted changes: '
-					) +
+					chalk.black.bgRed( ' This git repository has untracked files or uncommitted changes: ' ) +
 					'\n\n' +
 					gitStatus
 						.split( '\n' )
 						.map( line => line.match( / .*/g )[ 0 ].trim() )
 						.join( '\n' ) +
 					'\n\n' +
-					chalk.black.bgRed(
-						' Remove untracked files, stash or commit any changes, and try again. '
-					),
+					chalk.black.bgRed( ' Remove untracked files, stash or commit any changes, and try again. ' ),
 				'\n\n'
 			);
 			process.exit( 1 );
@@ -92,9 +85,7 @@ inquirer
 			if ( fs.existsSync( path.join( appPath, file ) ) ) {
 				console.error(
 					'\n\n' +
-						`\`${ chalk.red(
-							file
-						) }\` already exists in your plugin's folder. We cannot ` +
+						`\`${ chalk.red( file ) }\` already exists in your plugin's folder. We cannot ` +
 						'continue as you would lose all the changes in that file or directory. ' +
 						'Please move or delete it (maybe make a copy for backup) and run this ' +
 						'command again.'
@@ -145,19 +136,11 @@ inquirer
 			content =
 				content
 					// Remove dead code from .js files on eject.
-					.replace(
-						/\/\/ @remove-on-eject-begin([\s\S]*?)\/\/ @remove-on-eject-end/gm,
-						''
-					)
+					.replace( /\/\/ @remove-on-eject-begin([\s\S]*?)\/\/ @remove-on-eject-end/gm, '' )
 					// Remove dead code from .applescript files on eject.
-					.replace(
-						/-- @remove-on-eject-begin([\s\S]*?)-- @remove-on-eject-end/gm,
-						''
-					)
+					.replace( /-- @remove-on-eject-begin([\s\S]*?)-- @remove-on-eject-end/gm, '' )
 					.trim() + '\n';
-			console.log(
-				`  ➕  Adding ${ green( file.replace( ownPath, '' ) ) } to your plugin.`
-			);
+			console.log( `  ➕  Adding ${ green( file.replace( ownPath, '' ) ) } to your plugin.` );
 			fs.writeFileSync( file.replace( ownPath, appPath ), content );
 		} );
 
@@ -167,11 +150,7 @@ inquirer
 		// Assume a file called package.json file in current folder.
 		const appPackage = require( path.join( appPath, 'package.json' ) );
 
-		console.log(
-			'\n 👉 ',
-			`${ chalk.black.bgYellow( ' Updating the dependencies... ' ) }`,
-			'\n'
-		);
+		console.log( '\n 👉 ', `${ chalk.black.bgYellow( ' Updating the dependencies... ' ) }`, '\n' );
 
 		// Name: cgb-scripts.
 		const ownPackageName = ownPackage.name;
@@ -180,9 +159,7 @@ inquirer
 		if ( appPackage.devDependencies ) {
 			// We used to put cgb-scripts in devDependencies.
 			if ( appPackage.devDependencies[ ownPackageName ] ) {
-				console.log(
-					`  ➖  Removing ${ cyan( ownPackageName ) } from devDependencies.`
-				);
+				console.log( `  ➖  Removing ${ cyan( ownPackageName ) } from devDependencies.` );
 				delete appPackage.devDependencies[ ownPackageName ];
 			}
 		}
@@ -216,11 +193,7 @@ inquirer
 		console.log( `  ♻  ${ green( 'Sorting... ' ) }` );
 
 		// Update the scripts.
-		console.log(
-			'\n 👉 ',
-			`${ chalk.black.bgYellow( ' Updating the scripts... ' ) }`,
-			'\n'
-		);
+		console.log( '\n 👉 ', `${ chalk.black.bgYellow( ' Updating the scripts... ' ) }`, '\n' );
 
 		// Del the eject script.
 		delete appPackage.scripts.eject;
@@ -232,23 +205,12 @@ inquirer
 				if ( ! regex.test( appPackage.scripts[ key ] ) ) {
 					return;
 				}
-				appPackage.scripts[ key ] = appPackage.scripts[ key ].replace(
-					regex,
-					'node scripts/$1.js'
-				);
-				console.log(
-					`  ♻  Replacing ${ cyan( `"${ binKey } ${ key }"` ) } with ${ green(
-						`"node scripts/${ key }.js"`
-					) }`
-				);
+				appPackage.scripts[ key ] = appPackage.scripts[ key ].replace( regex, 'node scripts/$1.js' );
+				console.log( `  ♻  Replacing ${ cyan( `"${ binKey } ${ key }"` ) } with ${ green( `"node scripts/${ key }.js"` ) }` );
 			} );
 		} );
 
-		console.log(
-			'\n 👉 ',
-			`${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`,
-			'\n'
-		);
+		console.log( '\n 👉 ', `${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`, '\n' );
 
 		// Add Babel config.
 		console.log( `  ➕  Adding ${ green( 'Babel' ) } preset.` );
@@ -300,10 +262,7 @@ inquirer
 		// // Add ESlint config — already there.
 		// console.log( `  Adding ${ cyan( 'ESLint' ) } configuration` );
 
-		fs.writeFileSync(
-			path.join( appPath, 'package.json' ),
-			JSON.stringify( appPackage, null, 2 ) + '\n'
-		);
+		fs.writeFileSync( path.join( appPath, 'package.json' ), JSON.stringify( appPackage, null, 2 ) + '\n' );
 
 		// "Don't destroy what isn't ours".
 		if ( ownPath.indexOf( appPath ) === 0 ) {
@@ -335,23 +294,15 @@ inquirer
 			// console.log(cyan('Running yarn...'));
 			// spawnSync('yarnpkg', [], { stdio: 'inherit' });
 		} else {
-			console.log(
-				'\n\n 👉 ',
-				`${ chalk.black.bgYellow( ' Running npm install... ' ) }`,
-				'\n'
-			);
+			console.log( '\n\n 👉 ', `${ chalk.black.bgYellow( ' Running npm install... ' ) }`, '\n' );
 			spawnSync( 'npm', [ 'install', '--loglevel', 'error' ], {
 				stdio: 'inherit',
 			} );
 		}
-		console.log(
-			'\n\n✅ ',
-			chalk.black.bgGreen( ' Ejected successfully! ' ),
-			'\n'
-		);
+		console.log( '\n\n✅ ', chalk.black.bgGreen( ' Ejected successfully! ' ), '\n' );
 
-		console.log(
-			green( '  Kindly, consider sharing why you ejected in this survey:\n' )
-		);
+		console.log( green( '  Kindly, consider sharing why you ejected in this survey:\n' ) );
 		console.log( green( '  →  https://goo.gl/forms/T901kvHr1kNsJGaJ3 \n' ) );
+
+		console.log( '\n👌 ', chalk.black.bgGreen( ' Support Awais via VSCode Power User at https://VSCode.pro → \n' ) );
 	} );
