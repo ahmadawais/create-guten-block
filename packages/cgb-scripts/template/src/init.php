@@ -53,13 +53,14 @@ function <% blockNamePHPLower %>_cgb_block_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
-	// Localise globals - plugin path and url for use in blocks.
+	// Localised globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal object.
 	wp_localize_script(
 		'<% blockNamePHPLower %>-cgb-block-js',
-		'CGB_GLOBAL', // Array containing dynamic data for a JS Global.
+		'cgbGlobal', // Array containing dynamic data for a JS Global.
 		[
-			'path' => plugin_dir_path( __FILE__ ),
-			'url'  => plugin_dir_url( __FILE__ ),
+			'pluginDirPath' => plugin_dir_path( __DIR__ ),
+			'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
+			// Add more data here that you want to access from cgbGlobal object.
 		]
 	);
 
