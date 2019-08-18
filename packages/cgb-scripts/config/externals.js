@@ -32,7 +32,7 @@ const externals = [
 ].reduce(
 	( externals, name ) => ( {
 		...externals,
-		[ `@wordpress/${name}` ]: `wp.${ camelCaseDash( name ) }`,
+		[ `@wordpress/${ name }` ]: `wp.${ camelCaseDash( name ) }`,
 	} ),
 	{
 		wp: 'wp',
