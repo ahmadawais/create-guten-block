@@ -46,7 +46,7 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 
 <br>
 
-![Start](https://on.ahmda.ws/osd3/c)
+[![Start](https://on.ahmda.ws/osd3/c)](/)
 
 ## GETTING STARTED!
 
@@ -95,7 +95,7 @@ npx create-guten-block my-block
 
 ([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
 
-![npx block](https://on.ahmda.ws/p89T/c)
+[![npx block](https://on.ahmda.ws/p89T/c)](/)
 
 _It'll take a couple of minutes to install._
 
@@ -110,7 +110,7 @@ INSIDE: /local_dev_site.tld/wp-content/plugins/my-block
 ├── .gitignore
 ├── plugin.php
 ├── package.json
-├── README.md
+├── readme.md
 |
 ├── dist
 |  ├── blocks.build.js
@@ -143,7 +143,7 @@ npm start
 
 _You can also use `yarn start` if that's your jam_.
 
-![cgb-npm-start](https://on.ahmda.ws/orrh/c)
+[![cgb-npm-start](https://on.ahmda.ws/orrh/c)](/)
 
 This runs the plugin in development mode. To produce production code run `npm run build`.
 You will see the build messages, errors, and lint warnings in the console.
@@ -152,7 +152,7 @@ You will see the build messages, errors, and lint warnings in the console.
 
 <br>
 
-![More](https://on.ahmda.ws/orsm/c)
+[![More](https://on.ahmda.ws/orsm/c)](/)
 
 ### Workflow!
 
@@ -179,7 +179,7 @@ _That's about it._
 
 <br>
 
-![included](https://on.ahmda.ws/orOe/c)
+[![included](https://on.ahmda.ws/orOe/c)](/)
 
 ## What’s Included?
 
@@ -196,7 +196,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 <br>
 
-![Philosophy](https://on.ahmda.ws/orq5/c)
+[![Philosophy](https://on.ahmda.ws/orq5/c)](/)
 
 ## Philosophy
 
@@ -208,7 +208,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 <br>
 
-![Why](https://on.ahmda.ws/orvy/c)
+[![Why](https://on.ahmda.ws/orvy/c)](/)
 
 ## Why `create-guten-block`?
 
@@ -218,7 +218,7 @@ Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, E
 
 <br>
 
-![tldr](https://on.ahmda.ws/osPO/c)
+[![tldr](https://on.ahmda.ws/osPO/c)](/)
 
 ## TL;DR
 
@@ -235,11 +235,11 @@ Open the terminal app and run the following commands.
 Create-Guten-Block has been tested to work on macOS, but must also work on Windows, and Linux.
 If something doesn’t work, kindly file [an issue →](https://github.com/ahmadawais/create-guten-block/issues/new)
 
-<!-- ![Create-guten-block](https://on.ahmda.ws/okiU/c) -->
+<!-- [![Create-guten-block](https://on.ahmda.ws/okiU/c)](/) -->
 
 <br>
 
-![update](https://on.ahmda.ws/osO7/c)
+[![update](https://on.ahmda.ws/osO7/c)](/)
 
 ## Updating to New Releases
 
@@ -260,13 +260,13 @@ We commit to keeping the breaking changes minimal so you can upgrade `cgb-script
 
 <br>
 
-![Log](https://on.ahmda.ws/osUz/c)
+[![Log](https://on.ahmda.ws/osUz/c)](/)
 
 ## Changelog
 
 Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated.
 
-👉 Go read the entire changelog at this link — [CGB Changelog →](https://github.com/ahmadawais/create-guten-block/blob/master/CHANGELOG.md)
+👉 Go read the entire changelog at this link — [CGB Changelog →](https://github.com/ahmadawais/create-guten-block/blob/master/changelog.md)
 
 Nothing's ever complete, so bear with us while we keep iterating towards a better future.
 
@@ -283,7 +283,7 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 
 <br>
 
-![Hello](https://on.ahmda.ws/os6O/c)
+[![Hello](https://on.ahmda.ws/os6O/c)](/)
 
 #### **Hello, we're the [WordPress Couple](https://TheDevCouple.com)**!
 
@@ -302,7 +302,7 @@ If you'd like us to keep producing professional free and open source software (F
 
 <br>
 
-![Partners](https://on.ahmda.ws/osEJ/c)
+[![Partners](https://on.ahmda.ws/osEJ/c)](/)
 
 ### Project Backers & [TheDevCouple Partners](https://TheDevCouple.com/partners) ⚡️
 
@@ -323,7 +323,7 @@ This FOSS (free and open source software) project is updated and maintained with
 
 <br>
 
-![Thanks](https://on.ahmda.ws/orkW/c)
+[![Thanks](https://on.ahmda.ws/orkW/c)](/)
 
 ## License & Attribution
 
