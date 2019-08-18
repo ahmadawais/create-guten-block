@@ -327,7 +327,16 @@ This FOSS (free and open source software) project is updated and maintained with
 
 ## License & Attribution
 
-MIT © [Ahmad Awais](https://AhmadAwais.com/).
+- MIT © [Ahmad Awais](https://twitter.com/MrAhmadAwais/)
+- [Code of Conduct](code-of-conduct.md)
+
+<div align="left">
+    <p><a href="https://github.com/ahmadawais"><img alt="GitHub @AhmadAwais" align="center" src="https://img.shields.io/badge/GITHUB-gray.svg?colorB=6cc644&colorA=6cc644&style=flat" /></a>&nbsp;<small><strong>(follow)</strong> TO STAY UP TO DATE ON FREE & OPEN SOURCE SOFTWARE</small></p>
+    <p><a href="https://twitter.com/MrAhmadAwais/"><img alt="Twitter @MrAhmadAwais" align="center" src="https://img.shields.io/badge/TWITTER-gray.svg?colorB=1da1f2&colorA=1da1f2&style=flat" /></a>&nbsp;<small><strong>(follow)</strong> TO GET ONE DEV MINUTE DAILY HOT TIPS & TROLLS</small></p>
+    <p><a href="https://www.youtube.com/AhmadAwais"><img alt="YouTube AhmadAwais" align="center" src="https://img.shields.io/badge/YOUTUBE-gray.svg?colorB=ff0000&colorA=ff0000&style=flat" /></a>&nbsp;<small><strong>(subscribe)</strong> TO TECH TALKS & ONE DEV MINUTE VIDEOS</small></p>
+    <p><a href="https://AhmadAwais.com/"><img alt="Blog: AhmadAwais.com" align="center" src="https://img.shields.io/badge/MY%20BLOG-gray.svg?colorB=4D2AFF&colorA=4D2AFF&style=flat" /></a>&nbsp;<small><strong>(read)</strong> MOSTLY LONG FORM TECHNICAL ARTICLES</small></p>
+    <p><a href="https://www.linkedin.com/in/MrAhmadAwais/"><img alt="LinkedIn @MrAhmadAwais" align="center" src="https://img.shields.io/badge/LINKEDIN-gray.svg?colorB=0077b5&colorA=0077b5&style=flat" /></a>&nbsp;<small><strong>(connect)</strong> WITH THE LINKEDIN PROFILE Y'ALL</small></p>
+</div>
 
 This project is inspired by the work of more people than I could mention here. But thank you, [Dan Abramov](https://twitter.com/dan_abramov) for Create React App, [Andrew Clark](https://twitter.com/acdlite), and [Christopher Chedeau](https://twitter.com/vjeux), [Sophie Alpert](https://twitter.com/sophiebits) from React.js team, [Kent C. Dodds](https://twitter.com/kentcdodds) for his open source evangelism, WordPress Core Contributors, [Gary](https://twitter.com/GaryPendergast) for keeping everyone sane, [Gutenberg](https://github.com/wordpress/gutenberg) developers [Matias](https://twitter.com/matias_ventura), [Riad](https://github.com/youknowriad), [Andrew](https://github.com/aduth), [Ella](https://twitter.com/ellaiseulde), [Joen](https://github.com/jasmussen), [Tammie](https://twitter.com/karmatosed), [Greg](https://twitter.com/gziolo) and contributors, and other WordPress community members like [Zac](https://twitter.com/zgordon) for his [course on Gutenberg](https://ahmda.ws/ZacGutenbergCourse), and also my friend [Morten](https://twitter.com/mor10) for all the #Guten-motivation, [Icons8](https://icons8.com/) for the awesome icons, [Maedah](https://twitter.com/MaedahBatool/) for managing this project, and to everyone I forgot.
 
