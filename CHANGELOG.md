@@ -12,11 +12,19 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
-- Use `cgbGlobal` to `import globals from 'cgbGlobal';` 042e6089226a13bb96716d98bcffb3294d00a573
+- Use `cgbGlobal` to `import globals from 'cgbGlobal';` Props [@AhmadBilalDev](https://github.com/AhmadBilalDev)
 
 ![DOCS](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
 
-- Refactor JSDoc 6ab5eb4ab1792eb01f6af305bf478e42434bb98c
+- Refactor JSDoc to fix ESLint `valid-jsdoc` errors
+
+![hr](https://raw.githubusercontent.com/ahmadawais/shades-of-purple-vscode/master/images/hr.png)
+
+### 🦁 cgb-scripts: `1.18.0` to `1.13.0`
+
+![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+- View the [commit history for changelog →](https://github.com/ahmadawais/create-guten-block/commits/master)
 
 ### 🦁 cgb-scripts: `1.13.0`
 
