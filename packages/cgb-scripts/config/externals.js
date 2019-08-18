@@ -42,7 +42,7 @@ const externals = [
 		jquery: 'jQuery', // import $ from 'jquery' // Use the WordPress version after enqueuing it.
 		'react-dom': 'ReactDOM',
 		lodash: 'lodash', // Lodash is there in Gutenberg.
-		cgbGlobal: 'cgbGlobal', // import cgbGlobal from 'cgbGlobal' // Localized data.
+		cgbGlobal: 'cgbGlobal', // import globals from 'cgbGlobal' // Localized data.
 	}
 );
 
