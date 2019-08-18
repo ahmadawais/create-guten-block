@@ -6,8 +6,17 @@ Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated �
 
 👉  Read how to [**update to the latest version**](https://github.com/ahmadawais/create-guten-block#updating-to-new-releases)!
 
-
 ![hr](https://raw.githubusercontent.com/ahmadawais/shades-of-purple-vscode/master/images/hr.png)
+
+### 🏇 cgb-scripts: `1.19.1`
+
+![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+- Use `cgbGlobal` to `import globals from 'cgbGlobal';` 042e6089226a13bb96716d98bcffb3294d00a573
+
+![DOCS](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+- Refactor JSDoc 6ab5eb4ab1792eb01f6af305bf478e42434bb98c
 
 ### 🦁 cgb-scripts: `1.13.0`
 
