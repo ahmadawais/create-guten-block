@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"babel-eslint": "^8.2.1",
 		"chalk": "^2.4.2",
-		"eslint": "^4.17.0",
+		"eslint": "^6.2.2",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-jest": "^21.7.0",
 		"eslint-plugin-jsx-a11y": "^6.2.1",
