@@ -38,7 +38,7 @@
 		"envinfo": "^3.11.0",
 		"execa": "^0.9.0",
 		"fs-extra": "^5.0.0",
-		"ora": "^1.3.0",
+		"ora": "^4.0.0",
 		"shelljs": "^0.8.0",
 		"update-notifier": "^2.3.0"
 	},
