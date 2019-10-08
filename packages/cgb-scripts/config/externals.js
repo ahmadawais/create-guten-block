@@ -23,6 +23,7 @@ const externals = [
 	'element',
 	'plugins',
 	'editor',
+	'block-editor',
 	'blocks',
 	'hooks',
 	'utils',
