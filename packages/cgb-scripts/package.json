@@ -38,7 +38,7 @@
 		"cgb-dev-utils": "^1.6.0",
 		"chalk": "^2.3.0",
 		"cross-env": "^5.0.1",
-		"cross-spawn": "^5.1.0",
+		"cross-spawn": "^7.0.1",
 		"eslint": "^4.15.0",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-jest": "^21.6.1",
