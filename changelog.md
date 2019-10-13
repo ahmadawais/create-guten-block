@@ -5,8 +5,7 @@
 Read what's 📦 new, 👌 improved, 🐛 fixed, and  if 📖 docs got updated — in the latest version.
 
 👉  Read how to [**update to the latest version**](https://github.com/ahmadawais/create-guten-block#updating-to-new-releases)!
-
-[![VSCode](https://img.shields.io/badge/-VSCode.pro%20%E2%86%92-gray.svg?colorB=4D2AFF)](https://VSCode.pro/?utm_source=GitHubFOSS)
+lpjolhm97hg0 jnohojonojn
  [![Ahmad on Twitter](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Follow%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/)
 
 <br>
