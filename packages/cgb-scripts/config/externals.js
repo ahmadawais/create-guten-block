@@ -19,6 +19,7 @@ const camelCaseDash = string => string.replace( /-([a-z])/g, ( match, letter ) =
  */
 const externals = [
 	'components',
+	'api-fetch',
 	'edit-post',
 	'element',
 	'plugins',
