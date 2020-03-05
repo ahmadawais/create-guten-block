@@ -30,6 +30,7 @@
 		"cgb-scripts": "./bin/cgb-scripts.js"
 	},
 	"dependencies": {
+		"@wordpress/scripts": "^7.1.2",
 		"autoprefixer": "^7.2.4",
 		"babel-core": "^6.25.0",
 		"babel-eslint": "^8.2.1",
