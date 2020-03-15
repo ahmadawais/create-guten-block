@@ -27,7 +27,7 @@ const spawn = require( 'cgb-dev-utils/crossSpawn' );
 const config = require( '../config/webpack.config.dev' );
 const resolvePkg = require( 'resolve-pkg' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
-const wpscripts = resolvePkg( '@wordpress/scripts', { cwd: __dirname } );
+const wpScripts = resolvePkg( '@wordpress/scripts/bin/wp-scripts.js', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 const formatWebpackMessages = require( cgbDevUtilsPath + '/formatWebpackMessages' );
 
@@ -60,7 +60,7 @@ async function build( webpackConfig ) {
 	// Compiler Instance.
 	// const compiler = await webpack( webpackConfig );
 	const result = spawn.sync(
-		wpscripts,
+		wpScripts,
 		['start'],
 		{ stdio: 'inherit' }
 	);
