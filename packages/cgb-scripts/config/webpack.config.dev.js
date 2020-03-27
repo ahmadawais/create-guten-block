@@ -20,104 +20,196 @@
  * @since 1.0.0
  */
 
+// const autoprefixer = require( 'autoprefixer' );
+// const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+
+// // Extract style.css for both editor and frontend styles.
+// const blocksCSSPlugin = new ExtractTextPlugin( {
+// 	filename: './dist/blocks.style.build.css',
+// } );
+
+// // Extract editor.css for editor styles.
+// const editBlocksCSSPlugin = new ExtractTextPlugin( {
+// 	filename: './dist/blocks.editor.build.css',
+// } );
+
+// // Configuration for the ExtractTextPlugin — DRY rule.
+// const extractConfig = {
+// 	use: [
+// 		// "postcss" loader applies autoprefixer to our CSS.
+// 		{ loader: 'raw-loader' },
+// 		{
+// 			loader: 'postcss-loader',
+// 			options: {
+// 				ident: 'postcss',
+// 				plugins: [
+// 					autoprefixer( {
+// 						browsers: [
+// 							'>1%',
+// 							'last 4 versions',
+// 							'Firefox ESR',
+// 							'not ie < 9', // React doesn't support IE8 anyway
+// 						],
+// 						flexbox: 'no-2009',
+// 					} ),
+// 				],
+// 			},
+// 		},
+// 		// "sass" loader converts SCSS to CSS.
+// 		{
+// 			loader: 'sass-loader',
+// 			options: {
+// 				// Add common CSS file for variables and mixins.
+// 				data: '@import "./src/common.scss";\n',
+// 				outputStyle: 'nested',
+// 			},
+// 		},
+// 	],
+// };
+
+// // Export configuration.
+// module.exports = {
+// 	entry: {
+// 		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+// 	},
+// 	output: {
+// 		// Add /* filename */ comments to generated require()s in the output.
+// 		pathinfo: true,
+// 		// The dist folder.
+// 		path: paths.pluginDist,
+// 		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
+// 	},
+// 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
+// 	devtool: 'cheap-eval-source-map',
+// 	module: {
+// 		rules: [
+// 			{
+// 				test: /\.(js|jsx|mjs)$/,
+// 				exclude: /(node_modules|bower_components)/,
+// 				use: {
+// 					loader: 'babel-loader',
+// 					options: {
+// 						// @remove-on-eject-begin
+// 						babelrc: false,
+// 						presets: [ require.resolve( 'babel-preset-cgb' ) ],
+// 						// @remove-on-eject-end
+// 						// This is a feature of `babel-loader` for webpack (not Babel itself).
+// 						// It enables caching results in ./node_modules/.cache/babel-loader/
+// 						// directory for faster rebuilds.
+// 						cacheDirectory: true,
+// 					},
+// 				},
+// 			},
+// 			{
+// 				test: /style\.s?css$/,
+// 				exclude: /(node_modules|bower_components)/,
+// 				use: blocksCSSPlugin.extract( extractConfig ),
+// 			},
+// 			{
+// 				test: /editor\.s?css$/,
+// 				exclude: /(node_modules|bower_components)/,
+// 				use: editBlocksCSSPlugin.extract( extractConfig ),
+// 			},
+// 		],
+// 	},
+// 	// Add plugins.
+// 	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
+// 	stats: 'minimal',
+// 	// stats: 'errors-only',
+// 	// Add externals.
+// 	externals: externals,
+// };
+
+const path = require( 'path' );
 const paths = require( './paths' );
 const externals = require( './externals' );
-const autoprefixer = require( 'autoprefixer' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const postcssPresetEnv = require( 'postcss-preset-env' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const { mode, resolve } = defaultConfig;
 
-// Extract style.css for both editor and frontend styles.
-const blocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.style.build.css',
-} );
-
-// Extract editor.css for editor styles.
-const editBlocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.editor.build.css',
-} );
-
-// Configuration for the ExtractTextPlugin — DRY rule.
-const extractConfig = {
-	use: [
-		// "postcss" loader applies autoprefixer to our CSS.
-		{ loader: 'raw-loader' },
-		{
-			loader: 'postcss-loader',
-			options: {
-				ident: 'postcss',
-				plugins: [
-					autoprefixer( {
-						browsers: [
-							'>1%',
-							'last 4 versions',
-							'Firefox ESR',
-							'not ie < 9', // React doesn't support IE8 anyway
-						],
-						flexbox: 'no-2009',
-					} ),
-				],
-			},
-		},
-		// "sass" loader converts SCSS to CSS.
-		{
-			loader: 'sass-loader',
-			options: {
-				// Add common CSS file for variables and mixins.
-				data: '@import "./src/common.scss";\n',
-				outputStyle: 'nested',
-			},
-		},
-	],
-};
-
-// Export configuration.
 module.exports = {
+	mode,
 	entry: {
-		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+		'blocks.build': paths.pluginBlocksJs,
 	},
 	output: {
-		// Add /* filename */ comments to generated require()s in the output.
-		pathinfo: true,
-		// The dist folder.
+		filename: '[name].js',
 		path: paths.pluginDist,
-		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
+		pathinfo: true,
 	},
-	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
-	devtool: 'cheap-eval-source-map',
-	module: {
-		rules: [
-			{
-				test: /\.(js|jsx|mjs)$/,
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						// @remove-on-eject-begin
-						babelrc: false,
-						presets: [ require.resolve( 'babel-preset-cgb' ) ],
-						// @remove-on-eject-end
-						// This is a feature of `babel-loader` for webpack (not Babel itself).
-						// It enables caching results in ./node_modules/.cache/babel-loader/
-						// directory for faster rebuilds.
-						cacheDirectory: true,
-					},
+	resolve,
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+			cacheGroups: {
+				editor: {
+					name: 'editor',
+					test: /editor\.(sc|sa|c)ss$/,
+					enforce: true,
 				},
+				style: {
+					name: 'style',
+					test: /style\.(sc|sa|c)ss$/,
+					enforce: true,
+				},
+				default: false,
 			},
+		},
+	},
+	module: {
+		...defaultConfig.module,
+		rules: [
+			...defaultConfig.module.rules,
 			{
-				test: /style\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: blocksCSSPlugin.extract( extractConfig ),
-			},
-			{
-				test: /editor\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: editBlocksCSSPlugin.extract( extractConfig ),
+				test: /\.scss$/,
+				use: [
+					path.resolve( MiniCssExtractPlugin.loader ),
+					path.resolve( __dirname, '../node_modules/css-loader' ),
+					{
+						loader: path.resolve( __dirname, '../node_modules', 'postcss-loader' ),
+						options: {
+							ident: 'postcss',
+							plugins: () => [
+								postcssPresetEnv( {
+									stage: 3,
+									browsers: [
+										'>1%',
+										'last 4 versions',
+										'Firefox ESR',
+										'not ie < 9', // React doesn't support IE8 anyway
+									],
+								} ),
+							],
+						},
+					},
+					{
+						loader: path.resolve( __dirname, '../node_modules', 'sass-loader' ),
+						options: {
+							prependData: '@import "./src/common.scss";',
+							sassOptions: {
+								outputStyle: 'nested',
+							},
+						},
+					},
+				],
 			},
 		],
 	},
 	// Add plugins.
-	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
-	stats: 'minimal',
-	// stats: 'errors-only',
+	plugins: [
+		new FixStyleOnlyEntriesPlugin( {
+			silent: false,
+		} ),
+
+		// Extract CSS into individual files.
+		new MiniCssExtractPlugin( {
+			filename: 'blocks.[name].build.css',
+			chunkFilename: 'blocks.[name].build.css',
+		} ),
+	],
+	// stats: 'minimal',
 	// Add externals.
 	externals: externals,
 };

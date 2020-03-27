@@ -45,7 +45,7 @@ module.exports = ( blockName, blockDir, isCanary ) => {
 	}
 	// Install latest exact version of cgb-scripts.
 	return new Promise( async resolve => {
-		await execa( 'npm', [ 'install', '../packages/cgb-scripts', '--save', '--save-exact', '--silent' ] );
+		await execa( 'npm', [ 'install', 'cgb-scripts', '--save', '--save-exact', '--silent' ] );
 		resolve( true );
 	} );
 };

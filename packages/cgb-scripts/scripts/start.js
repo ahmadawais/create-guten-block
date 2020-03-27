@@ -24,8 +24,8 @@ const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
 const spawn = require( 'cgb-dev-utils/crossSpawn' );
-const config = require( '../config/webpack.config.dev' );
 const resolvePkg = require( 'resolve-pkg' );
+const config = resolvePkg( 'cgb-scripts/config/webpack.config.dev.js', { cwd: __dirname } );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const wpScripts = resolvePkg( '@wordpress/scripts/bin/wp-scripts.js', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
@@ -59,16 +59,16 @@ const spinner = new ora( { text: '' } );
 async function build( webpackConfig ) {
 	// Compiler Instance.
 	// const compiler = await webpack( webpackConfig );
-	const result = spawn.sync(
+	spawn.sync(
 		wpScripts,
-		['start'],
+		[ 'start', '--config', webpackConfig ],
 		{ stdio: 'inherit' }
 	);
-	console.log( result );
+	// console.log( result );
 
 	// Run the compiler.
 	// compiler.watch( {}, ( err, stats ) => {
-	// 	clearConsole();
+	// clearConsole();
 
 	// 	if ( err ) {
 	// 		return console.log( err );
