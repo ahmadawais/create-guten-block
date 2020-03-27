@@ -166,9 +166,9 @@ module.exports = {
 				test: /\.scss$/,
 				use: [
 					path.resolve( MiniCssExtractPlugin.loader ),
-					path.resolve( __dirname, '../node_modules/css-loader' ),
+					path.resolve( 'css-loader' ),
 					{
-						loader: path.resolve( __dirname, '../node_modules', 'postcss-loader' ),
+						loader: path.resolve( 'postcss-loader' ),
 						options: {
 							ident: 'postcss',
 							plugins: () => [
@@ -185,7 +185,7 @@ module.exports = {
 						},
 					},
 					{
-						loader: path.resolve( __dirname, '../node_modules', 'sass-loader' ),
+						loader: path.resolve( 'sass-loader' ),
 						options: {
 							prependData: '@import "./src/common.scss";',
 							sassOptions: {
