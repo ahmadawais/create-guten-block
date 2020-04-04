@@ -25,11 +25,12 @@ const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
 const spawn = require( 'cgb-dev-utils/crossSpawn' );
 const resolvePkg = require( 'resolve-pkg' );
-const config = resolvePkg( 'cgb-scripts/config/webpack.config.dev.js', { cwd: __dirname } );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const wpScripts = resolvePkg( '@wordpress/scripts/bin/wp-scripts.js', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 const formatWebpackMessages = require( cgbDevUtilsPath + '/formatWebpackMessages' );
+const paths = require( '../config/paths' );
+const config = paths.devConfig;
 
 // Don't run below node 8.
 const currentNodeVersion = process.versions.node;
