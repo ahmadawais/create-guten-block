@@ -43,11 +43,9 @@ Here goes nothing…
 * [LifterLMS](https://wordpress.org/plugins/lifterlms/ "WordPress.org - LifterLMS") **Installs**: 9,000
 * [Gutentor : WordPress Page Builder with Unlimited Possibilities to Design](https://wordpress.org/plugins/gutentor/ "WordPress.org - Gutentor : WordPress Page Builder with Unlimited Possibilities to Design") **Installs**: 9,000
 * [Drop Shadow Boxes](https://wordpress.org/plugins/drop-shadow-boxes/ "WordPress.org - Drop Shadow Boxes") **Installs**: 9,000
-* [") **Installs**: 8,000
 * [Block Gallery – Photo Gallery Gutenberg Blocks](https://wordpress.org/plugins/block-gallery/ "WordPress.org - Block Gallery &#8211; Photo Gallery Gutenberg Blocks") **Installs**: 8,000
 * [Gallery – Photo Albums Plugin](https://wordpress.org/plugins/easy-media-gallery/ "WordPress.org - Gallery – Photo Albums Plugin") **Installs**: 8,000
 * [Ultimate Blocks – Gutenberg Blocks Plugin](https://wordpress.org/plugins/ultimate-blocks/ "WordPress.org - Ultimate Blocks &#8211; Gutenberg Blocks Plugin") **Installs**: 8,000
-* []#wpsc") **Installs**: 7,000
 * [EmbedPress – Embed Google Docs, Vimeo and Wistia videos, Giphy and Imgur photos, and more](https://wordpress.org/plugins/embedpress/ "WordPress.org - EmbedPress – Embed Google Docs, Vimeo and Wistia videos, Giphy and Imgur photos, and more") **Installs**: 7,000
 * [Contact Form Plugin7,000](https://wordpress.org/plugins/contact-form-lite/ "WordPress.org - Contact Form Plugin") **Installs**: 6,000
 * [Photo Gallery – Image Gallery by Ape](https://wordpress.org/plugins/gallery-images-ape/ "WordPress.org - Photo Gallery &#8211; Image Gallery by Ape") **Installs**: 6,000
@@ -191,7 +189,6 @@ Here goes nothing…
 * [Pinblocks — Gutenberg blocks with Pinterest widgets](https://wordpress.org/plugins/pinblocks/ "WordPress.org - Pinblocks — Gutenberg blocks with Pinterest widgets") **Installs**: 40
 * [Pricing Tables Block](https://wordpress.org/plugins/pricing-tables-block/ "WordPress.org - Pricing Tables Block") **Installs**: 40
 * [Video Block with Ads](https://wordpress.org/plugins/video-block-with-ads/ "WordPress.org - Video Block with Ads") **Installs**: 40
-* [") **Installs**: 40
 * [HT Blocks – Absolute Gutenberg Blocks](https://wordpress.org/plugins/ht-blocks/ "WordPress.org - HT Blocks &#8211; Absolute Gutenberg Blocks") **Installs**: 40
 * [Gutenberg Tile Block](https://wordpress.org/plugins/sword-layouts/ "WordPress.org - Gutenberg Tile Block") **Installs**: 40
 * [Gutenstrap Blocks](https://wordpress.org/plugins/gutenstrap-blocks/ "WordPress.org - Gutenstrap Blocks") **Installs**: 30
@@ -299,7 +296,7 @@ Here goes nothing…
 * [Nusratech Pricing Block](https://wordpress.org/plugins/nusratech-pricing-block/ "WordPress.org - Nusratech Pricing Block") **Installs**: 10
 * [Progress bar block](https://wordpress.org/plugins/klarity-progress-bar-block/ "WordPress.org - Progress bar block") **Installs**: 10
 * [Simple Video Directory](https://wordpress.org/plugins/simple-media-directory/ "WordPress.org - Simple Video Directory") **Installs**: 10
-* [Heroic Glossary0](https://wordpress.org/plugins/heroic-glossary/ "WordPress.org - Heroic Glossary") **Installs**: 10
+* [Heroic Glossary](https://wordpress.org/plugins/heroic-glossary/ "WordPress.org - Heroic Glossary") **Installs**: 10
 * [Yasothon](https://wordpress.org/plugins/yasothon-blocks/ "WordPress.org - Yasothon") **Installs**: 10
 * [Demoify Blocks – Gutenberg Page Builder](https://wordpress.org/plugins/demoify-blocks/ "WordPress.org - Demoify Blocks &#8211; Gutenberg Page Builder") **Installs**: 10
 * [Pricing Table Block](https://wordpress.org/plugins/pricing-table-block/ "WordPress.org - Pricing Table Block") **Installs**: 10
