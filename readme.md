@@ -43,6 +43,7 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 - 🤠 Updatable ✓
 - 🗃 Set of sane-defaults ✓
 - 🐎 ONE single `cgb-scripts` dependency ✓
+- 💯 [100s of WordPress plugins built with `create-guten-block`](plugins.md) ✓
 
 <br>
 
