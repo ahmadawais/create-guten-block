@@ -340,3 +340,15 @@ Here goes nothing…
 * [Clock Block](https://wordpress.org/plugins/clocks-block/ "WordPress.org - Clock Block") **Installs**: 10
 * [WP Instagram Feed – Instagram Gallery for WordPress](https://wordpress.org/plugins/rex-instagram-feed/ "WordPress.org - WP Instagram Feed &#8211; Instagram Gallery for WordPress") **Installs**: 10
 * [Carbon Code](https://wordpress.org/plugins/block-carbon-code/ "WordPress.org - Carbon Code")
+
+<br>
+
+[![👌](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/sponsor.png)](./../../)
+
+## Sponsor
+
+Me ([Ahmad Awais](https://twitter.com/mrahmadawais/)) and my incredible wife ([Maedah Batool](https://twitter.com/MaedahBatool/)) are two engineers who fell in love with open source and then with each other. You can read more [about me here](https://ahmadawais.com/about). If you or your company use any of my projects or like what I’m doing then consider backing me. I'm in this for the long run. An open-source developer advocate.
+
+[![Ahmad on Twitter](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Follow%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/)
+
+[![Ahmad on Twitter](https://raw.githubusercontent.com/ahmadawais/stuff/master/sponsor/sponsor.jpg)](https://github.com/AhmadAwais/sponsor)
