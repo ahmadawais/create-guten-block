@@ -25,11 +25,14 @@ const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
 const fileSize = require( 'filesize' );
 const gzipSize = require( 'gzip-size' );
+const spawn = require( 'cgb-dev-utils/crossSpawn' );
 const resolvePkg = require( 'resolve-pkg' );
-const config = require( '../config/webpack.config.prod' );
+const wpScripts = resolvePkg( '@wordpress/scripts/bin/wp-scripts.js', { cwd: __dirname } );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 const formatWebpackMessages = require( cgbDevUtilsPath + '/formatWebpackMessages' );
+const paths = require( '../config/paths' );
+const config = paths.prodConfig;
 
 // Build file paths.
 const theCWD = process.cwd();
@@ -62,78 +65,84 @@ const spinner = new ora( { text: '' } );
  * @param {json} webpackConfig config
  */
 async function build( webpackConfig ) {
+	spawn.sync(
+		wpScripts,
+		[ 'build', '--config', webpackConfig ],
+		{ stdio: 'inherit' }
+	);
+
 	// Compiler Instance.
-	const compiler = await webpack( webpackConfig );
+	// const compiler = await webpack( webpackConfig );
 
 	// Run the compiler.
-	compiler.run( ( err, stats ) => {
-		clearConsole();
+	// compiler.run( ( err, stats ) => {
+	// 	clearConsole();
 
-		if ( err ) {
-			return console.log( err );
-		}
+	// 	if ( err ) {
+	// 		return console.log( err );
+	// 	}
 
-		// Get the messages formatted.
-		const messages = formatWebpackMessages( stats.toJson( {}, true ) );
+	// 	// Get the messages formatted.
+	// 	const messages = formatWebpackMessages( stats.toJson( {}, true ) );
 
-		// If there are errors just show the errors.
-		if ( messages.errors.length ) {
-			// Only keep the first error. Others are often indicative
-			// of the same problem, but confuse the reader with noise.
-			if ( messages.errors.length > 1 ) {
-				messages.errors.length = 1;
-			}
-			// Formatted errors.
-			clearConsole();
-			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile build. \n' ) );
-			console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
+	// 	// If there are errors just show the errors.
+	// 	if ( messages.errors.length ) {
+	// 		// Only keep the first error. Others are often indicative
+	// 		// of the same problem, but confuse the reader with noise.
+	// 		if ( messages.errors.length > 1 ) {
+	// 			messages.errors.length = 1;
+	// 		}
+	// 		// Formatted errors.
+	// 		clearConsole();
+	// 		console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile build. \n' ) );
+	// 		console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
 
-			// Don't go beyond this point at this time.
-			return;
-		}
+	// 		// Don't go beyond this point at this time.
+	// 		return;
+	// 	}
 
-		// CI.
-		if (
-			process.env.CI &&
-			( typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false' ) &&
-			messages.warnings.length
-		) {
-			console.log(
-				chalk.yellow(
-					'\nTreating warnings as errors because process.env.CI = true.\n' +
-						'Most CI servers set it automatically.\n'
-				)
-			);
-			console.log( messages.warnings.join( '\n\n' ) );
-		}
+	// 	// CI.
+	// 	if (
+	// 		process.env.CI &&
+	// 		( typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false' ) &&
+	// 		messages.warnings.length
+	// 	) {
+	// 		console.log(
+	// 			chalk.yellow(
+	// 				'\nTreating warnings as errors because process.env.CI = true.\n' +
+	// 					'Most CI servers set it automatically.\n'
+	// 			)
+	// 		);
+	// 		console.log( messages.warnings.join( '\n\n' ) );
+	// 	}
 
-		// Start the build.
-		console.log( `\n ${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
-		console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
+	// 	// Start the build.
+	// 	console.log( `\n ${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
+	// 	console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
 
-		console.log(
-			'\n\n',
-			'File sizes after gzip:',
-			'\n\n',
-			getFileSize( fileBuildJS ),
-			`${ chalk.dim( '— ./dist/' ) }`,
-			`${ chalk.green( 'blocks.build.js' ) }`,
-			'\n',
-			getFileSize( fileEditorCSS ),
-			`${ chalk.dim( '— ./dist/' ) }`,
-			`${ chalk.green( 'blocks.editor.build.css' ) }`,
+	// 	console.log(
+	// 		'\n\n',
+	// 		'File sizes after gzip:',
+	// 		'\n\n',
+	// 		getFileSize( fileBuildJS ),
+	// 		`${ chalk.dim( '— ./dist/' ) }`,
+	// 		`${ chalk.green( 'blocks.build.js' ) }`,
+	// 		'\n',
+	// 		getFileSize( fileEditorCSS ),
+	// 		`${ chalk.dim( '— ./dist/' ) }`,
+	// 		`${ chalk.green( 'blocks.editor.build.css' ) }`,
 
-			'\n',
-			getFileSize( fileStyleCSS ),
-			`${ chalk.dim( '— ./dist/' ) }`,
-			`${ chalk.green( 'blocks.style.build.css' ) }`,
-			'\n\n'
-		);
+	// 		'\n',
+	// 		getFileSize( fileStyleCSS ),
+	// 		`${ chalk.dim( '— ./dist/' ) }`,
+	// 		`${ chalk.green( 'blocks.style.build.css' ) }`,
+	// 		'\n\n'
+	// 	);
 
-		console.log( '\n👌 ', chalk.dim( ' Support Awais via VSCode Power User at https://VSCode.pro → \n' ) );
+	// 	console.log( '\n👌 ', chalk.dim( ' Support Awais via VSCode Power User at https://VSCode.pro → \n' ) );
 
-		return true;
-	} );
+	// 	return true;
+	// } );
 }
 
 build( config );

@@ -30,6 +30,7 @@
 		"cgb-scripts": "./bin/cgb-scripts.js"
 	},
 	"dependencies": {
+		"@wordpress/scripts": "^7.1.2",
 		"autoprefixer": "^7.2.4",
 		"babel-core": "^6.25.0",
 		"babel-eslint": "^8.2.1",
@@ -39,6 +40,7 @@
 		"chalk": "^2.3.0",
 		"cross-env": "^5.0.1",
 		"cross-spawn": "^5.1.0",
+		"css-loader": "^3.4.2",
 		"eslint": "^4.15.0",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-jest": "^21.6.1",
@@ -50,15 +52,17 @@
 		"fs-extra": "^5.0.0",
 		"gzip-size": "^4.1.0",
 		"inquirer": "^5.0.0",
+		"mini-css-extract-plugin": "^0.9.0",
 		"node-sass": "^4.7.2",
 		"ora": "^1.3.0",
-		"postcss-loader": "^2.0.10",
+		"postcss-loader": "^3.0.0",
+		"postcss-preset-env": "^6.7.0",
 		"raw-loader": "^0.5.1",
 		"resolve-pkg": "^1.0.0",
-		"sass-loader": "^6.0.6",
+		"sass-loader": "^8.0.2",
 		"shelljs": "^0.8.0",
 		"style-loader": "^0.23.1",
 		"update-notifier": "^2.3.0",
-		"webpack": "^3.1.0"
+		"webpack-fix-style-only-entries": "^0.4.0"
 	}
 }

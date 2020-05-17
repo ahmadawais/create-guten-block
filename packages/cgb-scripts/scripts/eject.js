@@ -213,51 +213,51 @@ inquirer
 		console.log( '\n 👉 ', `${ chalk.black.bgYellow( ' Configuring package.json... ' ) }`, '\n' );
 
 		// Add Babel config.
-		console.log( `  ➕  Adding ${ green( 'Babel' ) } preset.` );
-		appPackage.babel = {
-			presets: [
-				[
-					'env',
-					{
-						modules: false,
-						targets: {
-							browsers: [
-								'last 2 Chrome versions',
-								'last 2 Firefox versions',
-								'last 2 Safari versions',
-								'last 2 iOS versions',
-								'last 1 Android version',
-								'last 1 ChromeAndroid version',
-								'ie 11',
-							],
-						},
-					},
-				],
-			],
-			plugins: [
-				[ 'transform-object-rest-spread' ],
-				[
-					'transform-object-rest-spread',
-					{
-						useBuiltIns: true,
-					},
-				],
-				[
-					'transform-react-jsx',
-					{
-						pragma: 'wp.element.createElement',
-					},
-				],
-				[
-					'transform-runtime',
-					{
-						helpers: false,
-						polyfill: false,
-						regenerator: true,
-					},
-				],
-			],
-		};
+		// console.log( `  ➕  Adding ${ green( 'Babel' ) } preset.` );
+		// appPackage.babel = {
+		// 	presets: [
+		// 		[
+		// 			'env',
+		// 			{
+		// 				modules: false,
+		// 				targets: {
+		// 					browsers: [
+		// 						'last 2 Chrome versions',
+		// 						'last 2 Firefox versions',
+		// 						'last 2 Safari versions',
+		// 						'last 2 iOS versions',
+		// 						'last 1 Android version',
+		// 						'last 1 ChromeAndroid version',
+		// 						'ie 11',
+		// 					],
+		// 				},
+		// 			},
+		// 		],
+		// 	],
+		// 	plugins: [
+		// 		[ 'transform-object-rest-spread' ],
+		// 		[
+		// 			'transform-object-rest-spread',
+		// 			{
+		// 				useBuiltIns: true,
+		// 			},
+		// 		],
+		// 		[
+		// 			'transform-react-jsx',
+		// 			{
+		// 				pragma: 'wp.element.createElement',
+		// 			},
+		// 		],
+		// 		[
+		// 			'transform-runtime',
+		// 			{
+		// 				helpers: false,
+		// 				polyfill: false,
+		// 				regenerator: true,
+		// 			},
+		// 		],
+		// 	],
+		// };
 
 		// // Add ESlint config — already there.
 		// console.log( `  Adding ${ cyan( 'ESLint' ) } configuration` );

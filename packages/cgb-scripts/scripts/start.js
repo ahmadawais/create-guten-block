@@ -23,11 +23,14 @@ process.on( 'unhandledRejection', err => {
 const ora = require( 'ora' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const config = require( '../config/webpack.config.dev' );
+const spawn = require( 'cgb-dev-utils/crossSpawn' );
 const resolvePkg = require( 'resolve-pkg' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
+const wpScripts = resolvePkg( '@wordpress/scripts/bin/wp-scripts.js', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
 const formatWebpackMessages = require( cgbDevUtilsPath + '/formatWebpackMessages' );
+const paths = require( '../config/paths' );
+const config = paths.devConfig;
 
 // Don't run below node 8.
 const currentNodeVersion = process.versions.node;
@@ -56,65 +59,71 @@ const spinner = new ora( { text: '' } );
 // Create the production build and print the deployment instructions.
 async function build( webpackConfig ) {
 	// Compiler Instance.
-	const compiler = await webpack( webpackConfig );
+	// const compiler = await webpack( webpackConfig );
+	spawn.sync(
+		wpScripts,
+		[ 'start', '--config', webpackConfig ],
+		{ stdio: 'inherit' }
+	);
+	// console.log( result );
 
 	// Run the compiler.
-	compiler.watch( {}, ( err, stats ) => {
-		clearConsole();
+	// compiler.watch( {}, ( err, stats ) => {
+	// clearConsole();
 
-		if ( err ) {
-			return console.log( err );
-		}
+	// 	if ( err ) {
+	// 		return console.log( err );
+	// 	}
 
-		// Get the messages formatted.
-		const messages = formatWebpackMessages( stats.toJson( {}, true ) );
+	// 	// Get the messages formatted.
+	// 	const messages = formatWebpackMessages( stats.toJson( {}, true ) );
 
-		// If there are errors just show the errors.
-		if ( messages.errors.length ) {
-			// Only keep the first error. Others are often indicative
-			// of the same problem, but confuse the reader with noise.
-			if ( messages.errors.length > 1 ) {
-				messages.errors.length = 1;
-			}
+	// 	// If there are errors just show the errors.
+	// 	if ( messages.errors.length ) {
+	// 		// Only keep the first error. Others are often indicative
+	// 		// of the same problem, but confuse the reader with noise.
+	// 		if ( messages.errors.length > 1 ) {
+	// 			messages.errors.length = 1;
+	// 		}
 
-			// Clear success messages.
-			clearConsole();
+	// 		// Clear success messages.
+	// 		clearConsole();
 
-			// Formatted errors.
-			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile. \n' ) );
-			const logErrors = console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
-			console.log( '\n' );
-			spinner.start( chalk.dim( 'Watching for changes... let\'s fix this... (Press CTRL + C to stop).' ) );
-			return logErrors;
-		}
+	// 		// Formatted errors.
+	// 		console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile. \n' ) );
+	// 		const logErrors = console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
+	// 		console.log( '\n' );
+	// 		spinner.start( chalk.dim( 'Watching for changes... let\'s fix this... (Press CTRL + C to stop).' ) );
+	// 		return logErrors;
+	// 	}
 
-		// CI.
-		if (
-			process.env.CI &&
-			( typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false' ) &&
-			messages.warnings.length
-		) {
-			console.log(
-				chalk.yellow(
-					'\nTreating warnings as errors because process.env.CI = true.\n' +
-						'Most CI servers set it automatically.\n'
-				)
-			);
-			return console.log( messages.warnings.join( '\n\n' ) );
-		}
+	// 	// CI.
+	// 	if (
+	// 		process.env.CI &&
+	// 		( typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false' ) &&
+	// 		messages.warnings.length
+	// 	) {
+	// 		console.log(
+	// 			chalk.yellow(
+	// 				'\nTreating warnings as errors because process.env.CI = true.\n' +
+	// 					'Most CI servers set it automatically.\n'
+	// 			)
+	// 		);
+	// 		return console.log( messages.warnings.join( '\n\n' ) );
+	// 	}
 
-		// Start the build.
-		console.log( `\n${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
-		console.log( '\n✅ ', chalk.black.bgGreen( ' Compiled successfully! \n' ) );
-		console.log(
-			chalk.dim( '   Note that the development build is not optimized. \n' ),
-			chalk.dim( '  To create a production build, use' ),
-			chalk.green( 'npm' ),
-			chalk.white( 'run build\n\n' ),
-			chalk.dim( '👌  Support Awais via VSCode Power User at https://VSCode.pro →\n\n' )
-		);
-		return spinner.start( `${ chalk.dim( 'Watching for changes... (Press CTRL + C to stop).' ) }` );
-	} );
+	// 	// Start the build.
+	// 	console.log( `\n${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
+	// 	console.log( '\n✅ ', chalk.black.bgGreen( ' Compiled successfully! \n' ) );
+	// 	console.log(
+	// 		chalk.dim( '   Note that the development build is not optimized. \n' ),
+	// 		chalk.dim( '  To create a production build, use' ),
+	// 		chalk.green( 'npm' ),
+	// 		chalk.white( 'run build\n\n' ),
+	// 		chalk.dim( '👌  Support Awais via VSCode Power User at https://VSCode.pro →\n\n' )
+	// 	);
+	// 	return spinner.start( `${ chalk.dim( 'Watching for changes... (Press CTRL + C to stop).' ) }` );
+	// } );
 }
 
 build( config );
