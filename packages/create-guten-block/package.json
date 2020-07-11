@@ -32,6 +32,7 @@
 	},
 	"homepage": "https://github.com/ahmadawais/create-guten-block#readme",
 	"dependencies": {
+		"@scarf/scarf": "^1.0.6",
 		"chalk": "^2.3.0",
 		"commander": "^2.13.0",
 		"directory-exists": "^1.0.2",
