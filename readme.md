@@ -1,7 +1,7 @@
 <div align="center">
-	<img width="300" src="https://on.ahmda.ws/osSb/c" alt="CGB Create Guten Block by Ahmad Awais">
+	<img width="300" src="https://d2ddoduugvun08.cloudfront.net/items/2s0r1l3H2e2G0H2K341F/logo-icon-trim.png" alt="CGB Create Guten Block by Ahmad Awais">
 	<br>
-	<img src="https://on.ahmda.ws/orxb/c" alt="Create Guten Block">
+	<img src="https://d2ddoduugvun08.cloudfront.net/items/3D0c0E1S02361I3O2K0v/logo-with-name-2.png" alt="Create Guten Block">
 	<br>
 	<br>
 
