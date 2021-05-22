@@ -1,0 +1,19 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-cgb-block-kitchen-sink {
+	padding: 1rem;
+	.example-block {
+		border: 1px solid #eee;
+		border-radius: 0.5rem;
+		padding: 1rem;
+		margin-bottom: 2rem;
+
+		ul {
+			margin-left: 2rem;
+		}
+	}
+}

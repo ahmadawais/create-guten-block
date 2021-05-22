@@ -1,0 +1,20 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-cgb-block-kitchen-sink {
+  padding: 1rem; }
+  .wp-block-cgb-block-kitchen-sink .example-block {
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem; }
+    .wp-block-cgb-block-kitchen-sink .example-block ul {
+      margin-left: 2rem; }
