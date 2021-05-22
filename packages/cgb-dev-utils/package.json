@@ -29,7 +29,7 @@
 	"dependencies": {
 		"@scarf/scarf": "^1.0.6",
 		"chalk": "2.3.0",
-		"cross-spawn": "5.1.0",
+		"cross-spawn": "7.0.1",
 		"update-notifier": "^2.3.0"
 	}
 }
