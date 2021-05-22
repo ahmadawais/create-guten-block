@@ -2,6 +2,13 @@
     <a href="https://github.com/ahmadawais/create-guten-block">
         <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgb.png" alt="create-guten-block" />
     </a>
+	
+    <br>
+	    <a href="https://github.com/ahmadawais/create-guten-block">
+        <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgblogo.png" alt="create-guten-block" />
+    </a>
+	
+	
     <br>
     <br>
 
