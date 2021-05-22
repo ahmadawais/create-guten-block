@@ -47,7 +47,7 @@ Create Guten Block is not like other [starter-kits](https://github.com/ahmadawai
 
 <br>
 
-[![Start](https://on.ahmda.ws/osd3/c)](/)
+[![Start](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/rocket.png)](/)
 
 ## GETTING STARTED!
 
@@ -96,7 +96,7 @@ npx create-guten-block my-block
 
 ([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/ahmadawais/e4c69b22561c7079c9d99faba90e3b23))
 
-[![npx block](https://on.ahmda.ws/p89T/c)](/)
+[![npx block](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgb1.gif)](/)
 
 _It'll take a couple of minutes to install._
 
@@ -144,7 +144,7 @@ npm start
 
 _You can also use `yarn start` if that's your jam_.
 
-[![cgb-npm-start](https://on.ahmda.ws/orrh/c)](/)
+[![cgb-npm-start](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgb2.gif)](/)
 
 This runs the plugin in development mode. To produce production code run `npm run build`.
 You will see the build messages, errors, and lint warnings in the console.
@@ -153,7 +153,7 @@ You will see the build messages, errors, and lint warnings in the console.
 
 <br>
 
-[![More](https://on.ahmda.ws/orsm/c)](/)
+[![More](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/workflow.png)](/)
 
 ### Workflow!
 
@@ -180,7 +180,7 @@ _That's about it._
 
 <br>
 
-[![included](https://on.ahmda.ws/orOe/c)](/)
+[![included](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/included.png)](/)
 
 ## What’s Included?
 
@@ -197,7 +197,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 <br>
 
-[![Philosophy](https://on.ahmda.ws/orq5/c)](/)
+[![Philosophy](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/philosophy.png)](/)
 
 ## Philosophy
 
@@ -209,7 +209,7 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
 
 <br>
 
-[![Why](https://on.ahmda.ws/orvy/c)](/)
+[![Why](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/why.png)](/)
 
 ## Why `create-guten-block`?
 
@@ -219,7 +219,7 @@ Well, it's really hard to configure things like webpack, React, ES 6/7/8/Next, E
 
 <br>
 
-[![tldr](https://on.ahmda.ws/osPO/c)](/)
+[![tldr](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/tldr.png)](/)
 
 ## TL;DR
 
@@ -240,7 +240,7 @@ If something doesn’t work, kindly file [an issue →](https://github.com/ahmad
 
 <br>
 
-[![update](https://on.ahmda.ws/osO7/c)](/)
+[![update](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/update.png)](/)
 
 ## Updating to New Releases
 
@@ -261,7 +261,7 @@ We commit to keeping the breaking changes minimal so you can upgrade `cgb-script
 
 <br>
 
-[![Log](https://on.ahmda.ws/osUz/c)](/)
+[![Log](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/changelog.png)](/)
 
 ## Changelog
 
@@ -284,7 +284,7 @@ Nothing's ever complete, so bear with us while we keep iterating towards a bette
 
 <br>
 
-[![Hello](https://on.ahmda.ws/os6O/c)](/)
+[![Hello](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/hello.png)](/)
 
 #### **Hello, we're [The Dev Couple](https://TheDevCouple.com)**!
 
@@ -308,7 +308,7 @@ without wasting a 1,000 hours][n] →</p>
 
 <br>
 
-[![Partners](https://on.ahmda.ws/osEJ/c)](/)
+[![Partners](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/backers.png)](/)
 
 ### Project Backers & [TheDevCouple Partners](https://TheDevCouple.com/partners) ⚡️
 
@@ -318,18 +318,15 @@ This FOSS (free and open source software) project is updated and maintained with
 
 <table width='100%'>
 	<tr>
-		<td width='500'><a target='_blank' href='https://kinsta.com/?kaid=WMDAKYHJLNJX&utm_source=TheDevCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/73cedc/c' /></a></td>
-		<td width='500'><a target='_blank' href='https://ahmda.ws/USES_WPE?utm_source=TheDevCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/ff40fe/c' /></a></td>
+		<td width='500'><a target='_blank' href='https://Awais.dev/kinsta'><img src='https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/kinsta.png' /></a></td>
+		<td width='500'><a target='_blank' href='https://mythemeshop.com/?utm_source=TheDevCouple&utm_medium=Partner'><img src='https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/mts.png' /></a></td>
 	</tr>
-	<tr>
-		<td width='500'><a target='_blank' href='https://mythemeshop.com/?utm_source=TheDevCouple&utm_medium=Partner'><img src='https://on.ahmda.ws/3166d9/c' /></a></td>
-		<td width='500'><a target='_blank' href='https://ipapi.com/?utm_source=TheDevCouple&utm_medium=Partner'><img src='https://d2ddoduugvun08.cloudfront.net/items/1R190r2U0p3N3L0U0b2u/ip-api.png'/></a></td>
-	</tr>
+	
 </table>
 
 <br>
 
-[![Thanks](https://on.ahmda.ws/orkW/c)](/)
+[![Thanks](https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/license.png)](/)
 
 ## License & Attribution
 
