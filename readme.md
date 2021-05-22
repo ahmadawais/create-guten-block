@@ -1,34 +1,15 @@
-<div align="center">
-	<img width="300" src="https://d2ddoduugvun08.cloudfront.net/items/2s0r1l3H2e2G0H2K341F/logo-icon-trim.png" alt="CGB Create Guten Block by Ahmad Awais">
-	<br>
-	<img src="https://d2ddoduugvun08.cloudfront.net/items/3D0c0E1S02361I3O2K0v/logo-with-name-2.png" alt="Create Guten Block">
-	<br>
-	<br>
+<h4 align="center">
+    <a href="https://github.com/ahmadawais/create-guten-block">
+        <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgb.png" alt="create-guten-block" />
+    </a>
+    <br>
+    <br>
 
-[![npm](https://img.shields.io/npm/v/create-guten-block.svg?style=flat-square)](https://www.npmjs.com/package/create-guten-block) [![npm](https://img.shields.io/npm/dt/create-guten-block.svg?style=flat-square&label=downloads)](https://www.npmjs.com/package/create-guten-block) [![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/flat.svg)](https://github.com/ahmadawais/Emoji-Log/) [![Tweet for help](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Tweet%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/) [![GitHub stars](https://img.shields.io/github/stars/ahmadawais/create-guten-block.svg?style=social&label=Stars)](https://github.com/ahmadawais/create-guten-block/stargazers) [![GitHub followers](https://img.shields.io/github/followers/ahmadawais.svg?style=social&label=Follow)](https://github.com/ahmadawais?tab=followers) [![VSCode.pro](https://img.shields.io/badge/Supported%20by-VSCode%20Power%20User%20Course%20%E2%86%92-gray.svg?colorA=444444&colorB=4F44D6&style=flat-square)](https://VSCode.pro "This open source project is supported by VSCode.pro")
+`create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
+	
+[![DOWNLOADS](https://img.shields.io/npm/dt/create-guten-block?label=DOWNLOADS%20%20%E2%9D%AF&colorA=216AFF&colorB=216AFF&style=flat)](https://www.npmjs.com/package/create-guten-block) [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?colorB=216AFF&style=flat)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=216AFF&colorB=216AFF&style=flat)](https://twitter.com/mrahmadawais/)
 
-<table width='100%' align="center">
-    <tr align='center'>
-        <td align='center' width='100%' colspan='2'>
-           <strong><code>create-guten-block</code></strong><br />
-            📦 A zero-configuration developer toolkit for building WordPress Gutenberg block plugins..
-        </td>
-    </tr>
-    <tr align='center' >
-        <td align='center'>
-            A FOSS (Free & Open Source Software) project. Maintained by <a href='https://github.com/ahmadawais'>@AhmadAwais</a>.
-        </td>
-        <td align='center'>
-            <a href='https://twitter.com/MrAhmadAwais/'>
-                <img src='https://img.shields.io/badge/→-AHMAD%20AWAIS-gray.svg?colorB=1F6BFF&style=flat' width='100' />
-            </a>
-        </td>
-    </tr>
-<tr align='center'  width='100%'><td align='center'><sup> Follow Ahmad's #FOSS work on GitHub <a href='https://github.com/ahmadawais'>@AhmadAwais</a> —   Say Hi on Twitter <a href="https://twitter.com/mrahmadawais/">@MrAhmadAwais</a></sup></td><td align='center'>🙌</td></tr>
-</table>
-
-</div>
-
+</h4>
 <br>
 
 # 📦 `create-guten-block`
