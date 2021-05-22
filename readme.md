@@ -1,16 +1,10 @@
 <h4 align="center">
     <a href="https://github.com/ahmadawais/create-guten-block">
         <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgb.png" alt="create-guten-block" />
-    </a>
-	
-    <br>
-	    <a href="https://github.com/ahmadawais/create-guten-block">
+    </a><br><a href="https://github.com/ahmadawais/create-guten-block">
         <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgblogo.png" alt="create-guten-block" />
-    </a>
-	
-	
-    <br>
-    <br>
+    </a><br><br>
+
 
 `create-guten-block` is _zero configuration dev-toolkit_ (#0CJS) to develop WordPress Gutenberg blocks in a matter of minutes without configuring `React`, `webpack`, `ES6/7/8/Next`, `ESLint`, `Babel`, etc.
 	
