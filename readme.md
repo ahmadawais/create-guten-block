@@ -1,3 +1,5 @@
+> [Archived and looking for active maintainers](https://github.com/ahmadawais/create-guten-block/issues/307). 
+
 <h4 align="center">
     <a href="https://github.com/ahmadawais/create-guten-block">
         <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/fix/cgb.png" alt="create-guten-block" />
