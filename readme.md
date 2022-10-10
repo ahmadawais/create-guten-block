@@ -1,4 +1,4 @@
-> [Archived and looking for active maintainers](https://github.com/ahmadawais/create-guten-block/issues/307). 
+> [Archived and looking for active maintainers](https://github.com/ahmadawais/create-guten-block/issues/307). Check out [`@wordpress/create-block`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/).
 
 <h4 align="center">
     <a href="https://github.com/ahmadawais/create-guten-block">
