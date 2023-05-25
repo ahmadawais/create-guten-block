@@ -166,6 +166,7 @@ inquirer
 
 		// Dependencies.
 		appPackage.dependencies = appPackage.dependencies || {};
+		appPackage.devDependencies = appPackage.devDependencies || {};
 		if ( appPackage.dependencies[ ownPackageName ] ) {
 			// Del cgb-scripts from dependencies now.
 			console.log( `  ➖  Removing ${ cyan( ownPackageName ) } from dependencies.` );
@@ -178,8 +179,8 @@ inquirer
 			// if ( ownPackage.optionalDependencies[ key ] ) {
 			// 	return;
 			// }
-			console.log( `  ➕  Adding ${ green( key ) } to dependencies.` );
-			appPackage.dependencies[ key ] = ownPackage.dependencies[ key ];
+			console.log( `  ➕  Adding ${ green( key ) } to devDependencies.` );
+			appPackage.devDependencies[ key ] = ownPackage.dependencies[ key ];
 		} );
 
 		// Sort the dependencies because we are that good :).
