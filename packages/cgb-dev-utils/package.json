@@ -1,0 +1,35 @@
+{
+	"name": "cgb-dev-utils",
+	"version": "1.6.0",
+	"description": "Developer utilities used by Create Guten Block.",
+	"repository": "ahmadawais/create-guten-block",
+	"keywords": [
+		"gutenberg",
+		"create-gutenberg-block",
+		"create-gutenberg-blocks",
+		"wp",
+		"wordpress",
+		"cgb",
+		"wp webpack",
+		"react",
+		"ESLint",
+		"Webpack",
+		"wp-scripts",
+		"cgb-scripts",
+		"guten-scripts",
+		"babel",
+		"cgb-dev-utils",
+		"babel-preset-cgb"
+	],
+	"author": "Ahmad Awais (https://AhmadAwais.com/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ahmadawais/create-guten-block/issues"
+	},
+	"dependencies": {
+		"@scarf/scarf": "^1.0.6",
+		"chalk": "2.3.0",
+		"cross-spawn": "5.1.0",
+		"update-notifier": "^2.3.0"
+	}
+}
